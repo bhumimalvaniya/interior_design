@@ -1,0 +1,354 @@
+/* =========================================
+   EDIT PROJECT PAGE
+========================================= */
+
+.edit-project-page {
+  min-height: 100vh;
+  padding: 35px;
+  background: #f6f5f2;
+  color: #222;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.edit-project-header {
+  max-width: 1100px;
+  margin: 0 auto 30px;
+}
+
+.edit-project-header p {
+  margin: 0 0 8px;
+  color: #9a8063;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.edit-project-header h1 {
+  margin: 0 0 8px;
+  color: #1d1d1d;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.edit-project-header span {
+  display: block;
+  color: #777;
+  font-size: 14px;
+}
+
+
+/* =========================================
+   EDIT FORM
+========================================= */
+
+.edit-project-form {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid #e8e5e1;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 9px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   INPUTS
+========================================= */
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  border: 1px solid #dcd9d5;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+
+/* Text input */
+
+.form-group input[type="text"] {
+  height: 46px;
+  padding: 0 14px;
+}
+
+
+/* Select */
+
+.form-group select {
+  height: 46px;
+  padding: 0 14px;
+  cursor: pointer;
+}
+
+
+/* Textarea */
+
+.form-group textarea {
+  min-height: 145px;
+  padding: 13px 14px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   FOCUS EFFECT
+========================================= */
+
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #9a8063;
+  box-shadow: 0 0 0 3px rgba(154, 128, 99, 0.10);
+}
+
+
+/* =========================================
+   FORM ROW
+========================================= */
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+
+/* =========================================
+   FORM ACTIONS
+========================================= */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid #eeeeee;
+}
+
+
+/* =========================================
+   CANCEL BUTTON
+========================================= */
+
+.cancel-project-btn {
+  min-width: 120px;
+  height: 45px;
+  padding: 0 20px;
+  border: 1px solid #d8d5d1;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #555;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.cancel-project-btn:hover {
+  border-color: #333;
+  background: #f7f7f7;
+  color: #222;
+}
+
+
+/* =========================================
+   UPDATE PROJECT BUTTON
+========================================= */
+
+.update-project-btn {
+  min-width: 155px;
+  height: 45px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 8px;
+  background: #1d1d1d;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.update-project-btn:hover {
+  background: #9a8063;
+  transform: translateY(-1px);
+}
+
+.update-project-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================
+   PROJECT NOT FOUND
+========================================= */
+
+.edit-not-found {
+  max-width: 550px;
+  margin: 120px auto;
+  padding: 45px 35px;
+  border: 1px solid #e8e5e1;
+  border-radius: 14px;
+  background: #ffffff;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.edit-not-found h2 {
+  margin: 0 0 12px;
+  color: #222;
+  font-size: 25px;
+}
+
+.edit-not-found p {
+  margin: 0 0 25px;
+  color: #777;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.edit-not-found button {
+  min-width: 160px;
+  height: 44px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 8px;
+  background: #1d1d1d;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.edit-not-found button:hover {
+  background: #9a8063;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 768px) {
+
+  .edit-project-page {
+    padding: 25px 18px;
+  }
+
+  .edit-project-header h1 {
+    font-size: 28px;
+  }
+
+  .edit-project-form {
+    padding: 25px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+  .edit-project-page {
+    padding: 20px 12px;
+  }
+
+  .edit-project-header {
+    margin-bottom: 22px;
+  }
+
+  .edit-project-header p {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .edit-project-header h1 {
+    font-size: 24px;
+  }
+
+  .edit-project-header span {
+    font-size: 13px;
+  }
+
+  .edit-project-form {
+    padding: 20px 16px;
+    border-radius: 10px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input[type="text"],
+  .form-group select {
+    height: 44px;
+    font-size: 13px;
+  }
+
+  .form-group textarea {
+    font-size: 13px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .cancel-project-btn,
+  .update-project-btn {
+    width: 100%;
+  }
+
+  .edit-not-found {
+    margin: 80px auto;
+    padding: 35px 20px;
+  }
+
+}

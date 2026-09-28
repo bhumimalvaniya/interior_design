@@ -1,0 +1,1002 @@
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e8e2d8;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1400px;
+  min-height: 82px;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #171717;
+  text-decoration: none;
+
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  white-space: nowrap;
+}
+
+.logo:hover {
+  color: #171717;
+}
+
+.logo-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #b38b45;
+  font-size: 23px;
+
+  transform: rotate(0deg);
+}
+
+.logo-highlight {
+  color: #b38b45;
+  margin-left: 3px;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  flex: 1;
+}
+
+.navbar > a,
+.navbar > .nav-dropdown > .dropdown-btn {
+  position: relative;
+
+  height: 45px;
+  padding: 0 15px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+
+  color: #333333;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+.navbar > a::after,
+.navbar > .nav-dropdown > .dropdown-btn::after {
+  content: "";
+
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  bottom: 3px;
+
+  height: 2px;
+
+  background: #b38b45;
+
+  transform: scaleX(0);
+  transform-origin: center;
+
+  transition: transform 0.25s ease;
+}
+
+.navbar > a:hover,
+.navbar > .nav-dropdown > .dropdown-btn:hover {
+  color: #b38b45;
+}
+
+.navbar > a:hover::after,
+.navbar > .nav-dropdown > .dropdown-btn:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* =========================================================
+   DROPDOWN WRAPPER
+========================================================= */
+
+.nav-dropdown {
+  position: relative;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================================================
+   DROPDOWN BUTTON
+========================================================= */
+
+.dropdown-btn {
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.dropdown-btn > .dropdown-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.dropdown-btn > span,
+.dropdown-link > span {
+  margin-left: 5px;
+
+  font-size: 15px;
+  line-height: 1;
+
+  transition: transform 0.25s ease;
+}
+
+
+/* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+.dropdown-menu {
+  position: absolute;
+
+  top: calc(100% + 5px);
+  left: 50%;
+
+  min-width: 220px;
+
+  transform: translateX(-50%);
+
+  padding: 9px 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e8e2d8;
+  border-top: 3px solid #b38b45;
+
+  border-radius: 0 0 6px 6px;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12);
+
+  animation: dropdownFade 0.2s ease;
+
+  overflow: hidden;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  padding: 12px 20px;
+
+  color: #333333;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background: #faf7f1;
+  color: #b38b45;
+  padding-left: 25px;
+}
+
+
+/* =========================================================
+   SEARCH BUTTON
+========================================================= */
+
+.search-btn {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #333333;
+  text-decoration: none;
+
+  font-size: 17px;
+
+  border-radius: 50%;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.search-btn:hover {
+  color: #b38b45;
+  background: #faf7f1;
+  transform: scale(1.05);
+}
+
+
+/* =========================================================
+   HEADER RIGHT
+========================================================= */
+
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.login-btn {
+  min-height: 40px;
+
+  padding: 0 16px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #333333;
+  text-decoration: none;
+
+  border: 1px solid #ddd5c9;
+  border-radius: 4px;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.login-btn:hover {
+  background: #faf7f1;
+  color: #b38b45;
+  border-color: #b38b45;
+}
+
+
+/* =========================================================
+   CONSULTATION BUTTON
+========================================================= */
+
+.consult-btn {
+  min-height: 42px;
+
+  padding: 0 19px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #b38b45;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  border: 1px solid #b38b45;
+  border-radius: 4px;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.consult-btn:hover {
+  background: #987338;
+  border-color: #987338;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 6px 15px rgba(179, 139, 69, 0.25);
+}
+
+
+/* =========================================================
+   PROFILE DROPDOWN
+========================================================= */
+
+.profile-dropdown {
+  position: relative;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================================================
+   PROFILE BUTTON
+========================================================= */
+
+.profile-btn {
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 4px 10px 4px 5px;
+
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+
+  color: #333333;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.profile-btn:hover {
+  background: #faf7f1;
+  border-color: #e6ddcf;
+  color: #b38b45;
+}
+
+
+/* =========================================================
+   HEADER AVATAR
+========================================================= */
+
+.header-avatar {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 2px solid #d5b77b;
+
+  display: block;
+}
+
+.header-user-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #faf7f1;
+  border: 1px solid #dfd4c3;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   PROFILE MENU
+========================================================= */
+
+.profile-menu {
+  position: absolute;
+
+  top: calc(100% + 8px);
+  right: 0;
+
+  width: 220px;
+
+  padding: 8px 0;
+
+  background: #ffffff;
+
+  border: 1px solid #e8e2d8;
+  border-top: 3px solid #b38b45;
+
+  border-radius: 0 0 6px 6px;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.13);
+
+  animation: profileFade 0.2s ease;
+
+  overflow: hidden;
+}
+
+@keyframes profileFade {
+  from {
+    opacity: 0;
+    transform: translateY(-7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-menu a,
+.profile-menu button {
+  width: 100%;
+
+  min-height: 42px;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  background: transparent;
+  border: none;
+
+  color: #333333;
+
+  text-decoration: none;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.profile-menu a:hover,
+.profile-menu button:hover {
+  background: #faf7f1;
+  color: #b38b45;
+  padding-left: 23px;
+}
+
+
+/* =========================================================
+   MOBILE LOGIN / CONSULTATION
+========================================================= */
+
+.mobile-login,
+.mobile-consultation {
+  display: none !important;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-toggle {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+
+  border: 1px solid #ddd5c9;
+  border-radius: 4px;
+
+  color: #333333;
+
+  font-size: 22px;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.menu-toggle:hover {
+  background: #faf7f1;
+  border-color: #b38b45;
+  color: #b38b45;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .header-container {
+    padding: 0 25px;
+    gap: 20px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .navbar {
+    gap: 0;
+  }
+
+  .navbar > a,
+  .navbar > .nav-dropdown > .dropdown-btn {
+    padding: 0 10px;
+    font-size: 13px;
+  }
+
+  .consult-btn {
+    padding: 0 14px;
+  }
+
+  .profile-btn {
+    padding-right: 5px;
+  }
+
+  .profile-btn > span:nth-child(2) {
+    max-width: 90px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+
+/* =========================================================
+   MOBILE / TABLET NAVIGATION
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .header-container {
+    min-height: 72px;
+
+    padding: 0 20px;
+
+    position: relative;
+  }
+
+  .logo {
+    font-size: 21px;
+  }
+
+  .logo-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+
+
+  /* -----------------------------------------------
+     HIDE DESKTOP RIGHT SIDE
+  ----------------------------------------------- */
+
+  .header-right {
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  .header-right .search-btn {
+    display: none;
+  }
+
+  .header-right .login-btn,
+  .header-right .consult-btn {
+    display: none;
+  }
+
+
+  /* -----------------------------------------------
+     MOBILE MENU BUTTON
+  ----------------------------------------------- */
+
+  .menu-toggle {
+    display: flex;
+  }
+
+
+  /* -----------------------------------------------
+     MOBILE NAVBAR
+  ----------------------------------------------- */
+
+  .navbar {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    width: 100%;
+
+    max-height: calc(100vh - 72px);
+
+    padding: 12px 20px 20px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eee8df;
+    border-bottom: 1px solid #e6ded2;
+
+    box-shadow:
+      0 12px 25px rgba(0, 0, 0, 0.09);
+
+    display: none;
+
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    gap: 2px;
+
+    overflow-y: auto;
+  }
+
+  .navbar.active {
+    display: flex;
+
+    animation: mobileNavOpen 0.25s ease;
+  }
+
+  @keyframes mobileNavOpen {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+  /* -----------------------------------------------
+     MOBILE TOP LEVEL LINKS
+  ----------------------------------------------- */
+
+  .navbar > a,
+  .navbar > .nav-dropdown > .dropdown-btn {
+    width: 100%;
+    min-height: 48px;
+
+    padding: 0 15px;
+
+    justify-content: flex-start;
+
+    border-bottom: 1px solid #f1ece5;
+
+    font-size: 14px;
+  }
+
+  .navbar > a::after,
+  .navbar > .nav-dropdown > .dropdown-btn::after {
+    display: none;
+  }
+
+
+  /* -----------------------------------------------
+     MOBILE DROPDOWN
+  ----------------------------------------------- */
+
+  .nav-dropdown {
+    width: 100%;
+    height: auto;
+
+    display: block;
+  }
+
+  .dropdown-btn {
+    width: 100%;
+  }
+
+  .dropdown-link {
+    flex: 1;
+  }
+
+  .dropdown-menu {
+    position: static;
+
+    width: 100%;
+    min-width: 0;
+
+    transform: none;
+
+    margin: 0;
+
+    padding: 5px 0 7px;
+
+    border: none;
+    border-left: 2px solid #b38b45;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    animation: none;
+
+    background: #faf8f4;
+  }
+
+  .dropdown-menu a {
+    min-height: 42px;
+
+    padding: 0 20px 0 28px;
+
+    font-size: 13px;
+  }
+
+  .dropdown-menu a:hover {
+    padding-left: 32px;
+  }
+
+
+  /* -----------------------------------------------
+     MOBILE LOGIN
+  ----------------------------------------------- */
+
+  .mobile-login {
+    display: flex !important;
+
+    width: 100%;
+    min-height: 48px;
+
+    padding: 0 15px;
+
+    align-items: center;
+
+    color: #333333;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    border-bottom: 1px solid #f1ece5;
+  }
+
+  .mobile-login:hover {
+    color: #b38b45;
+  }
+
+
+  /* -----------------------------------------------
+     MOBILE CONSULTATION
+  ----------------------------------------------- */
+
+  .mobile-consultation {
+    display: flex !important;
+
+    width: 100%;
+    min-height: 45px;
+
+    margin-top: 12px;
+
+    padding: 0 15px;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #b38b45;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 4px;
+
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .mobile-consultation:hover {
+    background: #987338;
+    color: #ffffff;
+  }
+
+
+  /* -----------------------------------------------
+     PROFILE ON MOBILE
+  ----------------------------------------------- */
+
+  .profile-dropdown {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .header-container {
+    min-height: 68px;
+    padding: 0 15px;
+  }
+
+  .logo {
+    font-size: 19px;
+    gap: 7px;
+  }
+
+  .logo-icon {
+    width: 27px;
+    height: 27px;
+    font-size: 18px;
+  }
+
+  .logo-highlight {
+    margin-left: 2px;
+  }
+
+  .menu-toggle {
+    width: 39px;
+    height: 39px;
+    font-size: 20px;
+  }
+
+  .navbar {
+    max-height: calc(100vh - 68px);
+
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .header-container {
+    padding: 0 12px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .logo-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+  }
+
+  .menu-toggle {
+    width: 37px;
+    height: 37px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.navbar a:focus-visible,
+.dropdown-btn:focus-visible,
+.profile-btn:focus-visible,
+.profile-menu a:focus-visible,
+.profile-menu button:focus-visible,
+.search-btn:focus-visible,
+.login-btn:focus-visible,
+.consult-btn:focus-visible,
+.menu-toggle:focus-visible {
+  outline: 2px solid #b38b45;
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+

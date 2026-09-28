@@ -1,0 +1,601 @@
+/* =========================================================
+   ADD CATEGORY PAGE
+========================================================= */
+
+.add-category-page {
+  min-height: 100vh;
+  width: 100%;
+
+  padding: 35px 40px 50px;
+
+  box-sizing: border-box;
+
+  background: #f6f5f2;
+
+  color: #242424;
+
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.add-category-header {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto 32px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+.add-category-small-title {
+  margin: 0 0 9px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2.2px;
+
+  text-transform: uppercase;
+
+  color: #a18463;
+}
+
+.add-category-header h1 {
+  margin: 0 0 8px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 38px;
+
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  color: #222;
+}
+
+.add-category-header span {
+  display: block;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-category-btn {
+  min-width: 180px;
+
+  height: 45px;
+
+  padding: 0 18px;
+
+  border: 1px solid #dedbd5;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #333;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.back-category-btn:hover {
+  background: #292929;
+
+  border-color: #292929;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.add-category-card {
+  width: 100%;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 38px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e8e5df;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 25px rgba(38, 33, 26, 0.05),
+    0 2px 6px rgba(38, 33, 26, 0.03);
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.category-form-group {
+  width: 100%;
+
+  margin-bottom: 24px;
+}
+
+.category-form-group label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-size: 13px;
+
+  font-weight: 650;
+
+  color: #333;
+}
+
+.category-form-group label::after {
+  content: " *";
+
+  color: #a18463;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.category-form-group input,
+.category-form-group select,
+.category-form-group textarea {
+  width: 100%;
+
+  padding: 0 15px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dedbd5;
+
+  border-radius: 7px;
+
+  background: #fcfcfb;
+
+  color: #2c2c2c;
+
+  outline: none;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.category-form-group input,
+.category-form-group select {
+  height: 50px;
+}
+
+.category-form-group textarea {
+  min-height: 130px;
+
+  padding-top: 14px;
+  padding-bottom: 14px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+.category-form-group input::placeholder,
+.category-form-group textarea::placeholder {
+  color: #aaa;
+}
+
+
+/* =========================================================
+   INPUT HOVER
+========================================================= */
+
+.category-form-group input:hover,
+.category-form-group select:hover,
+.category-form-group textarea:hover {
+  border-color: #c7c0b5;
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
+
+.category-form-group input:focus,
+.category-form-group select:focus,
+.category-form-group textarea:focus {
+  background: #ffffff;
+
+  border-color: #a18463;
+
+  box-shadow:
+    0 0 0 3px rgba(161, 132, 99, 0.12);
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.category-form-group select {
+  cursor: pointer;
+
+  appearance: auto;
+}
+
+
+/* =========================================================
+   IMAGE PREVIEW
+========================================================= */
+
+.category-image-preview {
+  width: 100%;
+
+  margin: 8px 0 28px;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: #faf9f7;
+
+  border: 1px solid #e7e3dc;
+
+  border-radius: 10px;
+}
+
+
+/* Preview heading */
+
+.category-preview-heading {
+  margin-bottom: 15px;
+}
+
+.category-preview-heading span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  color: #a18463;
+}
+
+.category-preview-heading h3 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 21px;
+
+  font-weight: 600;
+
+  color: #292929;
+}
+
+
+/* Preview image */
+
+.category-image-preview img {
+  display: block;
+
+  width: 100%;
+
+  max-width: 650px;
+
+  height: 300px;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+
+  border: 1px solid #ddd8d0;
+
+  background: #eeeeee;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.add-category-actions {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  margin-top: 32px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #eeeae4;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+========================================================= */
+
+.cancel-category-btn {
+  min-width: 115px;
+
+  height: 46px;
+
+  padding: 0 22px;
+
+  border: 1px solid #d8d5cf;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #555;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.cancel-category-btn:hover {
+  background: #f5f4f2;
+
+  border-color: #bbb6ae;
+
+  color: #222;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SAVE BUTTON
+========================================================= */
+
+.save-category-btn {
+  min-width: 150px;
+
+  height: 46px;
+
+  padding: 0 24px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #292929;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 12px rgba(0, 0, 0, 0.12);
+
+  transition: all 0.25s ease;
+}
+
+.save-category-btn:hover {
+  background: #a18463;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 20px rgba(0, 0, 0, 0.15);
+}
+
+.save-category-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .add-category-page {
+    padding: 30px 25px 40px;
+  }
+
+  .add-category-header {
+    align-items: flex-start;
+  }
+
+  .add-category-header h1 {
+    font-size: 34px;
+  }
+
+  .add-category-card {
+    padding: 30px;
+  }
+
+  .category-image-preview img {
+    max-width: 100%;
+
+    height: 280px;
+  }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .add-category-page {
+    padding: 22px 16px 35px;
+  }
+
+  .add-category-header {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    margin-bottom: 25px;
+  }
+
+  .add-category-header h1 {
+    font-size: 30px;
+  }
+
+  .add-category-header span {
+    font-size: 13px;
+  }
+
+  .back-category-btn {
+    width: 100%;
+  }
+
+  .add-category-card {
+    padding: 23px 18px;
+
+    border-radius: 11px;
+  }
+
+  .category-form-group input,
+  .category-form-group select {
+    height: 48px;
+  }
+
+  .category-form-group textarea {
+    min-height: 120px;
+  }
+
+  .category-image-preview {
+    padding: 14px;
+  }
+
+  .category-image-preview img {
+    height: 220px;
+  }
+
+  .add-category-actions {
+    flex-direction: column-reverse;
+
+    align-items: stretch;
+  }
+
+  .cancel-category-btn,
+  .save-category-btn {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .add-category-page {
+    padding: 18px 12px 30px;
+  }
+
+  .add-category-header h1 {
+    font-size: 26px;
+  }
+
+  .add-category-small-title {
+    font-size: 10px;
+
+    letter-spacing: 1.8px;
+  }
+
+  .add-category-card {
+    padding: 20px 14px;
+  }
+
+  .category-form-group input,
+  .category-form-group select {
+    height: 46px;
+
+    padding: 0 12px;
+
+    font-size: 13px;
+  }
+
+  .category-form-group textarea {
+    font-size: 13px;
+  }
+
+  .category-image-preview img {
+    height: 180px;
+  }
+}

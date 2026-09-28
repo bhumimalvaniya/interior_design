@@ -1,0 +1,1596 @@
+
+/* =====================================================
+   RESIDENTIAL PAGE
+===================================================== */
+
+.residential-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  color: #222222;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.residential-hero {
+  min-height: 650px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.82),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=90");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.residential-hero-content {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 100px 0;
+
+  color: #ffffff;
+}
+
+.residential-label {
+  color: #c28b63;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  margin: 0 0 15px;
+}
+
+.residential-hero-content h1 {
+  max-width: 800px;
+
+  margin: 0 0 25px;
+
+  font-size: 68px;
+  line-height: 1.08;
+
+  font-weight: 600;
+}
+
+.residential-hero-content h1 span {
+  color: #c28b63;
+}
+
+.residential-hero-description {
+  max-width: 630px;
+
+  margin: 0 0 35px;
+
+  color: #eeeeee;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.residential-hero-btn {
+  display: inline-block;
+
+  padding: 15px 32px;
+
+  background: #c28b63;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.residential-hero-btn:hover {
+  background: #ffffff;
+  color: #222222;
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.residential-intro {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 110px 0;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.residential-intro-image {
+  position: relative;
+}
+
+.residential-intro-image img {
+  width: 100%;
+  height: 540px;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.residential-intro-badge {
+  position: absolute;
+
+  right: -20px;
+  bottom: -20px;
+
+  width: 175px;
+  height: 125px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  background: #c28b63;
+
+  color: #ffffff;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.residential-intro-badge strong {
+  font-size: 40px;
+}
+
+.residential-intro-badge span {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   INTRO CONTENT
+===================================================== */
+
+.residential-intro-content h2 {
+  margin: 0 0 25px;
+
+  color: #222222;
+
+  font-size: 46px;
+  line-height: 1.15;
+
+  font-weight: 600;
+}
+
+.residential-intro-content h2 span {
+  color: #c28b63;
+}
+
+.residential-intro-content > p:not(.residential-label) {
+  color: #777777;
+
+  font-size: 15px;
+  line-height: 1.8;
+
+  margin: 0 0 18px;
+}
+
+
+/* =====================================================
+   CHECK LIST
+===================================================== */
+
+.residential-check-list {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 16px;
+
+  margin-top: 30px;
+}
+
+.residential-check-list div {
+  color: #444444;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.residential-check-list span {
+  color: #c28b63;
+
+  margin-right: 8px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   PROJECTS SECTION
+===================================================== */
+
+.residential-projects {
+  padding: 110px 5%;
+
+  background: #f6f3f0;
+}
+
+.residential-section-heading {
+  max-width: 700px;
+
+  margin: 0 auto 55px;
+
+  text-align: center;
+}
+
+.residential-section-heading h2 {
+  margin: 0 0 18px;
+
+  color: #222222;
+
+  font-size: 46px;
+  line-height: 1.15;
+
+  font-weight: 600;
+}
+
+.residential-section-heading h2 span {
+  color: #c28b63;
+}
+
+.residential-section-heading > p:last-child {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   PROJECT GRID
+===================================================== */
+
+.residential-project-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+}
+
+
+/* =====================================================
+   PROJECT CARD
+===================================================== */
+
+.residential-project-card {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+
+  transition: all 0.35s ease;
+}
+
+.residential-project-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #c28b63;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =====================================================
+   PROJECT IMAGE
+===================================================== */
+
+.residential-project-image {
+  position: relative;
+
+  height: 280px;
+
+  overflow: hidden;
+}
+
+.residential-project-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.residential-project-card:hover
+.residential-project-image img {
+  transform: scale(1.08);
+}
+
+
+/* =====================================================
+   PROJECT NUMBER
+===================================================== */
+
+.residential-project-number {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #c28b63;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   PROJECT CONTENT
+===================================================== */
+
+.residential-project-content {
+  padding: 28px;
+}
+
+.residential-project-category {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #c28b63;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.residential-project-content h3 {
+  margin: 0 0 12px;
+
+  color: #222222;
+
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.residential-project-content p {
+  margin: 0 0 20px;
+
+  color: #777777;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.residential-project-link {
+  color: #c28b63;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: all 0.3s ease;
+}
+
+.residential-project-link:hover {
+  color: #222222;
+
+  padding-left: 5px;
+}
+
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.residential-features {
+  padding: 110px 5%;
+
+  background: #ffffff;
+}
+
+.residential-features-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.residential-feature-card {
+  padding: 35px 28px;
+
+  background: #f6f3f0;
+
+  border: 1px solid #eeeeee;
+
+  transition: all 0.3s ease;
+}
+
+.residential-feature-card:hover {
+  background: #222222;
+
+  transform: translateY(-7px);
+}
+
+.residential-feature-number {
+  color: #c28b63;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.residential-feature-card h3 {
+  margin: 25px 0 12px;
+
+  color: #222222;
+
+  font-size: 20px;
+}
+
+.residential-feature-card p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.residential-feature-card:hover h3 {
+  color: #ffffff;
+}
+
+.residential-feature-card:hover p {
+  color: #bbbbbb;
+}
+
+
+/* =====================================================
+   ROOMS SECTION
+===================================================== */
+
+.residential-rooms {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  background: #252525;
+
+  color: #ffffff;
+}
+
+.residential-rooms-content {
+  padding: 90px 10%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.residential-rooms-content h2 {
+  margin: 0 0 20px;
+
+  color: #ffffff;
+
+  font-size: 44px;
+  line-height: 1.15;
+
+  font-weight: 600;
+}
+
+.residential-rooms-content h2 span {
+  color: #c28b63;
+}
+
+.residential-rooms-content > p:not(.residential-label) {
+  color: #aaaaaa;
+
+  font-size: 15px;
+  line-height: 1.8;
+
+  margin-bottom: 30px;
+}
+
+.residential-room-list {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+}
+
+.residential-room-item {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 17px 0;
+
+  border-bottom: 1px solid #444444;
+}
+
+.residential-room-item span {
+  color: #c28b63;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.residential-room-item h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  font-weight: 500;
+}
+
+.residential-rooms-image {
+  min-height: 650px;
+}
+
+.residential-rooms-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =====================================================
+   PROCESS
+===================================================== */
+
+.residential-process {
+  padding: 110px 5%;
+
+  background: #f6f3f0;
+}
+
+.residential-process-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.residential-process-card {
+  min-height: 220px;
+
+  padding: 35px 28px;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+
+  transition: all 0.3s ease;
+}
+
+.residential-process-card:hover {
+  background: #222222;
+
+  transform: translateY(-7px);
+}
+
+.residential-process-card > span {
+  color: #c28b63;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.residential-process-card h3 {
+  margin: 28px 0 12px;
+
+  color: #222222;
+
+  font-size: 20px;
+}
+
+.residential-process-card p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.residential-process-card:hover h3 {
+  color: #ffffff;
+}
+
+.residential-process-card:hover p {
+  color: #bbbbbb;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.residential-cta {
+  min-height: 460px;
+
+  padding: 80px 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.75)
+    ),
+    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=90");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.residential-cta-content {
+  max-width: 800px;
+}
+
+.residential-cta-content > p:first-child {
+  margin: 0 0 18px;
+
+  color: #c28b63;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.residential-cta-content h2 {
+  margin: 0 0 20px;
+
+  color: #ffffff;
+
+  font-size: 50px;
+  line-height: 1.15;
+}
+
+.residential-cta-content h2 span {
+  color: #c28b63;
+}
+
+.residential-cta-content > p:not(:first-child) {
+  max-width: 650px;
+
+  margin: 0 auto 28px;
+
+  color: #dddddd;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.residential-cta-btn {
+  display: inline-block;
+
+  padding: 15px 34px;
+
+  background: #c28b63;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.residential-cta-btn:hover {
+  background: #ffffff;
+
+  color: #222222;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+  .residential-hero-content h1 {
+    font-size: 58px;
+  }
+
+  .residential-intro {
+    gap: 50px;
+  }
+
+  .residential-project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .residential-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .residential-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =====================================================
+   TABLET / SMALL DESKTOP
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .residential-hero {
+    min-height: 570px;
+  }
+
+  .residential-hero-content {
+    text-align: center;
+  }
+
+  .residential-hero-content h1 {
+    font-size: 48px;
+  }
+
+  .residential-hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .residential-intro {
+    grid-template-columns: 1fr;
+
+    padding: 90px 0;
+
+    gap: 60px;
+  }
+
+  .residential-intro-content {
+    text-align: center;
+  }
+
+  .residential-intro-image {
+    width: 100%;
+    max-width: 650px;
+
+    margin: auto;
+  }
+
+  .residential-rooms {
+    grid-template-columns: 1fr;
+  }
+
+  .residential-rooms-image {
+    min-height: 450px;
+
+    order: -1;
+  }
+
+  .residential-rooms-content {
+    padding: 80px 8%;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .residential-hero {
+    min-height: 520px;
+  }
+
+  .residential-hero-content {
+    width: 88%;
+  }
+
+  .residential-hero-content h1 {
+    font-size: 38px;
+  }
+
+  .residential-hero-content > p:first-child {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+  .residential-hero-description {
+    font-size: 14px;
+  }
+
+
+  /* Intro */
+
+  .residential-intro {
+    width: 88%;
+  }
+
+  .residential-intro-content h2 {
+    font-size: 34px;
+  }
+
+  .residential-intro-image img {
+    height: 400px;
+  }
+
+  .residential-intro-badge {
+    right: -5px;
+
+    bottom: -15px;
+
+    width: 145px;
+    height: 105px;
+  }
+
+  .residential-intro-badge strong {
+    font-size: 32px;
+  }
+
+  .residential-intro-badge span {
+    font-size: 11px;
+  }
+
+  .residential-check-list {
+    grid-template-columns: 1fr;
+
+    text-align: left;
+  }
+
+
+  /* Projects */
+
+  .residential-projects {
+    padding: 75px 6%;
+  }
+
+  .residential-section-heading h2 {
+    font-size: 34px;
+  }
+
+  .residential-project-grid {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .residential-project-image {
+    height: 270px;
+  }
+
+
+  /* Features */
+
+  .residential-features {
+    padding: 75px 6%;
+  }
+
+  .residential-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Rooms */
+
+  .residential-rooms-content {
+    padding: 75px 8%;
+  }
+
+  .residential-rooms-content h2 {
+    font-size: 34px;
+  }
+
+  .residential-room-list {
+    grid-template-columns: 1fr;
+  }
+
+  .residential-rooms-image {
+    min-height: 380px;
+  }
+
+
+  /* Process */
+
+  .residential-process {
+    padding: 75px 6%;
+  }
+
+  .residential-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .residential-process-card {
+    min-height: auto;
+  }
+
+
+  /* CTA */
+
+  .residential-cta {
+    min-height: 420px;
+
+    padding: 70px 20px;
+  }
+
+  .residential-cta-content h2 {
+    font-size: 36px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .residential-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .residential-intro-content h2,
+  .residential-section-heading h2,
+  .residential-rooms-content h2 {
+    font-size: 30px;
+  }
+
+  .residential-cta-content h2 {
+    font-size: 30px;
+  }
+
+  .residential-project-image {
+    height: 240px;
+  }
+
+}
+/* start seconed css*/
+/* =========================================================
+   RESIDENTIAL PAGE
+========================================================= */
+
+.residential-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  color: #222222;
+  font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+.residential-label {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #a07845;
+}
+
+.residential-section-heading {
+  max-width: 760px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.residential-section-heading h2 {
+  margin: 0 0 18px;
+  font-size: 48px;
+  line-height: 1.15;
+  font-weight: 600;
+  color: #222222;
+}
+
+.residential-section-heading h2 span {
+  display: inline;
+  color: #a07845;
+}
+
+.residential-section-heading > p:last-child {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #777777;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.residential-hero {
+  position: relative;
+  min-height: 680px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20, 20, 20, 0.78),
+      rgba(20, 20, 20, 0.38),
+      rgba(20, 20, 20, 0.08)
+    ),
+    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2000&q=85")
+      center / cover no-repeat;
+}
+
+.residential-hero-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 30px;
+}
+
+.residential-hero .residential-label {
+  color: #d6b17d;
+}
+
+.residential-hero h1 {
+  max-width: 750px;
+  margin: 0 0 25px;
+
+  font-size: 72px;
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -2px;
+
+  color: #ffffff;
+}
+
+.residential-hero h1 span {
+  display: block;
+  color: #d4a66c;
+}
+
+.residential-hero-description {
+  max-width: 650px;
+  margin: 0 0 35px;
+
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.residential-hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 52px;
+  padding: 0 30px;
+
+  border: 1px solid #c89b64;
+  background: #c89b64;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  transition: all 0.3s ease;
+}
+
+.residential-hero-btn:hover {
+  background: transparent;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.residential-intro {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  padding: 110px 30px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+
+  align-items: center;
+}
+
+.residential-intro-image {
+  position: relative;
+}
+
+.residential-intro-image img {
+  display: block;
+
+  width: 100%;
+  height: 580px;
+
+  object-fit: cover;
+}
+
+.residential-intro-badge {
+  position: absolute;
+  right: -30px;
+  bottom: 35px;
+
+  width: 145px;
+  height: 145px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: #a07845;
+  color: #ffffff;
+
+  text-align: center;
+}
+
+.residential-intro-badge strong {
+  display: block;
+  margin-bottom: 5px;
+
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.residential-intro-badge span {
+  font-size: 12px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.residential-intro-content h2 {
+  margin: 0 0 25px;
+
+  font-size: 48px;
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+.residential-intro-content h2 span {
+  display: block;
+  color: #a07845;
+}
+
+.residential-intro-content > p:not(.residential-label) {
+  margin: 0 0 20px;
+
+  font-size: 15px;
+  line-height: 1.9;
+  color: #707070;
+}
+
+.residential-check-list {
+  margin-top: 30px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.residential-check-list div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 14px;
+  color: #333333;
+}
+
+.residential-check-list span {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #a07845;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   PROJECTS SECTION
+========================================================= */
+
+.residential-projects {
+  padding: 110px 30px;
+
+  background: #f7f5f1;
+}
+
+.residential-projects .residential-section-heading {
+  max-width: 800px;
+}
+
+
+/* =========================================================
+   PROJECT GRID
+========================================================= */
+
+.residential-project-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.residential-project-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #ebe7df;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.residential-project-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
+
+.residential-project-image {
+  position: relative;
+
+  width: 100%;
+  height: 330px;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+}
+
+.residential-project-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.residential-project-card:hover
+.residential-project-image img {
+  transform: scale(1.06);
+}
+
+
+/* =========================================================
+   PROJECT NUMBER
+========================================================= */
+
+.residential-project-number {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  color: #a07845;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   PROJECT CONTENT
+========================================================= */
+
+.residential-project-content {
+  min-height: 320px;
+
+  padding: 28px 27px 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.residential-project-category {
+  display: inline-block;
+
+  margin-bottom: 10px;
+
+  color: #a07845;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.residential-project-content h3 {
+  margin: 0 0 12px;
+
+  font-size: 24px;
+  line-height: 1.3;
+
+  font-weight: 600;
+
+  color: #222222;
+}
+
+.residential-project-location {
+  margin-bottom: 15px;
+
+  font-size: 13px;
+  line-height: 1.5;
+
+  color: #777777;
+}
+
+.residential-project-content > p {
+  margin: 0 0 18px;
+
+  font-size: 14px;
+  line-height: 1.8;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.residential-project-status {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  padding: 7px 13px;
+
+  border: 1px solid #ded7cc;
+
+  background: #faf8f4;
+
+  color: #80633e;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   PROJECT LINK
+========================================================= */
+
+.residential-project-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  margin-top: auto;
+
+  color: #222222;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid #a07845;
+
+  padding-bottom: 5px;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.residential-project-link:hover {
+  color: #a07845;
+}
+
+
+/* =========================================================
+   LOADING / ERROR / EMPTY
+========================================================= */
+
+.residential-loading,
+.residential-error,
+.residential-empty {
+  grid-column: 1 / -1;
+
+  min-height: 220px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  text-align: center;
+
+  font-size: 16px;
+}
+
+
+/* LOADING */
+
+.residential-loading {
+  color: #8a704f;
+}
+
+
+/* ERROR */
+
+.residential-error {
+  border: 1px solid #ead6d6;
+
+  background: #fff8f8;
+
+  color: #b24b4b;
+}
+
+
+/* EMPTY */
+
+.residential-empty {
+  border: 1px dashed #d8d0c4;
+
+  background: #ffffff;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.residential-features {
+  padding: 110px 30px;
+
+  background: #ffffff;
+}
+
+.residential-features-grid {
+  max-width: 1200
+}
+

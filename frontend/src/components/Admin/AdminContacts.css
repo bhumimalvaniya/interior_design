@@ -1,0 +1,963 @@
+
+/* =========================================================
+   ADMIN CONTACTS PAGE
+========================================================= */
+
+.admin-contacts {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px;
+  background: #f7f5f1;
+  box-sizing: border-box;
+  color: #222;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.contacts-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.contacts-small-title {
+  margin: 0 0 8px;
+
+  color: #a17b45;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.contacts-page-header h1 {
+  margin: 0 0 8px;
+
+  color: #1d1d1d;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.contacts-page-header span {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.contacts-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+
+  margin-bottom: 25px;
+}
+
+.contact-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  min-height: 105px;
+  padding: 20px;
+
+  background: #ffffff;
+  border: 1px solid #e8e2d9;
+  border-radius: 14px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.contact-stat-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.contact-stat-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: #f5efe6;
+  border-radius: 12px;
+
+  font-size: 22px;
+}
+
+.contact-stat-card span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #777;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.contact-stat-card strong {
+  display: block;
+
+  color: #222;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   SEARCH + FILTER
+========================================================= */
+
+.contacts-filter {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 18px;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.contacts-search {
+  width: 100%;
+  max-width: 420px;
+
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 0 15px;
+
+  background: #ffffff;
+  border: 1px solid #ddd6cc;
+  border-radius: 10px;
+
+  box-sizing: border-box;
+
+  transition: all 0.25s ease;
+}
+
+.contacts-search:focus-within {
+  border-color: #a17b45;
+
+  box-shadow:
+    0 0 0 3px rgba(161, 123, 69, 0.1);
+}
+
+.contacts-search span {
+  font-size: 16px;
+  opacity: 0.7;
+}
+
+.contacts-search input {
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #333;
+  font-size: 14px;
+}
+
+.contacts-search input::placeholder {
+  color: #999;
+}
+
+/* =========================================================
+   STATUS SELECT
+========================================================= */
+
+.contacts-filter > select {
+  min-width: 160px;
+  height: 46px;
+
+  padding: 0 38px 0 14px;
+
+  border: 1px solid #ddd6cc;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #333;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  outline: none;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.contacts-filter > select:focus {
+  border-color: #a17b45;
+
+  box-shadow:
+    0 0 0 3px rgba(161, 123, 69, 0.1);
+}
+
+/* =========================================================
+   TABLE WRAPPER
+========================================================= */
+
+.contacts-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+
+  background: #ffffff;
+
+  border: 1px solid #e5dfd6;
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 18px rgba(0, 0, 0, 0.04);
+
+  scrollbar-width: thin;
+  scrollbar-color: #c8bba8 #f5f2ed;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.contacts-table {
+  width: 100%;
+
+  min-width: 1050px;
+
+  border-collapse: collapse;
+}
+
+.contacts-table thead {
+  background: #faf8f5;
+}
+
+.contacts-table th {
+  padding: 17px 18px;
+
+  border-bottom: 1px solid #e6e0d8;
+
+  color: #6f6a63;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-align: left;
+  text-transform: uppercase;
+
+  letter-spacing: 0.7px;
+
+  white-space: nowrap;
+}
+
+.contacts-table td {
+  padding: 18px;
+
+  border-bottom: 1px solid #eeeae4;
+
+  vertical-align: middle;
+
+  font-size: 14px;
+}
+
+.contacts-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.contacts-table tbody tr:hover {
+  background: #fcfbf9;
+}
+
+.contacts-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================================================
+   CUSTOMER
+========================================================= */
+
+.contact-customer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-width: 180px;
+}
+
+.customer-avatar {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #1d1d1d;
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+}
+
+.contact-customer > div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.contact-customer strong {
+  color: #292929;
+  font-size: 14px;
+  font-weight: 650;
+
+  white-space: nowrap;
+}
+
+.contact-customer span {
+  color: #999;
+  font-size: 11px;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   CONTACT INFORMATION
+========================================================= */
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  min-width: 190px;
+}
+
+.contact-info span {
+  color: #555;
+  font-size: 13px;
+
+  white-space: nowrap;
+}
+
+.contact-info span:first-child {
+  color: #333;
+  font-weight: 500;
+}
+
+/* =========================================================
+   SUBJECT
+========================================================= */
+
+.contact-subject {
+  min-width: 220px;
+  max-width: 290px;
+}
+
+.contact-subject strong {
+  display: block;
+
+  margin-bottom: 5px;
+
+  overflow: hidden;
+
+  color: #292929;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact-subject p {
+  margin: 0;
+
+  color: #999;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   DATE
+========================================================= */
+
+.contact-date {
+  display: inline-block;
+
+  min-width: 100px;
+
+  color: #666;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.contact-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 78px;
+
+  padding: 6px 11px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: capitalize;
+
+  white-space: nowrap;
+}
+
+/* PENDING */
+
+.contact-status.new {
+  background: #fff3d8;
+  color: #a66b00;
+}
+
+/* READ */
+
+.contact-status.read {
+  background: #eeeeee;
+  color: #666;
+}
+
+/* REPLIED */
+
+.contact-status.replied {
+  background: #e4f5ea;
+  color: #2d7b4b;
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  white-space: nowrap;
+}
+
+.contact-actions button {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #e1dbd2;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.contact-actions button:hover {
+  transform: translateY(-2px);
+}
+
+/* VIEW */
+
+.view-contact {
+  color: #555;
+}
+
+.view-contact:hover {
+  background: #f2f2f2;
+  border-color: #bbb;
+}
+
+/* REPLY */
+
+.reply-contact {
+  color: #7d633f;
+}
+
+.reply-contact:hover {
+  background: #f8f0e5;
+  border-color: #c9ac84;
+}
+
+/* DELETE */
+
+.delete-contact {
+  color: #c24e4e;
+}
+
+.delete-contact:hover {
+  background: #fff0f0;
+  border-color: #e0aaaa;
+}
+
+/* =========================================================
+   NO CONTACTS
+========================================================= */
+
+.no-contacts {
+  padding: 60px 20px !important;
+
+  text-align: center;
+}
+
+.no-contacts > div {
+  margin-bottom: 12px;
+
+  font-size: 35px;
+}
+
+.no-contacts h2 {
+  margin: 0 0 8px;
+
+  color: #333;
+
+  font-size: 20px;
+}
+
+.no-contacts p {
+  margin: 0;
+
+  color: #999;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   CONTACT FOOTER
+========================================================= */
+
+.contacts-footer {
+  margin-top: 16px;
+
+  color: #888;
+
+  font-size: 13px;
+
+  text-align: right;
+}
+
+.contacts-footer strong {
+  color: #333;
+  font-weight: 700;
+}
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+.contacts-pagination {
+  width: 100%;
+
+  margin-top: 20px;
+  padding: 16px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #ffffff;
+
+  border: 1px solid #e5dfd6;
+  border-radius: 12px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 3px 15px rgba(0, 0, 0, 0.03);
+}
+
+/* =========================================================
+   PAGINATION INFORMATION
+========================================================= */
+
+.pagination-info {
+  color: #777;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.pagination-info strong {
+  color: #252525;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   PAGINATION CONTROLS
+========================================================= */
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* =========================================================
+   PAGINATION BUTTONS
+========================================================= */
+
+.pagination-number,
+.pagination-arrow {
+  width: 37px;
+  height: 37px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid #ddd6cc;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #444;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* =========================================================
+   PAGINATION HOVER
+========================================================= */
+
+.pagination-number:hover:not(.active),
+.pagination-arrow:hover:not(:disabled) {
+  background: #f6f1e9;
+
+  border-color: #bca37f;
+
+  color: #80623b;
+}
+
+/* =========================================================
+   ACTIVE PAGE
+========================================================= */
+
+.pagination-number.active {
+  background: #1d1d1d;
+
+  border-color: #1d1d1d;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================
+   PAGINATION ARROWS
+========================================================= */
+
+.pagination-arrow {
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.pagination-arrow:disabled {
+  background: #f5f5f5;
+
+  border-color: #e5e5e5;
+
+  color: #bbb;
+
+  cursor: not-allowed;
+
+  opacity: 0.7;
+}
+
+/* =========================================================
+   PAGINATION DOTS
+========================================================= */
+
+.pagination-dots {
+  width: 27px;
+  height: 37px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #888;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   PAGE SIZE
+========================================================= */
+
+.contacts-page-size {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-left: auto;
+
+  color: #777;
+
+  font-size: 13px;
+}
+
+.contacts-page-size select {
+  height: 40px;
+
+  min-width: 65px;
+
+  padding: 0 25px 0 10px;
+
+  border: 1px solid #ddd6cc;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #333;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+.contacts-page-size select:focus {
+  border-color: #a17b45;
+
+  box-shadow:
+    0 0 0 3px rgba(161, 123, 69, 0.1);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .admin-contacts {
+    padding: 25px;
+  }
+
+  .contacts-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contacts-filter {
+    flex-wrap: wrap;
+  }
+
+  .contacts-search {
+    max-width: none;
+    flex: 1;
+  }
+
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .admin-contacts {
+    padding: 18px;
+  }
+
+  /* HEADER */
+
+  .contacts-page-header h1 {
+    font-size: 28px;
+  }
+
+  .contacts-page-header span {
+    font-size: 13px;
+  }
+
+  /* STATS */
+
+  .contacts-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .contact-stat-card {
+    min-height: 90px;
+  }
+
+  /* FILTER */
+
+  .contacts-filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contacts-search {
+    width: 100%;
+    max-width: none;
+  }
+
+  .contacts-filter > select {
+    width: 100%;
+  }
+
+  .contacts-page-size {
+    margin-left: 0;
+
+    justify-content: flex-end;
+  }
+
+  /* PAGINATION */
+
+  .contacts-pagination {
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 15px 12px;
+  }
+
+  .pagination-info {
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 12px;
+  }
+
+  .pagination-controls {
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 4px;
+  }
+
+  .pagination-number,
+  .pagination-arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .pagination-dots {
+    width: 22px;
+    height: 34px;
+  }
+
+  .contacts-footer {
+    text-align: center;
+  }
+
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .admin-contacts {
+    padding: 12px;
+  }
+
+  .contacts-page-header h1 {
+    font-size: 24px;
+  }
+
+  .contact-stat-card {
+    padding: 15px;
+  }
+
+  .contact-stat-icon {
+    width: 42px;
+    height: 42px;
+
+    font-size: 19px;
+  }
+
+  .contact-stat-card strong {
+    font-size: 23px;
+  }
+
+  .pagination-number,
+  .pagination-arrow {
+    width: 31px;
+    height: 31px;
+
+    font-size: 12px;
+  }
+
+  .pagination-arrow {
+    font-size: 20px;
+  }
+
+  .pagination-dots {
+    width: 18px;
+  }
+
+}
+

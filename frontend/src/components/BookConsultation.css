@@ -1,0 +1,732 @@
+
+/* =====================================================
+   BOOK CONSULTATION PAGE
+===================================================== */
+
+.consultation-page {
+  width: 100%;
+  background: #ffffff;
+  color: #222222;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.consultation-hero {
+  position: relative;
+
+  min-height: 470px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image:
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=90");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.consultation-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 20, 20, 0.86),
+      rgba(20, 20, 20, 0.38)
+    );
+}
+
+.consultation-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 90%;
+  max-width: 850px;
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.consultation-hero-content p {
+  margin: 0 0 18px;
+
+  color: #c6a15b;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+}
+
+.consultation-hero-content h1 {
+  margin: 0;
+
+  font-size: 58px;
+
+  line-height: 1.1;
+
+  font-weight: 500;
+}
+
+.consultation-hero-content h1 span {
+  display: block;
+
+  color: #c6a15b;
+}
+
+.consultation-hero-line {
+  width: 65px;
+  height: 1px;
+
+  margin: 28px auto 20px;
+
+  background: #c6a15b;
+}
+
+.consultation-hero-content > span {
+  color: #eeeeee;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   MAIN SECTION
+===================================================== */
+
+.consultation-section {
+  padding: 100px 30px;
+}
+
+.consultation-wrapper {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.85fr)
+    minmax(0, 1.15fr);
+
+  gap: 90px;
+
+  align-items: start;
+}
+
+
+/* =====================================================
+   LEFT INFORMATION
+===================================================== */
+
+.consultation-info {
+  padding-top: 15px;
+}
+
+.consultation-label {
+  margin: 0 0 15px;
+
+  color: #b28c4c;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.consultation-info h2 {
+  margin: 0 0 25px;
+
+  color: #222222;
+
+  font-size: 44px;
+
+  line-height: 1.15;
+
+  font-weight: 500;
+}
+
+.consultation-info h2 span {
+  display: block;
+
+  color: #b28c4c;
+}
+
+.consultation-description {
+  margin: 0 0 17px;
+
+  color: #777777;
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+
+/* =====================================================
+   BENEFITS
+===================================================== */
+
+.consultation-benefits {
+  margin-top: 40px;
+}
+
+.consultation-benefit {
+  display: flex;
+
+  gap: 18px;
+
+  margin-bottom: 28px;
+}
+
+.benefit-icon {
+  flex-shrink: 0;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d6bc8a;
+
+  color: #b28c4c;
+
+  font-size: 17px;
+}
+
+.consultation-benefit h3 {
+  margin: 0 0 5px;
+
+  color: #333333;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.consultation-benefit p {
+  margin: 0;
+
+  color: #888888;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   CONTACT INFORMATION
+===================================================== */
+
+.consultation-contact {
+  display: flex;
+
+  gap: 50px;
+
+  margin-top: 45px;
+
+  padding-top: 30px;
+
+  border-top: 1px solid #eeeeee;
+}
+
+.consultation-contact span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #b28c4c;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.consultation-contact p {
+  margin: 0;
+
+  color: #444444;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   FORM BOX
+===================================================== */
+
+.consultation-form-box {
+  padding: 45px;
+
+  border: 1px solid #eeeeee;
+
+  background: #fafafa;
+
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =====================================================
+   FORM HEADER
+===================================================== */
+
+.consultation-form-header {
+  margin-bottom: 35px;
+
+  text-align: center;
+}
+
+.consultation-form-header p {
+  margin: 0 0 8px;
+
+  color: #b28c4c;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.consultation-form-header h2 {
+  margin: 0 0 10px;
+
+  color: #222222;
+
+  font-size: 30px;
+
+  font-weight: 500;
+}
+
+.consultation-form-header span {
+  color: #888888;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.consultation-form {
+  width: 100%;
+}
+
+.consultation-row {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+}
+
+.consultation-input-group {
+  margin-bottom: 20px;
+}
+
+.consultation-input-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #333333;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+.consultation-input-group input,
+.consultation-input-group select,
+.consultation-input-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dddddd;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #333333;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  transition: 0.3s;
+}
+
+.consultation-input-group input,
+.consultation-input-group select {
+  height: 50px;
+
+  padding: 0 15px;
+}
+
+.consultation-input-group textarea {
+  display: block;
+
+  padding: 14px 15px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+.consultation-input-group input::placeholder,
+.consultation-input-group textarea::placeholder {
+  color: #aaaaaa;
+}
+
+.consultation-input-group input:focus,
+.consultation-input-group select:focus,
+.consultation-input-group textarea:focus {
+  border-color: #c6a15b;
+
+  box-shadow:
+    0 0 0 3px rgba(198, 161, 91, 0.08);
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.consultation-submit {
+  width: 100%;
+
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-top: 5px;
+
+  border: 1px solid #c6a15b;
+
+  background: #c6a15b;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.consultation-submit span {
+  font-size: 18px;
+
+  transition: 0.3s;
+}
+
+.consultation-submit:hover {
+  border-color: #222222;
+
+  background: #222222;
+}
+
+.consultation-submit:hover span {
+  transform: translateX(5px);
+}
+
+
+/* =====================================================
+   BOTTOM CTA
+===================================================== */
+
+.consultation-bottom {
+  min-height: 260px;
+
+  padding: 60px 30px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  background: #242424;
+
+  color: #ffffff;
+}
+
+.consultation-bottom > div {
+  width: 100%;
+  max-width: 650px;
+
+  margin-left: auto;
+}
+
+.consultation-bottom p {
+  margin: 0 0 10px;
+
+  color: #c6a15b;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.consultation-bottom h2 {
+  margin: 0 0 10px;
+
+  font-size: 36px;
+
+  font-weight: 500;
+}
+
+.consultation-bottom span {
+  color: #aaaaaa;
+
+  font-size: 13px;
+}
+
+.consultation-bottom a {
+  flex-shrink: 0;
+
+  margin-right: auto;
+
+  padding: 15px 28px;
+
+  border: 1px solid #c6a15b;
+
+  color: #c6a15b;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.consultation-bottom a:hover {
+  background: #c6a15b;
+
+  color: #ffffff;
+}
+
+
+/* =====================================================
+   LARGE TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+  .consultation-wrapper {
+    gap: 50px;
+  }
+
+  .consultation-info h2 {
+    font-size: 38px;
+  }
+
+  .consultation-form-box {
+    padding: 35px;
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 850px) {
+
+  .consultation-hero {
+    min-height: 400px;
+  }
+
+  .consultation-hero-content h1 {
+    font-size: 46px;
+  }
+
+  .consultation-section {
+    padding: 70px 25px;
+  }
+
+  .consultation-wrapper {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .consultation-info {
+    max-width: 700px;
+
+    margin: auto;
+
+    text-align: center;
+  }
+
+  .consultation-benefit {
+    text-align: left;
+  }
+
+  .consultation-contact {
+    justify-content: center;
+
+    text-align: left;
+  }
+
+  .consultation-form-box {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    max-width: 700px;
+
+    margin: auto;
+  }
+
+  .consultation-bottom {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .consultation-bottom > div {
+    margin: 0 auto;
+  }
+
+  .consultation-bottom a {
+    margin: 0;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .consultation-hero {
+    min-height: 360px;
+  }
+
+  .consultation-hero-content {
+    width: 88%;
+  }
+
+  .consultation-hero-content h1 {
+    font-size: 38px;
+  }
+
+  .consultation-hero-content > span {
+    font-size: 9px;
+
+    line-height: 1.7;
+  }
+
+  .consultation-section {
+    padding: 55px 18px;
+  }
+
+  .consultation-info h2 {
+    font-size: 34px;
+  }
+
+  .consultation-form-box {
+    padding: 25px 18px;
+  }
+
+  .consultation-form-header h2 {
+    font-size: 25px;
+  }
+
+  .consultation-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .consultation-contact {
+    flex-direction: column;
+
+    gap: 20px;
+
+    text-align: center;
+  }
+
+  .consultation-bottom {
+    padding: 50px 20px;
+  }
+
+  .consultation-bottom h2 {
+    font-size: 30px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .consultation-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .consultation-info h2 {
+    font-size: 30px;
+  }
+
+  .consultation-form-box {
+    padding: 22px 15px;
+  }
+
+  .consultation-input-group input,
+  .consultation-input-group select {
+    height: 48px;
+  }
+
+}
+

@@ -1,0 +1,703 @@
+/* =========================================
+   ADMIN PROJECTS
+========================================= */
+
+.admin-projects {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px;
+  box-sizing: border-box;
+  background: #f7f7f5;
+  color: #222;
+}
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.projects-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.projects-small-title {
+  margin: 0 0 8px;
+  color: #a88336;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.projects-page-header h1 {
+  margin: 0 0 8px;
+  color: #222;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.projects-page-header span {
+  color: #777;
+  font-size: 14px;
+}
+
+/* =========================================
+   ADD PROJECT BUTTON
+========================================= */
+
+.add-project-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 45px;
+  padding: 0 22px;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.add-project-btn:hover {
+  background: #a88336;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.projects-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.project-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+
+.project-stat-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #f5efe3;
+  font-size: 21px;
+}
+
+.project-stat-card span {
+  display: block;
+  margin-bottom: 5px;
+  color: #777;
+  font-size: 13px;
+}
+
+.project-stat-card strong {
+  display: block;
+  color: #222;
+  font-size: 24px;
+}
+
+/* =========================================
+   FILTER
+========================================= */
+
+.projects-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+}
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.projects-search {
+  width: 100%;
+  max-width: 500px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.projects-search span {
+  font-size: 16px;
+}
+
+.projects-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #222;
+  font-size: 14px;
+}
+
+.projects-search input::placeholder {
+  color: #999;
+}
+
+/* =========================================
+   CATEGORY SELECT
+========================================= */
+
+.projects-filter select {
+  min-width: 190px;
+  height: 45px;
+  padding: 0 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.projects-filter select:focus {
+  border-color: #a88336;
+}
+
+/* =========================================
+   PROJECT GRID
+========================================= */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* =========================================
+   PROJECT CARD
+========================================= */
+
+.admin-project-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.admin-project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.09);
+}
+
+/* =========================================
+   PROJECT IMAGE
+========================================= */
+
+.admin-project-image {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.admin-project-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.admin-project-card:hover
+.admin-project-image img {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   STATUS
+========================================= */
+
+.project-status {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 6px 11px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.project-status.completed {
+  background: #e7f6ed;
+  color: #22864a;
+}
+
+.project-status.ongoing {
+  background: #fff4dc;
+  color: #a16c0c;
+}
+
+/* =========================================
+   PROJECT CONTENT
+========================================= */
+
+.admin-project-content {
+  padding: 18px;
+}
+
+.project-category {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #f5efe3;
+  color: #92712e;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.admin-project-content h2 {
+  margin: 0 0 8px;
+  color: #222;
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.admin-project-content > p {
+  margin: 0 0 16px;
+  color: #888;
+  font-size: 13px;
+}
+
+/* =========================================
+   CARD FOOTER
+========================================= */
+
+.project-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid #eee;
+}
+
+.project-card-footer > span {
+  color: #777;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================================
+   PROJECT ACTIONS
+========================================= */
+
+.project-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.edit-project,
+.delete-project {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 11px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* EDIT */
+
+.edit-project {
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #333;
+  text-decoration: none;
+}
+
+.edit-project:hover {
+  border-color: #a88336;
+  background: #f8f3e9;
+  color: #a88336;
+}
+
+/* DELETE */
+
+.delete-project {
+  border: 1px solid #ead1d1;
+  background: #fff;
+  color: #d64545;
+}
+
+.delete-project:hover {
+  border-color: #d64545;
+  background: #d64545;
+  color: #fff;
+}
+
+/* =========================================
+   NO PROJECTS
+========================================= */
+
+.no-projects {
+  grid-column: 1 / -1;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.no-projects > div {
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+
+.no-projects h2 {
+  margin: 0 0 8px;
+  color: #333;
+  font-size: 20px;
+}
+
+.no-projects p {
+  margin: 0;
+  color: #888;
+  font-size: 14px;
+}
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading-projects {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 16px;
+}
+
+/* =========================================
+   PAGINATION WRAPPER
+========================================= */
+
+.projects-pagination-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 25px;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+/* =========================================
+   PAGE SIZE
+========================================= */
+
+.projects-page-size {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #777;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.projects-page-size select {
+  width: 65px;
+  height: 36px;
+  padding: 0 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  background: #fff;
+  color: #333;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.projects-page-size select:focus {
+  border-color: #a88336;
+}
+
+/* =========================================
+   PAGINATION INFO
+========================================= */
+
+.projects-pagination-info {
+  color: #777;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.projects-pagination-info strong {
+  color: #222;
+  font-weight: 600;
+}
+
+/* =========================================
+   PAGINATION CONTROLS
+========================================= */
+
+.projects-pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* =========================================
+   PAGE NUMBER + ARROWS
+========================================= */
+
+.projects-pagination-number,
+.projects-pagination-arrow {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+  color: #444;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.projects-pagination-number:hover:not(.active),
+.projects-pagination-arrow:hover:not(:disabled) {
+  border-color: #a88336;
+  background: #f8f3e9;
+  color: #a88336;
+}
+
+/* =========================================
+   ACTIVE PAGE
+========================================= */
+
+.projects-pagination-number.active {
+  border-color: #222;
+  background: #222;
+  color: #fff;
+  cursor: default;
+}
+
+/* =========================================
+   ARROWS
+========================================= */
+
+.projects-pagination-arrow {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.projects-pagination-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background: #f7f7f7;
+}
+
+/* =========================================
+   PAGINATION DOTS
+========================================= */
+
+.projects-pagination-dots {
+  width: 30px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 14px;
+  user-select: none;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .admin-projects {
+    padding: 25px;
+  }
+
+  .projects-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-pagination-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .projects-pagination-controls {
+    margin-left: auto;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .admin-projects {
+    padding: 18px;
+  }
+
+  .projects-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .projects-page-header h1 {
+    font-size: 28px;
+  }
+
+  .add-project-btn {
+    width: 100%;
+  }
+
+  .projects-filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .projects-search {
+    max-width: 100%;
+  }
+
+  .projects-filter select {
+    width: 100%;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-pagination-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .projects-page-size {
+    justify-content: center;
+  }
+
+  .projects-pagination-info {
+    text-align: center;
+  }
+
+  .projects-pagination-controls {
+    margin-left: 0;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .admin-projects {
+    padding: 12px;
+  }
+
+  .projects-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-page-header h1 {
+    font-size: 25px;
+  }
+
+  .admin-project-image {
+    height: 210px;
+  }
+
+  .project-card-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .project-actions {
+    width: 100%;
+  }
+
+  .edit-project,
+  .delete-project {
+    flex: 1;
+  }
+
+  .projects-pagination-controls {
+    gap: 3px;
+  }
+
+  .projects-pagination-number,
+  .projects-pagination-arrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .projects-pagination-dots {
+    width: 22px;
+  }
+
+  .projects-pagination-info {
+    font-size: 12px;
+  }
+}

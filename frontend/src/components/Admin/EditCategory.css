@@ -1,0 +1,772 @@
+/* =========================================================
+   EDIT CATEGORY PAGE
+========================================================= */
+
+.edit-category-page {
+  min-height: 100vh;
+  width: 100%;
+
+  padding: 35px 40px 50px;
+
+  box-sizing: border-box;
+
+  background: #f6f5f2;
+
+  color: #242424;
+
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.edit-category-header {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto 32px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 25px;
+}
+
+.edit-category-small-title {
+  margin: 0 0 9px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 2.2px;
+
+  text-transform: uppercase;
+
+  color: #a18463;
+}
+
+.edit-category-header h1 {
+  margin: 0 0 8px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 38px;
+
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  color: #222;
+}
+
+.edit-category-header span {
+  display: block;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: #777;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.back-category-btn {
+  min-width: 190px;
+
+  height: 45px;
+
+  padding: 0 18px;
+
+  border: 1px solid #dedbd5;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #333;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.back-category-btn:hover {
+  background: #292929;
+
+  border-color: #292929;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+
+.edit-category-card {
+  width: 100%;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 38px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #e8e5df;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 25px rgba(38, 33, 26, 0.05),
+    0 2px 6px rgba(38, 33, 26, 0.03);
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.edit-category-form-group {
+  width: 100%;
+
+  margin-bottom: 24px;
+}
+
+.edit-category-form-group label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-size: 13px;
+
+  font-weight: 650;
+
+  color: #333;
+}
+
+.edit-category-form-group label::after {
+  content: " *";
+
+  color: #a18463;
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.edit-category-form-group input,
+.edit-category-form-group select,
+.edit-category-form-group textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dedbd5;
+
+  border-radius: 7px;
+
+  background: #fcfcfb;
+
+  color: #2c2c2c;
+
+  outline: none;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.edit-category-form-group input,
+.edit-category-form-group select {
+  height: 50px;
+
+  padding: 0 15px;
+}
+
+.edit-category-form-group textarea {
+  min-height: 130px;
+
+  padding: 14px 15px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+.edit-category-form-group input::placeholder,
+.edit-category-form-group textarea::placeholder {
+  color: #aaa;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.edit-category-form-group input:hover,
+.edit-category-form-group select:hover,
+.edit-category-form-group textarea:hover {
+  border-color: #c7c0b5;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.edit-category-form-group input:focus,
+.edit-category-form-group select:focus,
+.edit-category-form-group textarea:focus {
+  background: #ffffff;
+
+  border-color: #a18463;
+
+  box-shadow:
+    0 0 0 3px rgba(161, 132, 99, 0.12);
+}
+
+
+/* =========================================================
+   IMAGE PREVIEW
+========================================================= */
+
+.edit-category-preview {
+  width: 100%;
+
+  margin: 5px 0 28px;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background: #faf9f7;
+
+  border: 1px solid #e7e3dc;
+
+  border-radius: 10px;
+}
+
+.edit-category-preview-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 15px;
+}
+
+.edit-category-preview-heading span:first-child {
+  display: block;
+
+  margin-bottom: 5px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  color: #a18463;
+}
+
+.edit-category-preview-heading h3 {
+  margin: 0;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 21px;
+
+  font-weight: 600;
+
+  color: #292929;
+}
+
+
+/* =========================================================
+   PREVIEW STATUS
+========================================================= */
+
+.preview-status {
+  padding: 7px 13px;
+
+  border-radius: 20px;
+
+  background: #e9f5ec;
+
+  color: #367a47;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   PREVIEW IMAGE
+========================================================= */
+
+.edit-category-preview img {
+  display: block;
+
+  width: 100%;
+
+  max-width: 700px;
+
+  height: 310px;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+
+  border: 1px solid #ddd8d0;
+
+  background: #eeeeee;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   CATEGORY INFORMATION
+========================================================= */
+
+.category-info-box {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 15px;
+
+  margin-top: 5px;
+
+  padding: 18px;
+
+  background: #f8f7f4;
+
+  border: 1px solid #e8e4dd;
+
+  border-radius: 9px;
+}
+
+.category-info-item {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.category-info-item span {
+  font-size: 12px;
+
+  color: #777;
+}
+
+.category-info-item strong {
+  font-size: 14px;
+
+  color: #292929;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.edit-category-actions {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  margin-top: 30px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #eeeae4;
+}
+
+
+/* =========================================================
+   CANCEL
+========================================================= */
+
+.cancel-category-btn {
+  min-width: 115px;
+
+  height: 46px;
+
+  padding: 0 22px;
+
+  border: 1px solid #d8d5cf;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #555;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.cancel-category-btn:hover {
+  background: #f5f4f2;
+
+  border-color: #bbb6ae;
+
+  color: #222;
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   UPDATE BUTTON
+========================================================= */
+
+.update-category-btn {
+  min-width: 165px;
+
+  height: 46px;
+
+  padding: 0 24px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #292929;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 12px rgba(0, 0, 0, 0.12);
+
+  transition: all 0.25s ease;
+}
+
+.update-category-btn:hover {
+  background: #a18463;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 20px rgba(0, 0, 0, 0.15);
+}
+
+.update-category-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   NOT FOUND PAGE
+========================================================= */
+
+.edit-category-not-found {
+  min-height: 70vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px;
+
+  text-align: center;
+
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  background: #f6f5f2;
+}
+
+.not-found-icon {
+  width: 65px;
+
+  height: 65px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 15px;
+
+  border-radius: 50%;
+
+  background: #f7eee3;
+
+  color: #a18463;
+
+  font-size: 28px;
+}
+
+.edit-category-not-found h2 {
+  margin: 0 0 8px;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 28px;
+
+  color: #292929;
+}
+
+.edit-category-not-found p {
+  margin: 0 0 22px;
+
+  color: #777;
+
+  font-size: 14px;
+}
+
+.edit-category-not-found button {
+  height: 44px;
+
+  padding: 0 20px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #292929;
+
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.edit-category-not-found button:hover {
+  background: #a18463;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .edit-category-page {
+    padding: 30px 25px 40px;
+  }
+
+  .edit-category-header {
+    align-items: flex-start;
+  }
+
+  .edit-category-header h1 {
+    font-size: 34px;
+  }
+
+  .edit-category-card {
+    padding: 30px;
+  }
+
+  .edit-category-preview img {
+    max-width: 100%;
+
+    height: 280px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .edit-category-page {
+    padding: 22px 16px 35px;
+  }
+
+  .edit-category-header {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    margin-bottom: 25px;
+  }
+
+  .edit-category-header h1 {
+    font-size: 30px;
+  }
+
+  .edit-category-header span {
+    font-size: 13px;
+  }
+
+  .back-category-btn {
+    width: 100%;
+  }
+
+  .edit-category-card {
+    padding: 23px 18px;
+
+    border-radius: 11px;
+  }
+
+  .edit-category-form-group input,
+  .edit-category-form-group select {
+    height: 48px;
+  }
+
+  .edit-category-form-group textarea {
+    min-height: 120px;
+  }
+
+  .edit-category-preview {
+    padding: 14px;
+  }
+
+  .edit-category-preview-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .edit-category-preview img {
+    height: 220px;
+  }
+
+  .category-info-box {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+  .edit-category-actions {
+    flex-direction: column-reverse;
+
+    align-items: stretch;
+  }
+
+  .cancel-category-btn,
+  .update-category-btn {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .edit-category-page {
+    padding: 18px 12px 30px;
+  }
+
+  .edit-category-header h1 {
+    font-size: 26px;
+  }
+
+  .edit-category-small-title {
+    font-size: 10px;
+
+    letter-spacing: 1.8px;
+  }
+
+  .edit-category-card {
+    padding: 20px 14px;
+  }
+
+  .edit-category-form-group input,
+  .edit-category-form-group select {
+    height: 46px;
+
+    padding: 0 12px;
+
+    font-size: 13px;
+  }
+
+  .edit-category-form-group textarea {
+    font-size: 13px;
+  }
+
+  .edit-category-preview img {
+    height: 180px;
+  }
+}

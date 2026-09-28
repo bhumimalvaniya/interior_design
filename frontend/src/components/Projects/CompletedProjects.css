@@ -1,0 +1,550 @@
+/* ========================================
+   MAIN PAGE
+======================================== */
+
+.completed-page {
+  width: 100%;
+  background: #ffffff;
+  color: #222;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.completed-hero {
+  position: relative;
+  min-height: 430px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background-image: url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=85");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.completed-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.completed-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 30px 20px;
+  color: #ffffff;
+}
+
+.completed-hero-content span {
+  display: block;
+  margin-bottom: 15px;
+
+  color: #c6a15b;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.completed-hero-content h1 {
+  margin: 0;
+  font-size: 55px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.completed-hero-content h1 strong {
+  color: #c6a15b;
+  font-weight: 400;
+}
+
+.completed-hero-content p {
+  margin: 18px 0 0;
+
+  color: #eeeeee;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   PROJECT SECTION
+======================================== */
+
+.completed-projects {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding: 90px 30px;
+
+  box-sizing: border-box;
+}
+
+.completed-heading {
+  max-width: 650px;
+  margin: 0 auto 55px;
+
+  text-align: center;
+}
+
+.completed-heading > span {
+  display: block;
+  margin-bottom: 10px;
+
+  color: #a67c52;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.completed-heading h2 {
+  margin: 0 0 15px;
+
+  color: #222;
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.completed-heading h2 strong {
+  color: #a67c52;
+  font-weight: 400;
+}
+
+.completed-heading p {
+  margin: 0;
+
+  color: #777;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   PROJECT GRID
+======================================== */
+
+.completed-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+}
+
+
+/* ========================================
+   PROJECT CARD
+======================================== */
+
+.completed-card {
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.completed-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.10);
+}
+
+
+/* ========================================
+   IMAGE
+======================================== */
+
+.completed-image {
+  position: relative;
+
+  width: 100%;
+  height: 270px;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+}
+
+.completed-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+.completed-card:hover .completed-image img {
+  transform: scale(1.05);
+}
+
+
+/* NUMBER */
+
+.project-number {
+  position: absolute;
+
+  top: 15px;
+  left: 15px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  color: #a67c52;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.completed-content {
+  padding: 25px;
+}
+
+.project-category {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #a67c52;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.completed-content h3 {
+  margin: 0 0 12px;
+
+  color: #222;
+
+  font-size: 22px;
+  font-weight: 500;
+
+  line-height: 1.4;
+}
+
+.project-location {
+  margin: 0 0 12px;
+
+  color: #666;
+
+  font-size: 13px;
+}
+
+.project-description {
+  margin: 0 0 18px;
+
+  color: #777;
+
+  font-size: 13px;
+  line-height: 1.7;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  /* -webkit-line-clamp: 3; */
+  overflow: hidden;
+}
+
+
+/* ========================================
+   STATUS
+======================================== */
+
+.project-status {
+  display: inline-block;
+
+  padding: 6px 12px;
+
+  background: #f3eee9;
+
+  color: #a67c52;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+/* ========================================
+   LOADING / ERROR / EMPTY
+======================================== */
+
+.completed-message {
+  min-height: 200px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #777;
+}
+
+.completed-message h3 {
+  margin: 0 0 8px;
+
+  color: #333;
+
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.completed-message p {
+  margin: 5px 0;
+
+  font-size: 14px;
+}
+
+.completed-message button {
+  margin-top: 15px;
+
+  padding: 10px 22px;
+
+  border: none;
+
+  background: #a67c52;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  transition: background 0.3s ease;
+}
+
+.completed-message button:hover {
+  background: #8d6745;
+}
+
+.completed-message.error p {
+  color: #b35b4b;
+}
+
+
+/* LOADER */
+
+.completed-loader {
+  width: 35px;
+  height: 35px;
+
+  margin-bottom: 15px;
+
+  border: 3px solid #eeeeee;
+  border-top: 3px solid #a67c52;
+
+  border-radius: 50%;
+
+  animation: completedSpin 0.8s linear infinite;
+}
+
+@keyframes completedSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ========================================
+   CTA
+======================================== */
+
+.completed-cta {
+  width: 100%;
+
+  padding: 80px 25px;
+
+  box-sizing: border-box;
+
+  background: #292929;
+
+  color: #ffffff;
+
+  text-align: center;
+}
+
+.completed-cta > div {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.completed-cta span {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #c6a15b;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 2px;
+}
+
+.completed-cta h2 {
+  margin: 0 0 15px;
+
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.completed-cta h2 strong {
+  color: #c6a15b;
+  font-weight: 400;
+}
+
+.completed-cta p {
+  margin: 0 0 25px;
+
+  color: #cccccc;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.completed-cta a {
+  display: inline-block;
+
+  padding: 13px 25px;
+
+  background: #c6a15b;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: background 0.3s ease;
+}
+
+.completed-cta a:hover {
+  background: #a67c52;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+  .completed-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .completed-hero {
+    min-height: 380px;
+  }
+
+  .completed-hero-content h1 {
+    font-size: 45px;
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+  .completed-projects {
+    padding: 65px 20px;
+  }
+
+  .completed-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .completed-heading h2 {
+    font-size: 30px;
+  }
+
+  .completed-hero {
+    min-height: 330px;
+  }
+
+  .completed-hero-content h1 {
+    font-size: 38px;
+  }
+
+  .completed-hero-content p {
+    font-size: 13px;
+  }
+
+  .completed-image {
+    height: 250px;
+  }
+
+  .completed-content {
+    padding: 22px;
+  }
+
+  .completed-cta {
+    padding: 65px 20px;
+  }
+
+  .completed-cta h2 {
+    font-size: 29px;
+  }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 400px) {
+
+  .completed-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .completed-heading h2 {
+    font-size: 27px;
+  }
+
+  .completed-image {
+    height: 220px;
+  }
+
+}

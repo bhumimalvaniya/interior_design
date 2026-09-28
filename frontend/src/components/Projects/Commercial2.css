@@ -1,0 +1,1611 @@
+
+/* =====================================================
+   COMMERCIAL PAGE
+===================================================== */
+
+.commercial-page {
+  width: 100%;
+  overflow: hidden;
+
+  background: #ffffff;
+  color: #222222;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.commercial-hero {
+  min-height: 650px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.83),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=90");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.commercial-hero-content {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 100px 0;
+
+  color: #ffffff;
+}
+
+.commercial-label {
+  margin: 0 0 15px;
+
+  color: #c28b63;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.commercial-hero-content h1 {
+  max-width: 800px;
+
+  margin: 0 0 25px;
+
+  font-size: 68px;
+  line-height: 1.08;
+
+  font-weight: 600;
+}
+
+.commercial-hero-content h1 span {
+  color: #c28b63;
+}
+
+.commercial-hero-description {
+  max-width: 630px;
+
+  margin: 0 0 35px;
+
+  color: #eeeeee;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.commercial-hero-btn {
+  display: inline-block;
+
+  padding: 15px 32px;
+
+  background: #c28b63;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.commercial-hero-btn:hover {
+  background: #ffffff;
+
+  color: #222222;
+
+  transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.commercial-intro {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 110px 0;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.commercial-intro-image {
+  position: relative;
+}
+
+.commercial-intro-image img {
+  width: 100%;
+  height: 540px;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+.commercial-intro-badge {
+  position: absolute;
+
+  right: -20px;
+  bottom: -20px;
+
+  width: 175px;
+  height: 125px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  background: #c28b63;
+
+  color: #ffffff;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.commercial-intro-badge strong {
+  font-size: 40px;
+}
+
+.commercial-intro-badge span {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   INTRO CONTENT
+===================================================== */
+
+.commercial-intro-content h2 {
+  margin: 0 0 25px;
+
+  color: #222222;
+
+  font-size: 46px;
+  line-height: 1.15;
+
+  font-weight: 600;
+}
+
+.commercial-intro-content h2 span {
+  color: #c28b63;
+}
+
+.commercial-intro-content > p:not(.commercial-label) {
+  margin: 0 0 18px;
+
+  color: #777777;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   CHECK LIST
+===================================================== */
+
+.commercial-check-list {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 16px;
+
+  margin-top: 30px;
+}
+
+.commercial-check-list div {
+  color: #444444;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.commercial-check-list span {
+  margin-right: 8px;
+
+  color: #c28b63;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   PROJECTS
+===================================================== */
+
+.commercial-projects {
+  padding: 110px 5%;
+
+  background: #f6f3f0;
+}
+
+.commercial-section-heading {
+  max-width: 700px;
+
+  margin: 0 auto 55px;
+
+  text-align: center;
+}
+
+.commercial-section-heading h2 {
+  margin: 0 0 18px;
+
+  color: #222222;
+
+  font-size: 46px;
+  line-height: 1.15;
+
+  font-weight: 600;
+}
+
+.commercial-section-heading h2 span {
+  color: #c28b63;
+}
+
+.commercial-section-heading > p:last-child {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   PROJECT GRID
+===================================================== */
+
+.commercial-project-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+}
+
+
+/* =====================================================
+   PROJECT CARD
+===================================================== */
+
+.commercial-project-card {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+
+  transition: 0.35s;
+}
+
+.commercial-project-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #c28b63;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =====================================================
+   PROJECT IMAGE
+===================================================== */
+
+.commercial-project-image {
+  position: relative;
+
+  height: 280px;
+
+  overflow: hidden;
+}
+
+.commercial-project-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.commercial-project-card:hover
+.commercial-project-image img {
+  transform: scale(1.08);
+}
+
+
+/* =====================================================
+   NUMBER
+===================================================== */
+
+.commercial-project-number {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #c28b63;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   PROJECT CONTENT
+===================================================== */
+
+.commercial-project-content {
+  padding: 28px;
+}
+
+.commercial-project-category {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #c28b63;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.commercial-project-content h3 {
+  margin: 0 0 12px;
+
+  color: #222222;
+
+  font-size: 21px;
+
+  font-weight: 600;
+}
+
+.commercial-project-content p {
+  margin: 0 0 20px;
+
+  color: #777777;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.commercial-project-link {
+  color: #c28b63;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition: 0.3s;
+}
+
+.commercial-project-link:hover {
+  padding-left: 5px;
+
+  color: #222222;
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.commercial-services {
+  padding: 110px 5%;
+
+  background: #ffffff;
+}
+
+.commercial-services-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.commercial-service-card {
+  min-height: 220px;
+
+  padding: 35px 28px;
+
+  background: #f6f3f0;
+
+  border: 1px solid #eeeeee;
+
+  transition: 0.3s;
+}
+
+.commercial-service-card:hover {
+  background: #222222;
+
+  transform: translateY(-7px);
+}
+
+.commercial-service-number {
+  color: #c28b63;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.commercial-service-card h3 {
+  margin: 28px 0 12px;
+
+  color: #222222;
+
+  font-size: 20px;
+}
+
+.commercial-service-card p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.commercial-service-card:hover h3 {
+  color: #ffffff;
+}
+
+.commercial-service-card:hover p {
+  color: #bbbbbb;
+}
+
+
+/* =====================================================
+   BUSINESS SECTION
+===================================================== */
+
+.commercial-business {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  background: #252525;
+
+  color: #ffffff;
+}
+
+.commercial-business-content {
+  padding: 90px 10%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.commercial-business-content h2 {
+  margin: 0 0 20px;
+
+  color: #ffffff;
+
+  font-size: 44px;
+
+  line-height: 1.15;
+
+  font-weight: 600;
+}
+
+.commercial-business-content h2 span {
+  color: #c28b63;
+}
+
+.commercial-business-content > p:not(.commercial-label) {
+  margin: 0 0 30px;
+
+  color: #aaaaaa;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   BUSINESS LIST
+===================================================== */
+
+.commercial-business-list {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.commercial-business-item {
+  display: flex;
+
+  gap: 20px;
+
+  padding: 20px 0;
+
+  border-bottom: 1px solid #444444;
+}
+
+.commercial-business-item > span {
+  min-width: 30px;
+
+  color: #c28b63;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.commercial-business-item h3 {
+  margin: 0 0 7px;
+
+  color: #ffffff;
+
+  font-size: 18px;
+}
+
+.commercial-business-item p {
+  margin: 0;
+
+  color: #999999;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   BUSINESS IMAGE
+===================================================== */
+
+.commercial-business-image {
+  min-height: 650px;
+}
+
+.commercial-business-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =====================================================
+   PROCESS
+===================================================== */
+
+.commercial-process {
+  padding: 110px 5%;
+
+  background: #f6f3f0;
+}
+
+.commercial-process-grid {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.commercial-process-card {
+  min-height: 220px;
+
+  padding: 35px 28px;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+
+  transition: 0.3s;
+}
+
+.commercial-process-card:hover {
+  background: #222222;
+
+  transform: translateY(-7px);
+}
+
+.commercial-process-card > span {
+  color: #c28b63;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.commercial-process-card h3 {
+  margin: 28px 0 12px;
+
+  color: #222222;
+
+  font-size: 20px;
+}
+
+.commercial-process-card p {
+  margin: 0;
+
+  color: #777777;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.commercial-process-card:hover h3 {
+  color: #ffffff;
+}
+
+.commercial-process-card:hover p {
+  color: #bbbbbb;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.commercial-cta {
+  min-height: 460px;
+
+  padding: 80px 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.76),
+      rgba(0, 0, 0, 0.76)
+    ),
+    url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=90");
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+.commercial-cta-content {
+  max-width: 800px;
+}
+
+.commercial-cta-content > p:first-child {
+  margin: 0 0 18px;
+
+  color: #c28b63;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.commercial-cta-content h2 {
+  margin: 0 0 20px;
+
+  color: #ffffff;
+
+  font-size: 50px;
+
+  line-height: 1.15;
+}
+
+.commercial-cta-content h2 span {
+  color: #c28b63;
+}
+
+.commercial-cta-content > p:not(:first-child) {
+  max-width: 650px;
+
+  margin: 0 auto 28px;
+
+  color: #dddddd;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+.commercial-cta-btn {
+  display: inline-block;
+
+  padding: 15px 34px;
+
+  background: #c28b63;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.commercial-cta-btn:hover {
+  background: #ffffff;
+
+  color: #222222;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+
+  .commercial-hero-content h1 {
+    font-size: 58px;
+  }
+
+  .commercial-intro {
+    gap: 50px;
+  }
+
+  .commercial-project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .commercial-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .commercial-process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .commercial-hero {
+    min-height: 570px;
+  }
+
+  .commercial-hero-content {
+    text-align: center;
+  }
+
+  .commercial-hero-content h1 {
+    font-size: 48px;
+  }
+
+  .commercial-hero-description {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+
+  .commercial-intro {
+    grid-template-columns: 1fr;
+
+    padding: 90px 0;
+
+    gap: 60px;
+  }
+
+  .commercial-intro-content {
+    text-align: center;
+  }
+
+  .commercial-intro-image {
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: auto;
+  }
+
+
+  .commercial-business {
+    grid-template-columns: 1fr;
+  }
+
+  .commercial-business-image {
+    min-height: 450px;
+
+    order: -1;
+  }
+
+  .commercial-business-content {
+    padding: 80px 8%;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .commercial-hero {
+    min-height: 520px;
+  }
+
+  .commercial-hero-content {
+    width: 88%;
+  }
+
+  .commercial-hero-content h1 {
+    font-size: 38px;
+  }
+
+  .commercial-hero-content > p:first-child {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+  .commercial-hero-description {
+    font-size: 14px;
+  }
+
+
+  /* Intro */
+
+  .commercial-intro {
+    width: 88%;
+  }
+
+  .commercial-intro-content h2 {
+    font-size: 34px;
+  }
+
+  .commercial-intro-image img {
+    height: 400px;
+  }
+
+  .commercial-intro-badge {
+    right: -5px;
+
+    bottom: -15px;
+
+    width: 145px;
+
+    height: 105px;
+  }
+
+  .commercial-intro-badge strong {
+    font-size: 32px;
+  }
+
+  .commercial-intro-badge span {
+    font-size: 11px;
+  }
+
+  .commercial-check-list {
+    grid-template-columns: 1fr;
+
+    text-align: left;
+  }
+
+
+  /* Projects */
+
+  .commercial-projects {
+    padding: 75px 6%;
+  }
+
+  .commercial-section-heading h2 {
+    font-size: 34px;
+  }
+
+  .commercial-project-grid {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .commercial-project-image {
+    height: 270px;
+  }
+
+
+  /* Services */
+
+  .commercial-services {
+    padding: 75px 6%;
+  }
+
+  .commercial-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Business */
+
+  .commercial-business-content {
+    padding: 75px 8%;
+  }
+
+  .commercial-business-content h2 {
+    font-size: 34px;
+  }
+
+  .commercial-business-image {
+    min-height: 380px;
+  }
+
+
+  /* Process */
+
+  .commercial-process {
+    padding: 75px 6%;
+  }
+
+  .commercial-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .commercial-process-card {
+    min-height: auto;
+  }
+
+
+  /* CTA */
+
+  .commercial-cta {
+    min-height: 420px;
+
+    padding: 70px 20px;
+  }
+
+  .commercial-cta-content h2 {
+    font-size: 36px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .commercial-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .commercial-intro-content h2,
+  .commercial-section-heading h2,
+  .commercial-business-content h2 {
+    font-size: 30px;
+  }
+
+  .commercial-cta-content h2 {
+    font-size: 30px;
+  }
+
+  .commercial-project-image {
+    height: 240px;
+  }
+
+}
+
+/* =========================================================
+   COMMERCIAL PROJECT SECTION
+========================================================= */
+
+.commercial-projects {
+  width: 100%;
+  padding: 100px 5%;
+  background: #f8f7f5;
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.commercial-loading {
+  width: 100%;
+  min-height: 280px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.commercial-loading p {
+  margin: 0;
+
+  color: #a67c52;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.commercial-error {
+  width: 100%;
+  max-width: 650px;
+
+  margin: 0 auto;
+  padding: 35px 30px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #eaded3;
+
+  text-align: center;
+}
+
+.commercial-error p {
+  margin: 0;
+
+  color: #b35b4b;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   EMPTY DATA
+========================================================= */
+
+.commercial-empty {
+  width: 100%;
+  max-width: 700px;
+
+  margin: 0 auto;
+  padding: 60px 30px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  text-align: center;
+
+  border: 1px solid #eeeeee;
+}
+
+.commercial-empty h3 {
+  margin: 0 0 12px;
+
+  color: #222222;
+
+  font-size: 25px;
+  line-height: 1.3;
+
+  font-weight: 500;
+}
+
+.commercial-empty p {
+  max-width: 520px;
+
+  margin: 0 auto;
+
+  color: #777777;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   PROJECT GRID
+========================================================= */
+
+.commercial-project-grid {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  /*
+    Dynamic MongoDB projects automatically
+    arrange into 3 columns.
+  */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 30px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.commercial-project-card {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  border: 1px solid #eeeeee;
+
+  box-sizing: border-box;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.commercial-project-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   PROJECT IMAGE
+========================================================= */
+
+.commercial-project-image {
+  position: relative;
+
+  width: 100%;
+  height: 310px;
+
+  overflow: hidden;
+
+  background: #eeeeee;
+}
+
+.commercial-project-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.commercial-project-card:hover
+.commercial-project-image img {
+  transform: scale(1.06);
+}
+
+
+/* =========================================================
+   PROJECT NUMBER
+========================================================= */
+
+.commercial-project-number {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #ffffff;
+  color: #a67c52;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =========================================================
+   PROJECT CONTENT
+========================================================= */
+
+.commercial-project-content {
+  width: 100%;
+
+  min-width: 0;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 28px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   PROJECT CATEGORY / STYLE
+========================================================= */
+
+.commercial-project-category {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #a67c52;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   PROJECT TITLE
+========================================================= */
+
+.commercial-project-content h3 {
+  margin: 0 0 14px;
+
+  color: #222222;
+
+  font-size: 23px;
+  font-weight: 500;
+
+  line-height: 1.35;
+
+  /*
+    Prevents long MongoDB titles from
+    breaking the card layout.
+  */
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   PROJECT DESCRIPTION
+========================================================= */
+
+.commercial-project-content > p {
+  margin: 0 0 18px;
+
+  color: #777777;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  /*
+    Keep descriptions visually balanced.
+    Long descriptions are automatically shortened.
+  */
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+  /* -webkit-line-clamp: 4; */
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.commercial-project-location {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 14px;
+
+  color: #666666;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* =========================================================
+   PROJECT STATUS
+========================================================= */
+
+.commercial-project-status {
+  align-self: flex-start;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 6px 13px;
+
+  margin-bottom: 20px;
+
+  background: #f3eee9;
+
+  color: #a67c52;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+
+  line-height: 1.4;
+}
+
+
+/* COMPLETED */
+
+.commercial-project-status.completed {
+  background: #edf5ee;
+
+  color: #4d8055;
+}
+
+
+/* ONGOING */
+
+.commercial-project-status.ongoing {
+  background: #f8f0e7;
+
+  color: #a67c52;
+}
+
+
+/* =========================================================
+   PROJECT LINK
+========================================================= */
+
+.commercial-project-link {
+  display: inline-block;
+
+  margin-top: auto;
+  padding-top: 5px;
+
+  color: #222222;
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.commercial-project-link:hover {
+  color: #a67c52;
+
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   TABLET - 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .commercial-projects {
+    padding: 90px 5%;
+  }
+
+  .commercial-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+  }
+
+  .commercial-project-image {
+    height: 300px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET / MOBILE - 768px
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .commercial-projects {
+    padding: 75px 6%;
+  }
+
+  .commercial-project-grid {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+  .commercial-project-image {
+    height: 350px;
+  }
+
+  .commercial-project-content {
+    padding: 25px;
+  }
+
+  .commercial-project-content h3 {
+    font-size: 22px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE - 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .commercial-projects {
+    padding: 60px 5%;
+  }
+
+  .commercial-project-grid {
+    gap: 20px;
+  }
+
+  .commercial-project-image {
+    height: 270px;
+  }
+
+  .commercial-project-number {
+    top: 14px;
+    left: 14px;
+
+    width: 42px;
+    height: 42px;
+
+    font-size: 12px;
+  }
+
+  .commercial-project-content {
+    padding: 22px;
+  }
+
+  .commercial-project-category {
+    font-size: 10px;
+  }
+
+  .commercial-project-content h3 {
+    font-size: 20px;
+  }
+
+  .commercial-project-content > p {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .commercial-project-location {
+    font-size: 12px;
+  }
+
+  .commercial-project-status {
+    font-size: 9px;
+  }
+
+  .commercial-project-link {
+    font-size: 12px;
+  }
+
+  .commercial-empty {
+    padding: 45px 20px;
+  }
+
+  .commercial-empty h3 {
+    font-size: 21px;
+  }
+
+}

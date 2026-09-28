@@ -1,0 +1,1058 @@
+/* =====================================================
+   USERS PAGE
+===================================================== */
+
+.users-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px;
+  background: #f7f7f5;
+  box-sizing: border-box;
+  color: #222;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.users-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 28px;
+}
+
+.users-small-title {
+  margin: 0 0 7px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #b28a3e;
+}
+
+.users-header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+}
+
+.users-header > div:first-child > span {
+  display: block;
+  margin-top: 7px;
+  color: #777;
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   TOTAL USERS
+===================================================== */
+
+.users-total {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 20px;
+  background: #fff;
+  border: 1px solid #e6e2da;
+  border-radius: 12px;
+  min-width: 150px;
+}
+
+.users-total-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5ead4;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.users-total strong {
+  display: block;
+  font-size: 21px;
+  color: #222;
+}
+
+.users-total small {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  color: #888;
+}
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+.users-stats {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.user-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #e6e2da;
+  border-radius: 12px;
+}
+
+.stat-icon {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5ead4;
+  border-radius: 10px;
+  font-size: 19px;
+}
+
+.active-icon {
+  background: #e5f4e9;
+  color: #29843c;
+  font-weight: 700;
+}
+
+.blocked-icon {
+  background: #fbe8e5;
+  color: #c83b2e;
+  font-weight: 700;
+}
+
+.user-stat-card span {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #888;
+}
+
+.user-stat-card strong {
+  font-size: 23px;
+  color: #222;
+}
+
+
+/* =====================================================
+   MAIN CARD
+===================================================== */
+
+.users-card {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #e6e2da;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+
+.users-toolbar {
+  width: 100%;
+  min-height: 75px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ece9e3;
+}
+
+.users-search {
+  width: 430px;
+  max-width: 100%;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  box-sizing: border-box;
+  background: #fafafa;
+  border: 1px solid #ddd9d1;
+  border-radius: 8px;
+}
+
+.users-search span {
+  font-size: 15px;
+  color: #888;
+}
+
+.users-search input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #333;
+  font-size: 13px;
+}
+
+.users-search input::placeholder {
+  color: #999;
+}
+
+.users-result {
+  font-size: 12px;
+  color: #777;
+  white-space: nowrap;
+}
+
+.users-result strong {
+  color: #222;
+}
+
+
+/* =====================================================
+   TABLE WRAPPER
+   NO HORIZONTAL SCROLLBAR
+===================================================== */
+
+.users-table-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+
+/* =====================================================
+   COLUMN WIDTHS
+===================================================== */
+
+.users-table th:nth-child(1),
+.users-table td:nth-child(1) {
+  width: 17%;
+}
+
+.users-table th:nth-child(2),
+.users-table td:nth-child(2) {
+  width: 14%;
+}
+
+.users-table th:nth-child(3),
+.users-table td:nth-child(3) {
+  width: 10%;
+}
+
+.users-table th:nth-child(4),
+.users-table td:nth-child(4) {
+  width: 8%;
+}
+
+.users-table th:nth-child(5),
+.users-table td:nth-child(5) {
+  width: 9%;
+}
+
+.users-table th:nth-child(6),
+.users-table td:nth-child(6) {
+  width: 15%;
+}
+
+.users-table th:nth-child(7),
+.users-table td:nth-child(7) {
+  width: 10%;
+}
+
+.users-table th:nth-child(8),
+.users-table td:nth-child(8) {
+  width: 10%;
+}
+
+.users-table th:nth-child(9),
+.users-table td:nth-child(9) {
+  width: 7%;
+}
+
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.users-table thead {
+  background: #faf9f7;
+}
+
+.users-table th {
+  padding: 14px 8px;
+  text-align: left;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  color: #777;
+  border-bottom: 1px solid #e9e5de;
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   TABLE BODY
+===================================================== */
+
+.users-table td {
+  padding: 13px 8px;
+  border-bottom: 1px solid #eeeae4;
+  font-size: 11px;
+  color: #444;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.users-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.users-table tbody tr:hover {
+  background: #fcfbf9;
+}
+
+.users-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =====================================================
+   USER INFO
+===================================================== */
+
+.user-info {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-info img,
+.user-avatar {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 50%;
+}
+
+.user-info img {
+  display: block;
+  object-fit: cover;
+  border: 1px solid #e2ded6;
+}
+
+.user-avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0e3c9;
+  color: #8b6b2f;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.user-details {
+  min-width: 0;
+}
+
+.user-details strong {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 11px;
+  color: #222;
+}
+
+.user-details small {
+  display: block;
+  max-width: 100%;
+  margin-top: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 9px;
+  color: #999;
+}
+
+
+/* =====================================================
+   EMAIL
+===================================================== */
+
+.user-email {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #555;
+}
+
+
+/* =====================================================
+   LONG TEXT
+===================================================== */
+
+.users-table td:nth-child(6) {
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.user-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  max-width: 100%;
+  padding: 5px 7px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.user-status i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-active {
+  background: #e8f6eb;
+  color: #27783a;
+}
+
+.status-active i {
+  background: #2d9a45;
+}
+
+.status-blocked {
+  background: #fbe8e5;
+  color: #c33d32;
+}
+
+.status-blocked i {
+  background: #d64b3f;
+}
+
+
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
+
+.user-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+
+.user-actions button {
+  width: 27px;
+  height: 27px;
+  min-width: 27px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.block-btn {
+  background: #fff1ed;
+  color: #d24a38;
+}
+
+.block-btn:hover {
+  background: #d24a38;
+  color: #fff;
+}
+
+.unblock-btn {
+  background: #e8f6eb;
+  color: #2b8a43;
+}
+
+.unblock-btn:hover {
+  background: #2b8a43;
+  color: #fff;
+}
+
+.delete-btn {
+  background: #f4f4f4;
+  color: #777;
+}
+
+.delete-btn:hover {
+  background: #e04435;
+  color: #fff;
+}
+
+
+/* =====================================================
+   NO USERS
+===================================================== */
+
+.no-users {
+  height: 220px;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.no-users div {
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.no-users strong {
+  display: block;
+  font-size: 14px;
+  color: #333;
+}
+
+.no-users span {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  color: #999;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.users-loading {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.users-loading h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  color: #333;
+}
+
+.users-loading p {
+  margin: 0;
+  color: #888;
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   PAGINATION WRAPPER
+===================================================== */
+
+.users-pagination-wrapper {
+  min-height: 65px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  box-sizing: border-box;
+  border-top: 1px solid #ece9e3;
+  background: #fff;
+}
+
+
+/* =====================================================
+   PAGE SIZE
+===================================================== */
+
+.users-page-size {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #777;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.users-page-size select {
+  height: 32px;
+  min-width: 58px;
+  padding: 0 7px;
+  border: 1px solid #ddd9d1;
+  border-radius: 6px;
+  outline: none;
+  background: #fff;
+  color: #444;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.users-page-size select:focus {
+  border-color: #b28a3e;
+}
+
+
+/* =====================================================
+   PAGINATION INFO
+===================================================== */
+
+.users-pagination-info {
+  color: #777;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.users-pagination-info strong {
+  color: #333;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   PAGINATION CONTROLS
+===================================================== */
+
+.users-pagination-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+
+/* =====================================================
+   PAGE NUMBER
+===================================================== */
+
+.users-pagination-number,
+.users-pagination-arrow {
+  width: 31px;
+  height: 31px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd9d1;
+  border-radius: 6px;
+  background: #fff;
+  color: #555;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.users-pagination-number:hover,
+.users-pagination-arrow:hover:not(:disabled) {
+  border-color: #b28a3e;
+  color: #a17a35;
+  background: #fbf7ee;
+}
+
+
+/* =====================================================
+   ACTIVE PAGE
+===================================================== */
+
+.users-pagination-number.active {
+  border-color: #b28a3e;
+  background: #b28a3e;
+  color: #fff;
+}
+
+
+/* =====================================================
+   ARROWS
+===================================================== */
+
+.users-pagination-arrow {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.users-pagination-arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  background: #f7f7f7;
+}
+
+
+/* =====================================================
+   DOTS
+===================================================== */
+
+.users-pagination-dots {
+  width: 25px;
+  height: 31px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE - 1100px
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .users-page {
+    padding: 24px;
+  }
+
+  .users-table th,
+  .users-table td {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .users-table th {
+    font-size: 8px;
+  }
+
+  .users-table td {
+    font-size: 10px;
+  }
+
+  .user-info {
+    gap: 6px;
+  }
+
+  .user-info img,
+  .user-avatar {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+  }
+
+  .user-details strong {
+    font-size: 10px;
+  }
+
+  .user-details small {
+    font-size: 8px;
+  }
+
+  .user-status {
+    padding: 4px 5px;
+    font-size: 8px;
+  }
+
+  .user-actions button {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    font-size: 10px;
+  }
+}
+
+
+/* =====================================================
+   RESPONSIVE - 900px
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .users-header {
+    align-items: flex-start;
+  }
+
+  .users-total {
+    min-width: 130px;
+  }
+
+  .users-stats {
+    gap: 12px;
+  }
+
+  .user-stat-card {
+    padding: 15px;
+  }
+
+  .stat-icon {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+  }
+
+  .user-stat-card strong {
+    font-size: 20px;
+  }
+
+  .users-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .users-search {
+    width: 100%;
+  }
+
+  .users-result {
+    align-self: flex-end;
+  }
+
+  .users-pagination-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .users-pagination-info {
+    order: 3;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* =====================================================
+   RESPONSIVE - 700px
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .users-page {
+    padding: 16px;
+  }
+
+  .users-header {
+    flex-direction: column;
+  }
+
+  .users-total {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .users-stats {
+    grid-template-columns: 1fr;
+  }
+
+  /*
+     At smaller widths, allow table text
+     to become smaller instead of creating
+     horizontal scrollbar.
+  */
+
+  .users-table th {
+    font-size: 7px;
+    padding: 10px 4px;
+  }
+
+  .users-table td {
+    font-size: 9px;
+    padding: 10px 4px;
+  }
+
+  .user-info img,
+  .user-avatar {
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+  }
+
+  .user-details strong {
+    font-size: 9px;
+  }
+
+  .user-details small {
+    display: none;
+  }
+
+  .user-status {
+    padding: 3px 4px;
+    font-size: 7px;
+  }
+
+  .user-status i {
+    width: 4px;
+    height: 4px;
+  }
+
+  .user-actions {
+    gap: 3px;
+  }
+
+  .user-actions button {
+    width: 21px;
+    height: 21px;
+    min-width: 21px;
+    font-size: 8px;
+  }
+
+  .users-pagination-controls {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .users-page-size {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* =====================================================
+   RESPONSIVE - 500px
+===================================================== */
+
+@media (max-width: 500px) {
+
+  .users-page {
+    padding: 10px;
+  }
+
+  .users-header h1 {
+    font-size: 26px;
+  }
+
+  .users-header > div:first-child > span {
+    font-size: 12px;
+  }
+
+  .users-toolbar {
+    padding: 12px;
+  }
+
+  .users-card {
+    border-radius: 10px;
+  }
+
+  .users-table th {
+    font-size: 6px;
+    letter-spacing: 0.3px;
+  }
+
+  .users-table td {
+    font-size: 8px;
+  }
+
+  .user-info {
+    gap: 4px;
+  }
+
+  .user-info img,
+  .user-avatar {
+    width: 21px;
+    height: 21px;
+    min-width: 21px;
+    font-size: 9px;
+  }
+
+  .user-details strong {
+    font-size: 8px;
+  }
+
+  .user-email {
+    font-size: 8px;
+  }
+
+  .user-status {
+    font-size: 6px;
+  }
+
+  .users-pagination-number,
+  .users-pagination-arrow {
+    width: 27px;
+    height: 27px;
+  }
+
+  .users-pagination-controls {
+    gap: 3px;
+  }
+
+  .users-pagination-dots {
+    width: 18px;
+  }
+}
+
+
+/* =====================================================
+   RESPONSIVE - 400px
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .users-page {
+    padding: 8px;
+  }
+
+  .users-header h1 {
+    font-size: 23px;
+  }
+
+  .users-table th,
+  .users-table td {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  .users-table th {
+    font-size: 5.5px;
+  }
+
+  .users-table td {
+    font-size: 7px;
+  }
+
+  .user-info img,
+  .user-avatar {
+    width: 19px;
+    height: 19px;
+    min-width: 19px;
+  }
+
+  .user-details strong {
+    font-size: 7px;
+  }
+
+  .user-actions button {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    font-size: 7px;
+  }
+
+  .users-pagination-number,
+  .users-pagination-arrow {
+    width: 24px;
+    height: 24px;
+    font-size: 9px;
+  }
+}

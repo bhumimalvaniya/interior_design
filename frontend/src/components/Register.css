@@ -1,0 +1,594 @@
+
+/* =====================================================
+   REGISTER PAGE
+===================================================== */
+
+.register-page {
+  width: 100%;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   LEFT IMAGE
+===================================================== */
+
+.register-image-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  background-image:
+    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=90");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.register-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 20, 20, 0.88),
+      rgba(20, 20, 20, 0.35)
+    );
+}
+
+
+/* =====================================================
+   IMAGE CONTENT
+===================================================== */
+
+.register-image-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 80%;
+  max-width: 600px;
+
+  margin: auto;
+
+  color: #ffffff;
+}
+
+.register-image-label {
+  margin: 0 0 18px;
+
+  color: #c6a15b;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+}
+
+.register-image-content h1 {
+  margin: 0 0 25px;
+
+  font-size: 58px;
+
+  line-height: 1.05;
+
+  font-weight: 500;
+}
+
+.register-image-content h1 span {
+  display: block;
+
+  color: #c6a15b;
+}
+
+.register-image-content > p:not(.register-image-label) {
+  max-width: 500px;
+
+  margin: 0;
+
+  color: #dddddd;
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+.register-image-line {
+  width: 60px;
+  height: 1px;
+
+  margin: 35px 0 18px;
+
+  background: #c6a15b;
+}
+
+.register-image-content > span {
+  color: #eeeeee;
+
+  font-size: 11px;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   RIGHT FORM SECTION
+===================================================== */
+
+.register-form-section {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px 30px;
+
+  background: #ffffff;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 450px;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.register-logo {
+  width: fit-content;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 auto 38px;
+
+  color: #242424;
+
+  text-decoration: none;
+
+  text-align: center;
+}
+
+.register-logo span {
+  font-size: 22px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+}
+
+.register-logo small {
+  margin-top: 5px;
+
+  color: #b28c4c;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.register-heading {
+  margin-bottom: 28px;
+
+  text-align: center;
+}
+
+.register-heading p {
+  margin: 0 0 9px;
+
+  color: #b28c4c;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.register-heading h2 {
+  margin: 0 0 10px;
+
+  color: #222222;
+
+  font-size: 40px;
+
+  line-height: 1.1;
+
+  font-weight: 500;
+}
+
+.register-heading span {
+  color: #888888;
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.register-form {
+  width: 100%;
+}
+
+.register-input-group {
+  margin-bottom: 18px;
+}
+
+.register-input-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #333333;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   INPUT WRAPPER
+===================================================== */
+
+.register-input-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+.register-input-icon {
+  position: absolute;
+
+  top: 50%;
+  left: 15px;
+
+  z-index: 2;
+
+  transform: translateY(-50%);
+
+  color: #a47f43;
+
+  font-size: 14px;
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   INPUT + SELECT
+===================================================== */
+
+.register-input-wrapper input,
+.register-input-wrapper select {
+  width: 100%;
+
+  height: 48px;
+
+  box-sizing: border-box;
+
+  padding: 0 45px;
+
+  border: 1px solid #dddddd;
+
+  outline: none;
+
+  background: #fafafa;
+
+  color: #222222;
+
+  font-size: 13px;
+
+  transition: 0.3s;
+}
+
+.register-input-wrapper input::placeholder {
+  color: #aaaaaa;
+}
+
+.register-input-wrapper select {
+  appearance: none;
+
+  cursor: pointer;
+}
+
+.register-input-wrapper input:focus,
+.register-input-wrapper select:focus {
+  border-color: #c6a15b;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(198, 161, 91, 0.08);
+}
+
+
+/* =====================================================
+   PASSWORD BUTTON
+===================================================== */
+
+.register-password-toggle {
+  position: absolute;
+
+  top: 50%;
+  right: 14px;
+
+  transform: translateY(-50%);
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  opacity: 0.7;
+}
+
+.register-password-toggle:hover {
+  opacity: 1;
+}
+
+
+/* =====================================================
+   TERMS
+===================================================== */
+
+.register-terms {
+  display: flex !important;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin: 7px 0 20px;
+
+  color: #777777 !important;
+
+  font-size: 11px !important;
+
+  font-weight: 400 !important;
+
+  cursor: pointer;
+}
+
+.register-terms input {
+  width: 14px;
+  height: 14px;
+
+  margin: 0;
+
+  accent-color: #b28c4c;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   REGISTER BUTTON
+===================================================== */
+
+.register-button {
+  width: 100%;
+
+  height: 52px;
+
+  border: 1px solid #c6a15b;
+
+  background: #c6a15b;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.register-button:hover {
+  border-color: #242424;
+
+  background: #242424;
+}
+
+
+/* =====================================================
+   LOGIN LINK
+===================================================== */
+
+.register-login {
+  margin-top: 25px;
+
+  text-align: center;
+}
+
+.register-login p {
+  display: inline;
+
+  margin: 0;
+
+  color: #888888;
+
+  font-size: 12px;
+}
+
+.register-login a {
+  margin-left: 5px;
+
+  color: #a47f43;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.register-login a:hover {
+  color: #222222;
+}
+
+
+/* =====================================================
+   HOME LINK
+===================================================== */
+
+.register-home-link {
+  display: block;
+
+  width: fit-content;
+
+  margin: 25px auto 0;
+
+  color: #888888;
+
+  font-size: 11px;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.register-home-link:hover {
+  color: #a47f43;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .register-page {
+    grid-template-columns: 1fr;
+  }
+
+  .register-image-section {
+    min-height: 420px;
+  }
+
+  .register-image-content {
+    text-align: center;
+  }
+
+  .register-image-content > p:not(.register-image-label) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .register-image-line {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .register-form-section {
+    min-height: auto;
+
+    padding: 70px 30px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .register-image-section {
+    min-height: 350px;
+  }
+
+  .register-image-content {
+    width: 88%;
+  }
+
+  .register-image-content h1 {
+    font-size: 40px;
+  }
+
+  .register-image-content > p:not(.register-image-label) {
+    font-size: 13px;
+  }
+
+  .register-form-section {
+    padding: 50px 20px;
+  }
+
+  .register-logo {
+    margin-bottom: 40px;
+  }
+
+  .register-heading h2 {
+    font-size: 34px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .register-image-section {
+    min-height: 320px;
+  }
+
+  .register-image-content h1 {
+    font-size: 33px;
+  }
+
+  .register-heading h2 {
+    font-size: 30px;
+  }
+
+  .register-input-wrapper input,
+  .register-input-wrapper select {
+    height: 46px;
+  }
+
+  .register-button {
+    height: 50px;
+  }
+
+}
+

@@ -1,0 +1,612 @@
+
+/* ========================================
+   ABOUT PAGE
+======================================== */
+
+.about-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.about-hero {
+  height: 500px;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.58),
+      rgba(0, 0, 0, 0.58)
+    ),
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85");
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.about-hero-content {
+  color: #ffffff;
+  max-width: 850px;
+  padding: 30px;
+}
+
+.about-hero-content p {
+  color: #e47b4f;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.about-hero-content h1 {
+  font-size: 58px;
+  line-height: 1.15;
+  margin: 0 0 20px;
+  font-weight: 700;
+}
+
+.about-hero-content span {
+  color: #eeeeee;
+  font-size: 18px;
+}
+
+
+/* ========================================
+   INTRO
+======================================== */
+
+.about-intro {
+  max-width: 1200px;
+  margin: auto;
+
+  padding: 110px 5%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 75px;
+
+  align-items: center;
+}
+
+.about-intro-image {
+  position: relative;
+}
+
+.about-intro-image::after {
+  content: "";
+
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  border: 2px solid #e47b4f;
+
+  bottom: -25px;
+  right: -25px;
+
+  z-index: 0;
+}
+
+.about-intro-image img {
+  width: 100%;
+  height: 520px;
+
+  object-fit: cover;
+
+  position: relative;
+  z-index: 1;
+}
+
+
+.about-label {
+  color: #e47b4f;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+
+  margin-bottom: 15px;
+}
+
+.about-intro-content h2,
+.mission-content h2,
+.values-heading h2 {
+  font-size: 45px;
+  line-height: 1.15;
+
+  color: #222;
+
+  margin: 0 0 25px;
+}
+
+.about-intro-content h2 span,
+.mission-content h2 span,
+.values-heading h2 span {
+  color: #e47b4f;
+}
+
+.about-intro-content > p:not(.about-label) {
+  color: #777;
+
+  line-height: 1.8;
+
+  font-size: 16px;
+
+  margin-bottom: 18px;
+}
+
+.about-main-btn {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  padding: 14px 28px;
+
+  background: #e47b4f;
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.about-main-btn:hover {
+  background: #222;
+}
+
+
+/* ========================================
+   STATS
+======================================== */
+
+.about-stats {
+  background: #f5f3f0;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  padding: 65px 7%;
+
+  text-align: center;
+}
+
+.about-stat {
+  border-right: 1px solid #ddd;
+}
+
+.about-stat:last-child {
+  border-right: none;
+}
+
+.about-stat h3 {
+  font-size: 42px;
+
+  color: #e47b4f;
+
+  margin: 0 0 8px;
+}
+
+.about-stat p {
+  color: #555;
+
+  margin: 0;
+
+  font-size: 15px;
+}
+
+
+/* ========================================
+   MISSION
+======================================== */
+
+.mission-section {
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 110px 5%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 75px;
+
+  align-items: center;
+}
+
+.mission-content > p:not(.about-label) {
+  color: #777;
+
+  line-height: 1.8;
+
+  font-size: 16px;
+}
+
+.mission-image img {
+  width: 100%;
+  height: 540px;
+
+  object-fit: cover;
+}
+
+
+/* ========================================
+   MISSION POINTS
+======================================== */
+
+.mission-points {
+  margin-top: 35px;
+}
+
+.mission-point {
+  display: flex;
+
+  gap: 20px;
+
+  margin-bottom: 25px;
+}
+
+.mission-number {
+  min-width: 50px;
+  height: 50px;
+
+  border: 1px solid #e47b4f;
+
+  color: #e47b4f;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.mission-point h3 {
+  margin: 0 0 5px;
+
+  color: #222;
+
+  font-size: 18px;
+}
+
+.mission-point p {
+  margin: 0;
+
+  color: #777;
+
+  line-height: 1.6;
+
+  font-size: 14px;
+}
+
+
+/* ========================================
+   VALUES
+======================================== */
+
+.values-section {
+  background: #f8f7f5;
+
+  padding: 100px 5%;
+}
+
+.values-heading {
+  text-align: center;
+
+  max-width: 650px;
+
+  margin: 0 auto 55px;
+}
+
+.values-grid {
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 25px;
+}
+
+.value-card {
+  background: #ffffff;
+
+  padding: 40px 25px;
+
+  text-align: center;
+
+  transition: 0.3s;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.value-icon {
+  width: 65px;
+  height: 65px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #fdf0ea;
+
+  color: #e47b4f;
+
+  font-size: 25px;
+}
+
+.value-card h3 {
+  color: #222;
+
+  font-size: 20px;
+
+  margin-bottom: 12px;
+}
+
+.value-card p {
+  color: #777;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* ========================================
+   CTA
+======================================== */
+
+.about-cta {
+  min-height: 430px;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.68),
+      rgba(0, 0, 0, 0.68)
+    ),
+    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85");
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  padding: 70px 20px;
+}
+
+.about-cta-content {
+  max-width: 800px;
+}
+
+.about-cta-content > p:first-child {
+  color: #e47b4f;
+
+  font-size: 13px;
+
+  letter-spacing: 3px;
+
+  font-weight: 700;
+}
+
+.about-cta-content h2 {
+  font-size: 45px;
+
+  line-height: 1.2;
+
+  margin: 20px 0;
+}
+
+.about-cta-content h2 span {
+  color: #e47b4f;
+}
+
+.about-cta-content > p {
+  color: #ddd;
+
+  font-size: 16px;
+}
+
+.about-cta-btn {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding: 14px 32px;
+
+  background: #e47b4f;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.about-cta-btn:hover {
+  background: #ffffff;
+  color: #222;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 992px) {
+
+  .about-hero-content h1 {
+    font-size: 48px;
+  }
+
+  .about-intro,
+  .mission-section {
+    gap: 45px;
+  }
+
+  .about-intro-content h2,
+  .mission-content h2,
+  .values-heading h2 {
+    font-size: 38px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+  .about-hero {
+    height: 420px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 38px;
+  }
+
+  .about-hero-content span {
+    font-size: 16px;
+  }
+
+  .about-intro,
+  .mission-section {
+    grid-template-columns: 1fr;
+
+    padding: 75px 6%;
+
+    gap: 55px;
+  }
+
+  .about-intro-content h2,
+  .mission-content h2,
+  .values-heading h2 {
+    font-size: 34px;
+  }
+
+  .about-intro-image img,
+  .mission-image img {
+    height: 400px;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 35px;
+
+    padding: 55px 6%;
+  }
+
+  .about-stat {
+    border-right: none;
+  }
+
+  .values-section {
+    padding: 75px 6%;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-cta-content h2 {
+    font-size: 34px;
+  }
+
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+  .about-hero {
+    height: 360px;
+  }
+
+  .about-hero-content {
+    padding: 20px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 31px;
+  }
+
+  .about-hero-content p {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .about-intro-image::after {
+    width: 90px;
+    height: 90px;
+
+    right: -12px;
+    bottom: -12px;
+  }
+
+  .about-intro-image img,
+  .mission-image img {
+    height: 300px;
+  }
+
+  .about-intro-content h2,
+  .mission-content h2,
+  .values-heading h2 {
+    font-size: 29px;
+  }
+
+  .about-stat h3 {
+    font-size: 32px;
+  }
+
+  .about-cta-content h2 {
+    font-size: 29px;
+  }
+
+}
+

@@ -1,0 +1,537 @@
+/* =====================================================
+   ADMIN SERVICES PAGE
+===================================================== */
+
+.admin-services-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px;
+  background: #f8f7f4;
+  box-sizing: border-box;
+  color: #222;
+}
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.admin-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.admin-page-header h1 {
+  margin: 0 0 6px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #222;
+}
+
+.admin-page-header p {
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+}
+
+.admin-page-header > button {
+  border: none;
+  outline: none;
+  background: #c9a227;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.admin-page-header > button:hover {
+  background: #a98515;
+  transform: translateY(-1px);
+}
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error-message {
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  background: #fff0f0;
+  color: #c62828;
+  border: 1px solid #f0b5b5;
+  font-size: 14px;
+}
+
+/* =====================================================
+   NO SERVICES
+===================================================== */
+
+.no-services {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e5e5e5;
+}
+
+.no-services h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+}
+
+.no-services p {
+  margin: 0 0 20px;
+  color: #777;
+}
+
+.no-services button {
+  border: none;
+  background: #c9a227;
+  color: #fff;
+  padding: 11px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* =====================================================
+   TABLE CARD
+===================================================== */
+
+.admin-services-table-wrapper {
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #e7e2d8;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.services-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 22px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.services-table-header h3 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  color: #222;
+}
+
+.services-table-header p {
+  margin: 0;
+  color: #888;
+  font-size: 13px;
+}
+
+/* =====================================================
+   ITEMS PER PAGE
+===================================================== */
+
+.pagination-size {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.pagination-size select {
+  min-width: 65px;
+  padding: 8px 10px;
+  border: 1px solid #d7d7d7;
+  border-radius: 5px;
+  background: #fff;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+}
+
+.pagination-size select:focus {
+  border-color: #c9a227;
+}
+
+/* =====================================================
+   TABLE SCROLL
+===================================================== */
+
+.services-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.admin-services-table {
+  width: 100%;
+  min-width: 950px;
+  border-collapse: collapse;
+}
+
+.admin-services-table thead {
+  background: #f7f4ed;
+}
+
+.admin-services-table th {
+  padding: 15px 14px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 700;
+  color: #4c4c4c;
+  border-bottom: 1px solid #ddd6c8;
+  white-space: nowrap;
+}
+
+.admin-services-table td {
+  padding: 14px;
+  font-size: 13px;
+  color: #444;
+  border-bottom: 1px solid #eeeeee;
+  vertical-align: middle;
+}
+
+.admin-services-table tbody tr {
+  transition: 0.2s ease;
+}
+
+.admin-services-table tbody tr:hover {
+  background: #fcfbf8;
+}
+
+/* =====================================================
+   SERVICE IMAGE
+===================================================== */
+
+.service-table-image {
+  width: 65px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  display: block;
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.description-cell {
+  max-width: 280px;
+  min-width: 200px;
+  line-height: 1.5;
+  color: #666 !important;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-active,
+.status-inactive {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.status-active {
+  background: #e8f7ed;
+  color: #218838;
+}
+
+.status-inactive {
+  background: #fceaea;
+  color: #c62828;
+}
+
+/* =====================================================
+   ACTION BUTTONS
+===================================================== */
+
+.service-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 7px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.edit-btn {
+  background: #eee8d5;
+  color: #8c6d0a;
+}
+
+.edit-btn:hover {
+  background: #dfd3b2;
+}
+
+.delete-btn {
+  background: #fce8e8;
+  color: #c62828;
+}
+
+.delete-btn:hover {
+  background: #f7d1d1;
+}
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading-message {
+  padding: 60px 20px;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  color: #777;
+  font-size: 15px;
+}
+
+/* =====================================================
+   PAGINATION BOTTOM
+===================================================== */
+
+.pagination-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 22px;
+  border-top: 1px solid #e8e8e8;
+}
+
+/* =====================================================
+   PAGINATION INFO
+===================================================== */
+
+.pagination-info {
+  color: #777;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.pagination-info strong {
+  color: #333;
+  font-weight: 600;
+}
+
+/* =====================================================
+   PAGINATION CONTAINER
+===================================================== */
+
+.pagination-container {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+/* =====================================================
+   PAGE NUMBERS
+===================================================== */
+
+.pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pagination-number {
+  min-width: 34px;
+  height: 34px;
+  padding: 0 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #555;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.pagination-number:hover {
+  border-color: #c9a227;
+  color: #a98515;
+}
+
+/* ACTIVE PAGE */
+
+.pagination-number.active {
+  background: #c9a227;
+  border-color: #c9a227;
+  color: #fff;
+}
+
+/* =====================================================
+   PREVIOUS / NEXT
+===================================================== */
+
+.pagination-btn {
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #555;
+  border-radius: 5px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  white-space: nowrap;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  border-color: #c9a227;
+  color: #a98515;
+  background: #fffdf6;
+}
+
+.pagination-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* =====================================================
+   RESPONSIVE - 992px
+===================================================== */
+
+@media (max-width: 992px) {
+  .admin-services-page {
+    padding: 22px;
+  }
+
+  .pagination-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pagination-container {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE - 768px
+===================================================== */
+
+@media (max-width: 768px) {
+  .admin-services-page {
+    padding: 18px;
+  }
+
+  .admin-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-page-header > button {
+    width: 100%;
+  }
+
+  .services-table-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pagination-size {
+    width: 100%;
+  }
+
+  .pagination-bottom {
+    padding: 15px;
+  }
+
+  .pagination-container {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE - 576px
+===================================================== */
+
+@media (max-width: 576px) {
+  .admin-services-page {
+    padding: 12px;
+  }
+
+  .admin-page-header h1 {
+    font-size: 25px;
+  }
+
+  .services-table-header {
+    padding: 16px;
+  }
+
+  .pagination-bottom {
+    align-items: stretch;
+  }
+
+  .pagination-info {
+    white-space: normal;
+  }
+
+  .pagination-container {
+    justify-content: center;
+  }
+
+  .pagination-btn {
+    padding: 0 9px;
+  }
+
+  .pagination-number {
+    min-width: 32px;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE - 400px
+===================================================== */
+
+@media (max-width: 400px) {
+  .pagination-container {
+    gap: 4px;
+  }
+
+  .pagination-pages {
+    gap: 3px;
+  }
+
+  .pagination-number {
+    min-width: 29px;
+    height: 32px;
+    padding: 0 5px;
+  }
+
+  .pagination-btn {
+    height: 32px;
+    padding: 0 7px;
+    font-size: 11px;
+  }
+}

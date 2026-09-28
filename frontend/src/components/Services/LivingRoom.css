@@ -1,0 +1,786 @@
+/* =========================================================
+   LIVING ROOM PAGE
+========================================================= */
+
+.living-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f8f7f4;
+  color: #222;
+  overflow: hidden;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.living-container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.living-hero {
+  position: relative;
+  width: 100%;
+  height: 650px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.living-hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transform: scale(1.02);
+}
+
+.living-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.52) 38%,
+      rgba(0, 0, 0, 0.18) 75%,
+      rgba(0, 0, 0, 0.05) 100%
+    );
+}
+
+.living-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  color: #fff;
+  padding-top: 50px;
+}
+
+.living-hero-label {
+  display: inline-block;
+  margin-bottom: 22px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: #d5b06a;
+}
+
+.living-hero-content h1 {
+  margin: 0;
+  max-width: 700px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(52px, 7vw, 88px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -2px;
+}
+
+.living-hero-content h1 span {
+  display: block;
+  color: #d5b06a;
+  font-style: italic;
+}
+
+.living-hero-content p {
+  max-width: 570px;
+  margin: 28px 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.living-hero-line {
+  width: 85px;
+  height: 2px;
+  margin-top: 35px;
+  background: #d5b06a;
+}
+
+
+/* =========================================================
+   SERVICES SECTION
+========================================================= */
+
+.living-services {
+  padding: 110px 0 120px;
+  background: #f8f7f4;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.living-section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 65px;
+}
+
+.living-heading-content {
+  max-width: 760px;
+}
+
+.living-label {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #a17b3d;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.living-heading-content h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #242424;
+}
+
+.living-heading-content h2 span {
+  color: #a17b3d;
+  font-style: italic;
+}
+
+.living-heading-content > p {
+  max-width: 680px;
+  margin: 22px 0 0;
+  color: #777;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   SERVICE COUNT
+========================================================= */
+
+.service-count {
+  min-width: 150px;
+  padding: 20px 0 20px 30px;
+  border-left: 1px solid #d8d2c7;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.service-count strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 52px;
+  line-height: 1;
+  font-weight: 400;
+  color: #a17b3d;
+}
+
+.service-count span {
+  color: #777;
+  font-size: 11px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   SERVICE GRID
+========================================================= */
+
+.living-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
+.living-service-card {
+  background: #fff;
+  border: 1px solid #e7e2d9;
+  overflow: hidden;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.living-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(45, 38, 28, 0.12);
+}
+
+
+/* =========================================================
+   SERVICE IMAGE
+========================================================= */
+
+.service-image {
+  position: relative;
+  width: 100%;
+  height: 330px;
+  overflow: hidden;
+  background: #e9e5dd;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+
+  transition:
+    transform 0.7s ease,
+    filter 0.5s ease;
+}
+
+.living-service-card:hover .service-image img {
+  transform: scale(1.08);
+}
+
+.service-image-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.45)
+    );
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SERVICE NUMBER
+========================================================= */
+
+.service-number {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.94);
+  color: #a17b3d;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   CATEGORY BADGE
+========================================================= */
+
+.service-category-badge {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+
+  padding: 8px 13px;
+
+  background: rgba(255, 255, 255, 0.94);
+  color: #4e463b;
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   SERVICE CONTENT
+========================================================= */
+
+.service-content {
+  padding: 30px 30px 28px;
+}
+
+.service-category {
+  display: block;
+  margin-bottom: 12px;
+
+  color: #a17b3d;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.service-content h3 {
+  margin: 0;
+
+  color: #252525;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.service-content h4 {
+  margin: 9px 0 0;
+
+  color: #777;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.service-description {
+  margin: 17px 0 0;
+
+  color: #777;
+  font-size: 13px;
+  line-height: 1.8;
+
+  display: -webkit-box;
+  /* -webkit-line-clamp: 3; */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   SERVICE BOTTOM
+========================================================= */
+
+.service-bottom {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-top: 27px;
+}
+
+.arrow{
+    text-decoration: none;
+}
+
+.service-line {
+  width: 42px;
+  height: 1px;
+  background: #c8b18b;
+
+  transition: width 0.4s ease;
+}
+
+.living-service-card:hover .service-line {
+  width: 75px;
+}
+
+.service-arrow {
+  color: #a17b3d;
+  font-size: 23px;
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 0.4s ease;
+}
+
+.living-service-card:hover .service-arrow {
+  transform: translateX(6px);
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.living-loading {
+  min-height: 350px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 45px;
+  height: 45px;
+
+  border: 3px solid #ddd6ca;
+  border-top-color: #a17b3d;
+  border-radius: 50%;
+
+  animation: livingSpin 0.9s linear infinite;
+}
+
+.living-loading h3 {
+  margin: 22px 0 7px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.living-loading p {
+  margin: 0;
+  color: #888;
+  font-size: 14px;
+}
+
+@keyframes livingSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.living-error {
+  min-height: 350px;
+  padding: 50px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  text-align: center;
+
+  border: 1px solid #eaded1;
+  background: #fff;
+}
+
+.error-icon {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f4ebe4;
+  color: #9a6748;
+
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.living-error h3 {
+  margin: 18px 0 7px;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 27px;
+  font-weight: 400;
+}
+
+.living-error p {
+  max-width: 550px;
+  margin: 0;
+
+  color: #777;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   NO SERVICES
+========================================================= */
+
+.no-services {
+  min-height: 350px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 50px 20px;
+
+  background: #fff;
+  border: 1px solid #e7e2d9;
+
+  text-align: center;
+}
+
+.no-services-icon {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  border: 1px solid #d6c29e;
+  border-radius: 50%;
+
+  color: #a17b3d;
+  font-size: 27px;
+}
+
+.no-services h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.no-services p {
+  max-width: 500px;
+  margin: 12px 0 0;
+
+  color: #777;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.retry-button {
+  margin-top: 25px;
+  padding: 13px 27px;
+
+  border: 1px solid #a17b3d;
+  background: #a17b3d;
+  color: #fff;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.retry-button:hover {
+  background: transparent;
+  color: #a17b3d;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .living-hero {
+    height: 580px;
+  }
+
+  .living-service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-image {
+    height: 320px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .living-hero {
+    height: 540px;
+  }
+
+  .living-hero-content {
+    padding-top: 30px;
+  }
+
+  .living-services {
+    padding: 80px 0 90px;
+  }
+
+  .living-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 45px;
+  }
+
+  .service-count {
+    border-left: none;
+    border-top: 1px solid #d8d2c7;
+
+    padding: 20px 0 0;
+
+    width: 100%;
+  }
+
+  .service-count strong {
+    font-size: 45px;
+  }
+
+  .living-service-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .service-image {
+    height: 280px;
+  }
+
+  .service-content {
+    padding: 25px 22px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .living-container {
+    width: 90%;
+  }
+
+  .living-hero {
+    height: 500px;
+  }
+
+  .living-hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.72),
+        rgba(0, 0, 0, 0.35)
+      );
+  }
+
+  .living-hero-content {
+    width: 90%;
+  }
+
+  .living-hero-label {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+  }
+
+  .living-hero-content h1 {
+    font-size: 50px;
+    letter-spacing: -1px;
+  }
+
+  .living-hero-content p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .living-services {
+    padding: 65px 0 75px;
+  }
+
+  .living-heading-content h2 {
+    font-size: 38px;
+  }
+
+  .living-heading-content > p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .living-service-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .service-image {
+    height: 330px;
+  }
+
+  .service-content h3 {
+    font-size: 27px;
+  }
+
+  .service-description {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .living-hero {
+    height: 460px;
+  }
+
+  .living-hero-content h1 {
+    font-size: 43px;
+  }
+
+  .living-hero-content p {
+    font-size: 13px;
+  }
+
+  .living-heading-content h2 {
+    font-size: 34px;
+  }
+
+  .service-image {
+    height: 270px;
+  }
+
+  .service-number {
+    width: 42px;
+    height: 42px;
+    top: 15px;
+    left: 15px;
+  }
+
+  .service-category-badge {
+    right: 14px;
+    bottom: 14px;
+    font-size: 9px;
+  }
+}

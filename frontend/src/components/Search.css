@@ -1,0 +1,577 @@
+
+/* =====================================================
+   SEARCH PAGE
+===================================================== */
+
+.search-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f8f7f4;
+
+  color: #222;
+}
+
+
+/* =====================================================
+   BANNER
+===================================================== */
+
+.search-banner {
+  position: relative;
+
+  min-height: 350px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image:
+    url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1800&q=90");
+
+  background-size: cover;
+  background-position: center;
+}
+
+.search-banner-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 20, 20, 0.88),
+      rgba(20, 20, 20, 0.35)
+    );
+}
+
+.search-banner-content {
+  position: relative;
+
+  z-index: 2;
+
+  text-align: center;
+
+  color: #fff;
+}
+
+.search-banner-content p {
+  margin: 0 0 14px;
+
+  color: #c6a15b;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+}
+
+.search-banner-content h1 {
+  margin: 0;
+
+  font-size: 52px;
+
+  font-weight: 500;
+}
+
+.search-banner-content h1 span {
+  color: #c6a15b;
+}
+
+.search-banner-line {
+  width: 60px;
+  height: 1px;
+
+  margin: 22px auto 15px;
+
+  background: #c6a15b;
+}
+
+.search-banner-content > span {
+  color: #eee;
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+
+/* =====================================================
+   SEARCH SECTION
+===================================================== */
+
+.search-section {
+  padding: 70px 25px;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: auto;
+}
+
+
+/* =====================================================
+   SEARCH BOX
+===================================================== */
+
+.search-box {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  background: #fff;
+
+  border: 1px solid #dedbd4;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.05);
+
+  transition: 0.3s;
+}
+
+.search-box:focus-within {
+  border-color: #c6a15b;
+
+  box-shadow:
+    0 12px 35px rgba(198, 161, 91, 0.12);
+}
+
+.search-icon {
+  padding-left: 22px;
+
+  font-size: 18px;
+}
+
+.search-box input {
+  width: 100%;
+
+  padding: 22px 50px 22px 15px;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #333;
+
+  font-family: inherit;
+
+  font-size: 12px;
+}
+
+.search-box input::placeholder {
+  color: #aaa;
+}
+
+.clear-search {
+  position: absolute;
+
+  right: 18px;
+
+  width: 28px;
+  height: 28px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #f1eee8;
+
+  color: #777;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.clear-search:hover {
+  background: #c6a15b;
+
+  color: #fff;
+}
+
+
+/* =====================================================
+   RESULT HEADER
+===================================================== */
+
+.search-result-header {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin: 55px 0 30px;
+}
+
+.search-result-header p {
+  margin: 0 0 7px;
+
+  color: #b28c4c;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.search-result-header h2 {
+  margin: 0;
+
+  color: #333;
+
+  font-size: 28px;
+
+  font-weight: 500;
+}
+
+.search-result-header > span {
+  color: #999;
+
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   SEARCH GRID
+===================================================== */
+
+.search-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+
+/* =====================================================
+   SEARCH CARD
+===================================================== */
+
+.search-card {
+  overflow: hidden;
+
+  background: #fff;
+
+  border: 1px solid #eee;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.search-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =====================================================
+   CARD IMAGE
+===================================================== */
+
+.search-card-image {
+  position: relative;
+
+  height: 240px;
+
+  overflow: hidden;
+}
+
+.search-card-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.search-card:hover
+.search-card-image img {
+  transform: scale(1.08);
+}
+
+
+/* =====================================================
+   CATEGORY
+===================================================== */
+
+.search-card-category {
+  position: absolute;
+
+  left: 15px;
+  bottom: 15px;
+
+  padding: 8px 13px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  color: #9b783f;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.search-card-content {
+  padding: 25px;
+}
+
+.search-card-content > p {
+  margin: 0 0 7px;
+
+  color: #b28c4c;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.search-card-content h3 {
+  margin: 0 0 10px;
+
+  color: #333;
+
+  font-size: 19px;
+
+  font-weight: 500;
+}
+
+.search-card-content > span {
+  display: block;
+
+  min-height: 45px;
+
+  color: #999;
+
+  font-size: 10px;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   CARD LINK
+===================================================== */
+
+.search-card-link {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 20px;
+
+  padding-top: 15px;
+
+  border-top: 1px solid #eee;
+
+  color: #333;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.search-card-link b {
+  color: #b28c4c;
+
+  font-size: 15px;
+
+  transition: 0.3s;
+}
+
+.search-card-link:hover {
+  color: #b28c4c;
+}
+
+.search-card-link:hover b {
+  transform: translateX(5px);
+}
+
+
+/* =====================================================
+   EMPTY RESULT
+===================================================== */
+
+.search-empty {
+  padding: 80px 30px;
+
+  background: #fff;
+
+  border: 1px solid #eee;
+
+  text-align: center;
+}
+
+.search-empty-icon {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin: auto;
+
+  background: #f5f0e6;
+
+  font-size: 28px;
+}
+
+.search-empty h3 {
+  margin: 20px 0 10px;
+
+  color: #333;
+
+  font-size: 20px;
+
+  font-weight: 500;
+}
+
+.search-empty p {
+  margin: 0 0 25px;
+
+  color: #999;
+
+  font-size: 10px;
+}
+
+.search-empty button {
+  padding: 12px 22px;
+
+  border: 1px solid #c6a15b;
+
+  background: #c6a15b;
+
+  color: #fff;
+
+  font-family: inherit;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.search-empty button:hover {
+  background: #222;
+
+  border-color: #222;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 950px) {
+
+  .search-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 650px) {
+
+  .search-banner {
+    min-height: 300px;
+  }
+
+  .search-banner-content h1 {
+    font-size: 40px;
+  }
+
+  .search-section {
+    padding: 45px 15px;
+  }
+
+  .search-result-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    margin-top: 40px;
+  }
+
+  .search-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .search-card-image {
+    height: 250px;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .search-banner-content h1 {
+    font-size: 34px;
+  }
+
+  .search-box input {
+    font-size: 10px;
+  }
+
+  .search-card-image {
+    height: 220px;
+  }
+
+}
+

@@ -1,0 +1,1148 @@
+
+/* =========================================
+   BEDROOM PAGE
+========================================= */
+
+.bedroom-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.bedroom-hero {
+  min-height: 650px;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.76),
+      rgba(0, 0, 0, 0.28)
+    ),
+    url("https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1800&q=90");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+}
+
+.bedroom-hero-overlay {
+  width: 100%;
+}
+
+.bedroom-hero-content {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 100px 0;
+
+  color: #ffffff;
+}
+
+.bedroom-small-title {
+  color: #c58a68;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  margin-bottom: 20px;
+}
+
+.bedroom-hero-content h1 {
+  max-width: 750px;
+
+  font-size: 68px;
+
+  line-height: 1.08;
+
+  margin: 0 0 25px;
+}
+
+.bedroom-hero-content h1 span {
+  color: #c58a68;
+}
+
+.bedroom-hero-text {
+  max-width: 600px;
+
+  color: #eeeeee;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  margin-bottom: 35px;
+}
+
+.bedroom-hero-btn {
+  display: inline-block;
+
+  padding: 15px 32px;
+
+  background: #c58a68;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.bedroom-hero-btn:hover {
+  background: #ffffff;
+
+  color: #222222;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.bedroom-intro {
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding: 110px 5%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+.bedroom-intro-image {
+  position: relative;
+}
+
+.bedroom-intro-image img {
+  width: 100%;
+
+  height: 550px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.bedroom-experience-box {
+  position: absolute;
+
+  right: -20px;
+
+  bottom: -20px;
+
+  width: 175px;
+
+  height: 130px;
+
+  background: #c58a68;
+
+  color: #ffffff;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.bedroom-experience-box strong {
+  font-size: 40px;
+}
+
+.bedroom-experience-box span {
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.bedroom-section-label {
+  color: #c58a68;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  margin-bottom: 15px;
+}
+
+.bedroom-intro-content h2 {
+  color: #222222;
+
+  font-size: 46px;
+
+  line-height: 1.15;
+
+  margin: 0 0 25px;
+}
+
+.bedroom-intro-content h2 span {
+  color: #c58a68;
+}
+
+.bedroom-intro-content > p:not(.bedroom-section-label) {
+  color: #777777;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  margin-bottom: 18px;
+}
+
+
+/* =========================================
+   CHECK LIST
+========================================= */
+
+.bedroom-check-list {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 16px;
+
+  margin-top: 30px;
+}
+
+.bedroom-check-list div {
+  color: #444444;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+.bedroom-check-list span {
+  color: #c58a68;
+
+  margin-right: 8px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.bedroom-section-heading {
+  max-width: 700px;
+
+  margin: 0 auto 55px;
+
+  text-align: center;
+}
+
+.bedroom-section-heading h2 {
+  color: #222222;
+
+  font-size: 45px;
+
+  line-height: 1.15;
+
+  margin: 0 0 18px;
+}
+
+.bedroom-section-heading h2 span {
+  color: #c58a68;
+}
+
+.bedroom-section-heading > p:last-child {
+  color: #777777;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.bedroom-features-section {
+  background: #f7f4f1;
+
+  padding: 100px 5%;
+}
+
+.bedroom-features-grid {
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+.bedroom-feature-card {
+  background: #ffffff;
+
+  padding: 35px 25px;
+
+  border: 1px solid #eeeeee;
+
+  transition: 0.3s;
+}
+
+.bedroom-feature-card:hover {
+  transform: translateY(-8px);
+
+  border-color: #c58a68;
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+}
+
+.bedroom-feature-number {
+  color: #c58a68;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.bedroom-feature-card h3 {
+  color: #222222;
+
+  font-size: 20px;
+
+  margin: 25px 0 12px;
+}
+
+.bedroom-feature-card p {
+  color: #777777;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* =========================================
+   BEDROOM STYLES
+========================================= */
+
+.bedroom-styles-section {
+  padding: 110px 5%;
+
+  background: #ffffff;
+}
+
+.bedroom-styles-grid {
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 30px;
+}
+
+.bedroom-style-card {
+  background: #ffffff;
+
+  overflow: hidden;
+
+  border: 1px solid #eeeeee;
+
+  transition: 0.3s;
+}
+
+.bedroom-style-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.bedroom-style-image {
+  height: 300px;
+
+  overflow: hidden;
+}
+
+.bedroom-style-image img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: 0.5s;
+}
+
+.bedroom-style-card:hover img {
+  transform: scale(1.07);
+}
+
+.bedroom-style-content {
+  padding: 28px;
+}
+
+.bedroom-style-content h3 {
+  color: #222222;
+
+  font-size: 21px;
+
+  margin: 0 0 12px;
+}
+
+.bedroom-style-content p {
+  color: #777777;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* =========================================
+   PROCESS
+========================================= */
+
+.bedroom-process-section {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  background: #262323;
+
+  color: #ffffff;
+}
+
+.bedroom-process-image {
+  min-height: 700px;
+}
+
+.bedroom-process-image img {
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.bedroom-process-content {
+  padding: 90px 9%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
+.bedroom-process-content h2 {
+  color: #ffffff;
+
+  font-size: 43px;
+
+  line-height: 1.15;
+
+  margin: 0 0 20px;
+}
+
+.bedroom-process-content h2 span {
+  color: #c58a68;
+}
+
+.bedroom-process-content > p:not(.bedroom-section-label) {
+  color: #aaaaaa;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  margin-bottom: 30px;
+}
+
+.bedroom-process-list {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.bedroom-process-item {
+  display: flex;
+
+  gap: 20px;
+
+  padding: 20px 0;
+
+  border-bottom: 1px solid #444444;
+}
+
+.bedroom-process-item > span {
+  color: #c58a68;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  min-width: 30px;
+}
+
+.bedroom-process-item h3 {
+  color: #ffffff;
+
+  font-size: 18px;
+
+  margin: 0 0 7px;
+}
+
+.bedroom-process-item p {
+  color: #999999;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  margin: 0;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.bedroom-cta {
+  min-height: 450px;
+
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.72),
+      rgba(0, 0, 0, 0.72)
+    ),
+    url("https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=1800&q=90");
+
+  background-size: cover;
+
+  background-position: center;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  padding: 70px 20px;
+}
+
+.bedroom-cta-content {
+  max-width: 800px;
+}
+
+.bedroom-cta-content > p:first-child {
+  color: #c58a68;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 3px;
+}
+
+.bedroom-cta-content h2 {
+  font-size: 48px;
+
+  line-height: 1.2;
+
+  margin: 20px 0;
+}
+
+.bedroom-cta-content h2 span {
+  color: #c58a68;
+}
+
+.bedroom-cta-content > p {
+  color: #dddddd;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+.bedroom-cta-btn {
+  display: inline-block;
+
+  margin-top: 20px;
+
+  padding: 15px 32px;
+
+  background: #c58a68;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.bedroom-cta-btn:hover {
+  background: #ffffff;
+
+  color: #222222;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 992px) {
+
+  .bedroom-hero-content h1 {
+    font-size: 55px;
+  }
+
+  .bedroom-intro {
+    gap: 45px;
+  }
+
+  .bedroom-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bedroom-styles-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bedroom-process-content {
+    padding: 70px 6%;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .bedroom-hero {
+    min-height: 540px;
+  }
+
+  .bedroom-hero-content {
+    text-align: center;
+  }
+
+  .bedroom-hero-content h1 {
+    font-size: 42px;
+  }
+
+  .bedroom-hero-text {
+    font-size: 16px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .bedroom-intro {
+    grid-template-columns: 1fr;
+
+    padding: 80px 6%;
+
+    gap: 60px;
+  }
+
+  .bedroom-intro-image img {
+    height: 400px;
+  }
+
+  .bedroom-experience-box {
+    right: -10px;
+  }
+
+  .bedroom-intro-content h2,
+  .bedroom-section-heading h2 {
+    font-size: 35px;
+  }
+
+  .bedroom-check-list {
+    grid-template-columns: 1fr;
+  }
+
+  .bedroom-features-grid,
+  .bedroom-styles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bedroom-process-section {
+    grid-template-columns: 1fr;
+  }
+
+  .bedroom-process-image {
+    min-height: 400px;
+  }
+
+  .bedroom-process-content h2 {
+    font-size: 35px;
+  }
+
+  .bedroom-cta-content h2 {
+    font-size: 36px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .bedroom-hero-content h1 {
+    font-size: 34px;
+  }
+
+  .bedroom-small-title {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+  .bedroom-intro-content h2,
+  .bedroom-section-heading h2,
+  .bedroom-process-content h2 {
+    font-size: 30px;
+  }
+
+  .bedroom-intro-image img {
+    height: 300px;
+  }
+
+  .bedroom-experience-box {
+    width: 145px;
+
+    height: 110px;
+  }
+
+  .bedroom-experience-box strong {
+    font-size: 32px;
+  }
+
+  .bedroom-style-image {
+    height: 260px;
+  }
+
+  .bedroom-cta-content h2 {
+    font-size: 30px;
+  }
+
+}
+
+/* =========================================
+   BEDROOM SERVICES
+========================================= */
+
+.bedroom-services-section {
+  padding: 110px 7%;
+  background: #faf9f6;
+}
+
+.bedroom-section-heading {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.bedroom-section-label {
+  margin-bottom: 15px;
+  color: #a27b55;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.bedroom-section-heading h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(40px, 5vw, 68px);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.bedroom-section-heading h2 span {
+  display: block;
+  color: #a27b55;
+  font-style: italic;
+}
+
+.bedroom-section-heading > p:last-child {
+  max-width: 600px;
+  margin: 25px auto 0;
+  color: #777;
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   SERVICE GRID
+========================================= */
+
+.bedroom-services-grid {
+  max-width: 1400px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.bedroom-service-card {
+  background: #fff;
+  border: 1px solid #ebe6df;
+  overflow: hidden;
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.bedroom-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.bedroom-service-image {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+}
+
+.bedroom-service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  display: block;
+
+  transition: transform 0.7s ease;
+}
+
+.bedroom-service-card:hover
+.bedroom-service-image img {
+  transform: scale(1.08);
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.bedroom-service-number {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.bedroom-service-content {
+  padding: 32px;
+}
+
+.bedroom-service-category {
+  margin: 0 0 12px;
+
+  color: #a27b55;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.bedroom-service-content h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 32px;
+  font-weight: 400;
+
+  line-height: 1.2;
+}
+
+.bedroom-service-content h4 {
+  margin: 10px 0 0;
+
+  color: #777;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.bedroom-service-description {
+  margin: 18px 0 0;
+
+  color: #666;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.bedroom-service-footer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  margin-top: 25px;
+}
+
+.bedroom-service-footer span:first-child {
+  width: 55px;
+  height: 1px;
+
+  background: #a27b55;
+
+  transition: width 0.4s ease;
+}
+
+.bedroom-service-card:hover
+.bedroom-service-footer span:first-child {
+  width: 90px;
+}
+
+.bedroom-service-arrow {
+  color: #a27b55;
+  font-size: 22px;
+
+  transition: transform 0.3s ease;
+}
+
+.bedroom-service-card:hover
+.bedroom-service-arrow {
+  transform: translateX(8px);
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.bedroom-loading {
+  min-height: 250px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #777;
+}
+
+.bedroom-spinner {
+  width: 45px;
+  height: 45px;
+
+  margin-bottom: 20px;
+
+  border: 3px solid #e6dfd7;
+  border-top-color: #a27b55;
+
+  border-radius: 50%;
+
+  animation: bedroomSpin 0.9s linear infinite;
+}
+
+@keyframes bedroomSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================
+   ERROR
+========================================= */
+
+.bedroom-error {
+  padding: 60px 20px;
+
+  text-align: center;
+
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+.bedroom-error p {
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.bedroom-error button {
+  padding: 12px 25px;
+
+  border: none;
+
+  background: #222;
+  color: #fff;
+
+  cursor: pointer;
+}
+
+.bedroom-error button:hover {
+  background: #a27b55;
+}
+
+
+/* =========================================
+   NO SERVICES
+========================================= */
+
+.bedroom-no-services {
+  padding: 80px 20px;
+
+  text-align: center;
+
+  background: #fff;
+  border: 1px solid #eee;
+}
+
+.bedroom-no-services h3 {
+  margin: 0 0 10px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.bedroom-no-services p {
+  margin: 0;
+  color: #777;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  .bedroom-services-section {
+    padding: 80px 5%;
+  }
+
+  .bedroom-services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bedroom-service-image {
+    height: 420px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .bedroom-services-section {
+    padding: 65px 20px;
+  }
+
+  .bedroom-section-heading {
+    margin-bottom: 40px;
+  }
+
+  .bedroom-section-heading h2 {
+    font-size: 42px;
+  }
+
+  .bedroom-service-image {
+    height: 280px;
+  }
+
+  .bedroom-service-content {
+    padding: 25px 22px;
+  }
+
+  .bedroom-service-content h3 {
+    font-size: 27px;
+  }
+
+}
