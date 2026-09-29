@@ -37,7 +37,8 @@ app.use("/api/v1/services",serviceRouter);
 app.use("/api/v1/consultation",consultationRouter);
 app.use("/api/v1/header-menu", headerMenuRouter);
 
-const PORT=process.env.PORT;
+// const PORT=process.env.PORT;
+const PORT = process.env.PORT || 9000;
 const MONGOURL=process.env.MONGOURL;
 
 
@@ -49,8 +50,12 @@ mongoose.connect(MONGOURL)
    res.send("Backend API is running successfully 🚀");
 });
         
-app.listen(PORT,()=>{
-            console.log(`server is running on portion : ${PORT}`)
-        })
+// app.listen(PORT,()=>{
+//             console.log(`server is running on portion : ${PORT}`)
+//         })
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
+});
     })
     .catch((error)=>console.log(error))
