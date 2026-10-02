@@ -50,6 +50,9 @@ import AdminContacts from './components/Admin/AdminContacts.jsx';
 import A_Services from './components/Admin/A_Services.jsx';
 import A_Bookings from './components/Admin/A_Bookings.jsx';
 import A_HeaderMenu from './components/Admin/A_HeaderMenu.jsx';
+import A_About from './components/Admin/A_About.jsx';
+import A_AddAbout from './components/Admin/A_AddAbout.jsx';
+import A_EditAbout from './components/Admin/A_EditAbout.jsx';
 
 import A_Addevent from './components/Admin/A_Addevent.jsx';
 import AddProject from './components/Admin/AddProject.jsx';
@@ -123,7 +126,9 @@ function AppContent() {
         <Route path="/admin/categories/edit/:id" element={<EditCategory/>}/>
         <Route path="/admin/services/add" element={<A_AddServices/>}/>
         <Route path="/admin/services/edit/:id" element={<A_EditService/>}/>
-         
+        <Route path="/admin/about/add" element={<A_AddAbout />}/>
+        <Route path="/admin/about/edit/:id" element={<A_EditAbout />}/>
+
          <Route  element={<AdminProtectedRoute/>}>
           <Route path="/admin" element={<AdminLayout />}>
             <Route path="dashboard" element={<AdminDashboard />}/>
@@ -135,6 +140,7 @@ function AppContent() {
             <Route path="contacts" element={<AdminContacts/>}/>
             <Route path="bookings" element={<A_Bookings/>}/>
             <Route path="header_menu" element={<A_HeaderMenu/>}/>
+            <Route path="about" element={<A_About/>}/>
         </Route>
         </Route>
      

@@ -13,6 +13,7 @@ import {
   FaTimes,
   FaUserCircle,
   FaConciergeBell,
+  FaInfoCircle,
 } from "react-icons/fa";
 
 import "./AdminLayout.css";
@@ -233,6 +234,24 @@ const AdminLayout = () => {
                   Services
                 </span>
               </Link>
+
+              {/* About */}
+
+<Link
+  to="/admin/about"
+  className={
+    isActive("/admin/about")
+      ? "admin-nav-link active"
+      : "admin-nav-link"
+  }
+  onClick={() => setSidebarOpen(false)}
+>
+  <FaInfoCircle />
+
+  <span>
+    About
+  </span>
+</Link>
            {/* Categories */}
 
           <Link

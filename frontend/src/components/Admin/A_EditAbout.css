@@ -1,0 +1,477 @@
+/* ==========================================
+   EDIT ABOUT PAGE
+========================================== */
+
+.about-admin-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  background: #f7f7f8;
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.about-admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.about-admin-header h1 {
+  margin: 0;
+  color: #222;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.about-admin-header button {
+  min-width: 90px;
+  padding: 11px 22px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #222;
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.about-admin-header button:hover {
+  background: #444;
+  transform: translateY(-1px);
+}
+
+
+/* ==========================================
+   FORM
+========================================== */
+
+.about-admin-form {
+  width: 100%;
+  max-width: 1000px;
+
+  margin: 0 auto;
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  background: #fff;
+
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+/* ==========================================
+   FORM GROUP
+========================================== */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  margin-bottom: 22px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+
+  color: #333;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* ==========================================
+   INPUT / TEXTAREA / SELECT
+========================================== */
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px 14px;
+
+  border: 1px solid #d9d9d9;
+  border-radius: 7px;
+
+  background: #fff;
+  color: #222;
+
+  font-family: inherit;
+  font-size: 14px;
+
+  outline: none;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* ==========================================
+   INPUT
+========================================== */
+
+.form-group input[type="text"],
+.form-group input:not([type]) {
+  height: 46px;
+}
+
+
+/* ==========================================
+   TEXTAREA
+========================================== */
+
+.form-group textarea {
+  min-height: 160px;
+
+  resize: vertical;
+
+  line-height: 1.6;
+}
+
+
+/* ==========================================
+   SELECT
+========================================== */
+
+.form-group select {
+  height: 46px;
+
+  cursor: pointer;
+}
+
+
+/* ==========================================
+   PLACEHOLDER
+========================================== */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999;
+}
+
+
+/* ==========================================
+   FOCUS
+========================================== */
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #222;
+
+  box-shadow:
+    0 0 0 3px rgba(34, 34, 34, 0.08);
+}
+
+
+/* ==========================================
+   FORM ROW
+========================================== */
+
+.form-row {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+
+/* ==========================================
+   FILE INPUT
+========================================== */
+
+.form-group input[type="file"] {
+  height: auto;
+
+  padding: 10px;
+
+  background: #fafafa;
+
+  cursor: pointer;
+}
+
+.form-group input[type="file"]::file-selector-button {
+  margin-right: 12px;
+
+  padding: 8px 14px;
+
+  border: none;
+  border-radius: 5px;
+
+  background: #222;
+  color: #fff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background 0.3s ease;
+}
+
+.form-group input[type="file"]::file-selector-button:hover {
+  background: #444;
+}
+
+
+/* ==========================================
+   IMAGE PREVIEW
+========================================== */
+
+.image-preview {
+  width: 100%;
+
+  margin: 5px 0 25px;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  background: #fafafa;
+
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+
+  text-align: center;
+}
+
+.image-preview::before {
+  content: "Current / New Image";
+
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #666;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.image-preview img {
+  display: block;
+
+  width: 100%;
+  max-width: 450px;
+  max-height: 320px;
+
+  margin: 0 auto;
+
+  object-fit: cover;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==========================================
+   SUBMIT BUTTON
+========================================== */
+
+.submit-btn {
+  width: 100%;
+
+  height: 48px;
+
+  margin-top: 5px;
+
+  border: none;
+  border-radius: 7px;
+
+  background: #222;
+  color: #fff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background: #000;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  background: #999;
+
+  cursor: not-allowed;
+
+  opacity: 0.8;
+}
+
+
+/* ==========================================
+   LOADING
+========================================== */
+
+.loading {
+  min-height: 300px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #555;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+  .about-admin-page {
+    padding: 25px 20px;
+  }
+
+  .about-admin-form {
+    padding: 25px;
+  }
+
+  .form-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+  .about-admin-page {
+    padding: 18px 14px;
+  }
+
+  .about-admin-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    margin-bottom: 20px;
+  }
+
+  .about-admin-header h1 {
+    font-size: 25px;
+  }
+
+  .about-admin-header button {
+    width: 100%;
+  }
+
+  .about-admin-form {
+    padding: 20px 16px;
+
+    border-radius: 9px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+
+    gap: 0;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input:not([type]) {
+    height: 44px;
+  }
+
+  .form-group textarea {
+    min-height: 130px;
+  }
+
+  .image-preview {
+    padding: 12px;
+  }
+
+  .image-preview img {
+    max-height: 230px;
+  }
+
+  .submit-btn {
+    height: 46px;
+  }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 400px) {
+
+  .about-admin-page {
+    padding: 15px 10px;
+  }
+
+  .about-admin-form {
+    padding: 16px 12px;
+  }
+
+  .about-admin-header h1 {
+    font-size: 22px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+  }
+}

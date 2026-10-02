@@ -1,225 +1,334 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "./About.css";
 
+const API_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:9000/api/v1";
+
+/* =========================================================
+   STATIC SLIDER DATA
+   This data does NOT come from the database.
+========================================================= */
+
+const sliderData = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=90",
+    title: "Design Your Dream Space",
+    text: "Beautiful interiors created with creativity and purpose.",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1800&q=90",
+    title: "Elegant. Modern. Timeless.",
+    text: "We create spaces that feel as good as they look.",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=90",
+    title: "Make Your Space Special",
+    text: "Thoughtful design made especially for you.",
+  },
+];
+
+/* =========================================================
+   IMAGE URL
+========================================================= */
+
+const getImageUrl = (image) => {
+  if (!image || typeof image !== "string") {
+    return sliderData[0].image;
+  }
+
+  const cleanImage = image.trim();
+
+  if (
+    cleanImage.startsWith("http://") ||
+    cleanImage.startsWith("https://")
+  ) {
+    return cleanImage;
+  }
+
+  const backendURL = API_URL.replace(/\/api\/v1\/?$/, "");
+
+  if (cleanImage.startsWith("/")) {
+    return `${backendURL}${cleanImage}`;
+  }
+
+  return `${backendURL}/${cleanImage}`;
+};
+
+/* =========================================================
+   ABOUT COMPONENT
+========================================================= */
+
 const About = () => {
+  const [about, setAbout] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [slide, setSlide] = useState(0);
+
+  /* =======================================================
+     FETCH DYNAMIC ABOUT DATA
+  ======================================================= */
+
+  const fetchAbout = async () => {
+    try {
+      setLoading(true);
+
+      const response = await axios.get(
+        `${API_URL}/about/featch`
+      );
+
+      console.log("ABOUT DATA:", response.data);
+
+      if (
+        response.data?.success &&
+        Array.isArray(response.data.data)
+      ) {
+        setAbout(response.data.data);
+      } else {
+        setAbout([]);
+      }
+    } catch (error) {
+      console.error("About Fetch Error:", error);
+      setAbout([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchAbout();
+  }, []);
+
+  /* =======================================================
+     STATIC SLIDER AUTO PLAY
+  ======================================================= */
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlide((prev) => (prev + 1) % sliderData.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => {
+    setSlide((prev) => (prev + 1) % sliderData.length);
+  };
+
+  const previousSlide = () => {
+    setSlide((prev) =>
+      prev === 0 ? sliderData.length - 1 : prev - 1
+    );
+  };
+
+  /* =======================================================
+     UI
+  ======================================================= */
+
   return (
-    <div className="about-page">
+    <main className="about-page">
 
-      {/* ================= HERO ================= */}
-      <section className="about-hero">
-        <div className="about-hero-overlay">
-          <div className="about-hero-content">
-            <p>ABOUT US</p>
-            <h1>We Create Spaces That Inspire</h1>
-            <span>
-              Beautiful design, thoughtful details, and spaces made for you.
-            </span>
+      {/* =================================================
+          STATIC HERO SLIDER
+      ================================================= */}
+
+      <section className="about-slider">
+
+        {sliderData.map((item, index) => (
+          <div
+            key={index}
+            className={`about-slide ${
+              slide === index ? "active" : ""
+            }`}
+            style={{
+              backgroundImage: `url("${item.image}")`,
+            }}
+          >
+            <div className="slider-overlay"></div>
+
+            <div className="slider-content">
+              <span>ABOUT US</span>
+
+              <h1>{item.title}</h1>
+
+              <p>{item.text}</p>
+
+              <Link to="/contact">
+                Contact Us
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        ))}
 
-      {/* ================= INTRO ================= */}
-      <section className="about-intro">
+        {/* Previous */}
+        <button
+          type="button"
+          className="slider-arrow prev"
+          onClick={previousSlide}
+          aria-label="Previous slide"
+        >
+          ❮
+        </button>
 
-        <div className="about-intro-image">
-          <img
-            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85"
-            alt="Modern interior"
-          />
-        </div>
+        {/* Next */}
+        <button
+          type="button"
+          className="slider-arrow next"
+          onClick={nextSlide}
+          aria-label="Next slide"
+        >
+          ❯
+        </button>
 
-        <div className="about-intro-content">
-          <p className="about-label">WHO WE ARE</p>
-
-          <h2>
-            Designing Beautiful
-            <span> Spaces With Purpose</span>
-          </h2>
-
-          <p>
-            We believe that great design is more than just beautiful
-            furniture and attractive colors. It is about creating spaces
-            that feel comfortable, functional, and personal.
-          </p>
-
-          <p>
-            Our team combines creativity, modern design principles, and
-            attention to detail to create interiors that reflect the unique
-            personality and lifestyle of every client.
-          </p>
-
-          <Link to="/contact" className="about-main-btn">
-            Let's Work Together
-          </Link>
+        {/* Dots */}
+        <div className="slider-dots">
+          {sliderData.map((_, index) => (
+            <button
+              type="button"
+              key={index}
+              className={slide === index ? "active" : ""}
+              onClick={() => setSlide(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            ></button>
+          ))}
         </div>
 
       </section>
 
-      {/* ================= STATS ================= */}
-      <section className="about-stats">
+      {/* =================================================
+          DYNAMIC ABOUT SECTION
+      ================================================= */}
 
-        <div className="about-stat">
-          <h3>10+</h3>
-          <p>Years Experience</p>
-        </div>
+     <section className="about-section"> 
+      <div className="section-heading"> 
+        <span>WHO WE ARE</span> 
+        <h2>Our Story</h2> 
+        <p> Discover our experience, creativity and passion for
+           creating beautiful interior spaces. </p> 
+           </div> 
+           {loading ? ( 
+            <div className="about-message"> 
+            Loading About Us... </div> ) : 
+            about.length === 0 ?
+             ( <div className="about-message"> 
+             About information is not available. </div> ) :
+              ( <div className="about-row"> 
+              {about.map((item, index) => 
+                ( 
+                <div className="about-card" 
+                key={item._id || index} >
+                   {/* Image */} 
+                   <div className="about-card-image"> 
+                    <img src={getImageUrl(item.image)} 
+                    alt={item.title || "About Us"} 
+                    onError={(event) => { 
+                      event.currentTarget.onerror = null;
+                       event.currentTarget.src = sliderData
+                       [index % sliderData.length].image; 
+                       }} />
+                        </div>
+                         {/* Content */} 
+                         <div className="about-card-content"> 
+                          <span className="about-card-number">
+                             {String(index + 1).padStart(2, "0")}
+                              </span> 
+                              <span className="about-label">
+                                 ABOUT US 
+                                 </span> 
+                                 <h2> 
+                                  {item.title || "Our Interior Design"}
+                                   </h2>
+                                    <h3> 
+                                      {item.subtitle || ""} 
+                                      </h3>
+                                       <p> 
+                                        {item.description || ""}
+                                         </p> 
+                                    <Link to="/contact" className="about-button" > 
+                                    Let's Work Together 
+                                    </Link> 
+                                    </div> 
+                                    </div> 
+                                  ))} 
+                                  </div> 
+                                )} 
+                                </section>
 
-        <div className="about-stat">
-          <h3>250+</h3>
-          <p>Projects Completed</p>
-        </div>
+      {/* =================================================
+          DYNAMIC STATISTICS
+          Uses first About record
+      ================================================= */}
 
-        <div className="about-stat">
-          <h3>180+</h3>
-          <p>Happy Clients</p>
-        </div>
+      {!loading && about.length > 0 && (
+        <section className="stats-section">
 
-        <div className="about-stat">
-          <h3>25+</h3>
-          <p>Design Awards</p>
-        </div>
+          <div className="stats-container">
 
-      </section>
+            <div className="stat-card">
+              <span className="stat-number">
+                {about[0]?.experience || "0"}
+              </span>
 
-      {/* ================= MISSION ================= */}
-      <section className="mission-section">
-
-        <div className="mission-content">
-          <p className="about-label">OUR MISSION</p>
-
-          <h2>
-            Turning Your Ideas Into
-            <span> Beautiful Reality</span>
-          </h2>
-
-          <p>
-            Our mission is to transform ordinary spaces into extraordinary
-            environments. We listen carefully to our clients, understand
-            their needs, and develop designs that combine style, comfort,
-            and functionality.
-          </p>
-
-          <div className="mission-points">
-
-            <div className="mission-point">
-              <div className="mission-number">01</div>
-              <div>
-                <h3>Creative Design</h3>
-                <p>
-                  Unique concepts created specifically for your space.
-                </p>
-              </div>
+              <span className="stat-title">
+                Years Experience
+              </span>
             </div>
 
-            <div className="mission-point">
-              <div className="mission-number">02</div>
-              <div>
-                <h3>Quality Materials</h3>
-                <p>
-                  Carefully selected materials for lasting beauty.
-                </p>
-              </div>
+            <div className="stat-card">
+              <span className="stat-number">
+                {about[0]?.projects || "0"}
+              </span>
+
+              <span className="stat-title">
+                Projects Completed
+              </span>
             </div>
 
-            <div className="mission-point">
-              <div className="mission-number">03</div>
-              <div>
-                <h3>Client Focused</h3>
-                <p>
-                  Your vision and satisfaction always come first.
-                </p>
-              </div>
+            <div className="stat-card">
+              <span className="stat-number">
+                {about[0]?.clients || "0"}
+              </span>
+
+              <span className="stat-title">
+                Happy Clients
+              </span>
             </div>
 
           </div>
-        </div>
 
-        <div className="mission-image">
-          <img
-            src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=85"
-            alt="Interior design"
-          />
-        </div>
+        </section>
+      )}
 
-      </section>
+      {/* =================================================
+          CTA
+      ================================================= */}
 
-      {/* ================= VALUES ================= */}
-      <section className="values-section">
-
-        <div className="values-heading">
-          <p className="about-label">OUR VALUES</p>
-
-          <h2>
-            What Makes Us
-            <span> Different</span>
-          </h2>
-        </div>
-
-        <div className="values-grid">
-
-          <div className="value-card">
-            <div className="value-icon">✦</div>
-            <h3>Creativity</h3>
-            <p>
-              We bring fresh ideas and innovative solutions to every project.
-            </p>
-          </div>
-
-          <div className="value-card">
-            <div className="value-icon">◆</div>
-            <h3>Quality</h3>
-            <p>
-              We never compromise on quality, craftsmanship, or attention
-              to detail.
-            </p>
-          </div>
-
-          <div className="value-card">
-            <div className="value-icon">♡</div>
-            <h3>Passion</h3>
-            <p>
-              We love what we do and put our passion into every design.
-            </p>
-          </div>
-
-          <div className="value-card">
-            <div className="value-icon">✓</div>
-            <h3>Trust</h3>
-            <p>
-              We build long-term relationships through honesty and
-              transparent communication.
-            </p>
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* ================= CTA ================= */}
       <section className="about-cta">
 
-        <div className="about-cta-content">
-          <p>READY TO START?</p>
+        <span>START YOUR PROJECT</span>
 
-          <h2>
-            Let's Create Something
-            <span> Beautiful Together</span>
-          </h2>
+        <h2>
+          Let's Create Something Beautiful
+        </h2>
 
-          <p>
-            Have an idea for your space? We would love to hear about it.
-          </p>
+        <p>
+          Have an idea for your dream space?
+          Let's bring it to life.
+        </p>
 
-          <Link to="/contact" className="about-cta-btn">
-            Contact Us
-          </Link>
-        </div>
+        <Link to="/contact">
+          Contact Us
+        </Link>
 
       </section>
 
-    </div>
+    </main>
   );
 };
 
 export default About;
+

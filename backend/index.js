@@ -17,6 +17,7 @@ import contactRouter from "./Router/ContactRouter.js";
 import serviceRouter from "./Router/ServiseRouter.js";
 import consultationRouter from "./Router/ConsultationRouter.js";
 import headerMenuRouter from "./Router/HeaderMenuRouter.js";
+import aboutRouter from "./Router/AboutRouter.js";
 
 const app=express();
 
@@ -36,6 +37,7 @@ app.use("/api/v1/contact",contactRouter);
 app.use("/api/v1/services",serviceRouter);
 app.use("/api/v1/consultation",consultationRouter);
 app.use("/api/v1/header-menu", headerMenuRouter);
+app.use("/api/v1/about",aboutRouter);
 
 // const PORT=process.env.PORT;
 const PORT = process.env.PORT || 9000;

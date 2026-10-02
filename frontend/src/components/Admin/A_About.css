@@ -1,0 +1,113 @@
+.admin-about {
+  padding: 30px;
+  background: #f7f7f7;
+  min-height: 100vh;
+}
+
+.admin-about-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.admin-about-header h1 {
+  margin: 0;
+  font-size: 30px;
+  color: #222;
+}
+
+.admin-about-header p {
+  color: #777;
+  margin-top: 6px;
+}
+
+.admin-about-header button {
+  background: #111;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.about-table-wrapper {
+  background: white;
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.about-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1000px;
+}
+
+.about-table th {
+  background: #111;
+  color: white;
+  padding: 15px;
+  text-align: left;
+}
+
+.about-table td {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.about-thumb {
+  width: 90px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.status.active {
+  background: #dff7e7;
+  color: #16803a;
+}
+
+.status.inactive {
+  background: #f5dddd;
+  color: #b42323;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #222;
+  color: white;
+}
+
+.delete-btn {
+  background: #d93025;
+  color: white;
+}
+
+.loading,
+.empty {
+  text-align: center;
+  padding: 50px;
+  color: #777;
+}
