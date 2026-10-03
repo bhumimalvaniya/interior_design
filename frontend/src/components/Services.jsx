@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Services.css";
 
-const API_URL = "http://localhost:9000";
+// const API_URL = "http://localhost:9000";
+
+const API_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:9000/api/v1";
+
 
 const Services = () => {
   const [servicesData, setServicesData] = useState([]);
