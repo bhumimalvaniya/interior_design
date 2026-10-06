@@ -282,11 +282,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Gallery.css";
+import API_URL from "../config/api";
 
 // const API_URL = "http://localhost:9000";
 
-const API_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:9000/api/v1";
+// const API_URL = import.meta.env.VITE_API_URL || "http://localhost:9000/api/v1";
 
 const Gallery = () => {
   
@@ -304,7 +304,7 @@ const Gallery = () => {
     setLoading(true);
 
     const response = await axios.get(
-      "${API_URL}/api/v1/gallary/featch"
+      `${API_URL}/api/v1/gallary/featch`
     );
 
     console.log("Gallery Response:", response.data);

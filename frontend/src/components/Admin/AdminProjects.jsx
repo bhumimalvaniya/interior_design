@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./AdminProjects.css";
+import API_URL from "../../config/api";
 
 const AdminProjects = () => {
   // ==========================================
@@ -36,7 +37,7 @@ const AdminProjects = () => {
   // API URL
   // ==========================================
 
-  const API_URL = "http://localhost:9000/api/v1/project";
+  // const API_URL = "http://localhost:9000/api/v1/project";
 
   // ==========================================
   // FETCH PROJECTS
@@ -47,7 +48,7 @@ const AdminProjects = () => {
       setLoading(true);
 
       const response = await axios.get(
-        `${API_URL}/fetch`
+        `${API_URL}/project/fetch`
       );
 
       console.log("Projects:", response.data);
@@ -73,7 +74,7 @@ const AdminProjects = () => {
   const fetchStats = async () => {
     try {
       const response = await axios.get(
-        `${API_URL}/stats`
+        `${API_URL}/project/stats`
       );
 
       console.log(
@@ -107,7 +108,7 @@ const AdminProjects = () => {
 
     try {
       const response = await axios.delete(
-        `${API_URL}/delete/${id}`
+        `${API_URL}/project/delete/${id}`
       );
 
       alert(

@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Office.css";
+import API_URL from "../../config/api";
 
-const API_URL = "http://localhost:9000/api/v1";
+// const API_URL = "http://localhost:9000/api/v1";
 
 const DEFAULT_IMAGE =
   "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85";

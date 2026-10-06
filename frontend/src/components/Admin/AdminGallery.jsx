@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./AdminGallery.css";
+import API_URL from "../../config/api";
 
 const AdminGallery = () => {
   // =========================================
@@ -22,7 +23,7 @@ const AdminGallery = () => {
   // API URL
   // =========================================
 
-  const API_URL = "http://localhost:9000/api/v1/gallary";
+  // const API_URL = "http://localhost:9000/api/v1/gallary";
 
   // =========================================
   // FETCH GALLERY DATA
@@ -32,7 +33,7 @@ const AdminGallery = () => {
     try {
       setLoading(true);
 
-      const response = await axios.get(`${API_URL}/featch`);
+      const response = await axios.get(`${API_URL}/gallary/featch`);
 
       console.log("Gallery API Response:", response.data);
 
@@ -170,7 +171,7 @@ const AdminGallery = () => {
 
     try {
       const response = await axios.delete(
-        `${API_URL}/delete/${id}`
+        `${API_URL}/gallary/delete/${id}`
       );
 
       console.log("Delete Response:", response.data);

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./A_Addevent.css";
+import API_URL from "../../config/api";
 
 const A_Addevent = () => {
   const navigate = useNavigate();
@@ -33,7 +34,8 @@ const A_Addevent = () => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:9000/api/v1/category/featch"
+          // "http://localhost:9000/api/v1/category/featch"
+          `${API_URL}/category/featch`
         );
 
         if (response.data.success) {
@@ -171,7 +173,8 @@ const A_Addevent = () => {
       setSubmitting(true);
 
       const response = await axios.post(
-        "http://localhost:9000/api/v1/event/addevent",
+        // "http://localhost:9000/api/v1/event/addevent",
+        `${API_URL}/event/addevent`,
         data
       );
 

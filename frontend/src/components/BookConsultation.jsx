@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./BookConsultation.css";
+import API_URL from "../config/api";
 
-const API_URL = "http://localhost:9000/api/v1";
+// const API_URL = "http://localhost:9000/api/v1";
+
 
 const BookConsultation = () => {
   const [formData, setFormData] = useState({

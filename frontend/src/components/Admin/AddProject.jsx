@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./AddProject.css";
+import API_URL from "../../config/api";
 
 const AddProject = () => {
   const navigate = useNavigate();
@@ -83,7 +84,8 @@ const AddProject = () => {
       // ==========================================
 
       const response = await axios.post(
-        "http://localhost:9000/api/v1/project/add",
+        // "http://localhost:9000/api/v1/project/add",
+        `${API_URL}/project/add`,
         formData,
         {
           headers: {

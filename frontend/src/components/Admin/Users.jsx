@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Users.css";
 
-const BACKEND_URL = "http://localhost:9000";
-const API_URL = `${BACKEND_URL}/api/v1/cust`;
+// const BACKEND_URL = "http://localhost:9000";
+// const API_URL = `${BACKEND_URL}/api/v1/cust`;
 
 const Users = () => {
   const [search, setSearch] = useState("");
@@ -48,7 +48,7 @@ const Users = () => {
     try {
       setLoading(true);
 
-      const response = await axios.get(`${API_URL}/featch`);
+      const response = await axios.get(`${API_URL}/cust/featch`);
 
       console.log("Users API response:", response.data);
 
@@ -212,7 +212,7 @@ const Users = () => {
   const toggleStatus = async (id) => {
     try {
       const response = await axios.put(
-        `${API_URL}/toggle/${id}`
+        `${API_URL}/cust/toggle/${id}`
       );
 
       console.log("Toggle response:", response.data);
@@ -247,7 +247,7 @@ const Users = () => {
 
     try {
       const response = await axios.delete(
-        `${API_URL}/delete/${id}`
+        `${API_URL}/cust/delete/${id}`
       );
 
       console.log("Delete response:", response.data);

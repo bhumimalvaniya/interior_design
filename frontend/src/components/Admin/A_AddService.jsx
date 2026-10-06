@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./A_AddServices.css";
+import API_URL from "../../config/api";
 
 const A_AddServices = () => {
   const navigate = useNavigate();
 
-  const API_URL = "http://localhost:9000/api/v1";
+  // const API_URL = "http://localhost:9000/api/v1";
 
   const [formData, setFormData] = useState({
     section: "",

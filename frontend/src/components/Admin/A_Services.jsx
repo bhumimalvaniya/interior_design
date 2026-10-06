@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./A_Services.css";
+import API_URL from "../../config/api";
 
-const API_URL = "http://localhost:9000";
+// const API_URL = "http://localhost:9000";
 
 const A_Services = () => {
   const [services, setServices] = useState([]);
@@ -26,7 +27,8 @@ const A_Services = () => {
       setError("");
 
       const response = await axios.get(
-        `${API_URL}/api/v1/services/featch`
+        // `${API_URL}/api/v1/services/featch`
+        `${API_URL}/services/featch`
       );
 
       console.log("Services API Response:", response.data);
@@ -106,7 +108,8 @@ const A_Services = () => {
 
     try {
       const response = await axios.delete(
-        `${API_URL}/api/v1/services/delete/${id}`
+        // `${API_URL}/api/v1/services/delete/${id}`
+        `${API_URL}/services/delete/${id}`
       );
 
       console.log("Delete Response:", response.data);

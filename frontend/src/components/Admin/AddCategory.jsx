@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./AddCategory.css";
+import API_URL from "../../config/api";
 
 const AddCategory = () => {
   const navigate = useNavigate();
@@ -10,8 +11,7 @@ const AddCategory = () => {
   // API URL
   // =========================================
 
-  const API_URL =
-    "http://localhost:9000/api/v1/category";
+  // const API_URL = "http://localhost:9000/api/v1/category";
 
   // =========================================
   // FORM DATA
@@ -52,7 +52,7 @@ const AddCategory = () => {
       console.log("Sending category data:", formData);
 
       const response = await axios.post(
-        `${API_URL}/add`,
+        `${API_URL}/category/add`,
         formData
       );
 

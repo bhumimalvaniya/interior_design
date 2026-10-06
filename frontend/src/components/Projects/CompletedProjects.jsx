@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./CompletedProjects.css";
+import API_URL from "../../config/api";
 
-const API_URL = "http://localhost:9000/api/v1";
-const BACKEND_URL = "http://localhost:9000";
+// const API_URL = "http://localhost:9000/api/v1";
+// const BACKEND_URL = "http://localhost:9000";
 
 const DEFAULT_IMAGE =
   "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80";

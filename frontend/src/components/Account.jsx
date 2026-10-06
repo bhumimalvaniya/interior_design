@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Account.css";
+import API_URL from "../config/api";
 
 const Account = () => {
   const navigate = useNavigate();
@@ -106,7 +107,7 @@ const Account = () => {
     user.address ||
     "Not Added";
 
-    const API_URL = "http://localhost:9000";
+    // const API_URL = "http://localhost:9000";
  const getAvatarUrl = (user) => {
   const avatar =
     user?.avatar ||

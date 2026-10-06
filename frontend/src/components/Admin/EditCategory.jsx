@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import "./EditCategory.css";
+import API_URL from "../../config/api";
 
 const EditCategory = () => {
   const navigate = useNavigate();
@@ -11,8 +12,7 @@ const EditCategory = () => {
   // API URL
   // =========================================
 
-  const API_URL =
-    "http://localhost:9000/api/v1/category";
+  // const API_URL = "http://localhost:9000/api/v1/category";
 
   // =========================================
   // FORM DATA
@@ -53,7 +53,7 @@ const EditCategory = () => {
       );
 
       const response = await axios.get(
-        `${API_URL}/single/${id}`
+        `${API_URL}/category/single/${id}`
       );
 
       console.log(
@@ -137,7 +137,7 @@ const EditCategory = () => {
       );
 
       const response = await axios.put(
-        `${API_URL}/update/${id}`,
+        `${API_URL}/category/update/${id}`,
         formData
       );
 

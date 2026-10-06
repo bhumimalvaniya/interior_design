@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./AddGallery.css";
+import API_URL from "../../config/api";
 
 const AddGallery = () => {
   const navigate = useNavigate();
@@ -31,8 +32,7 @@ const AddGallery = () => {
   // API URL
   // =========================================
 
-  const API_URL =
-    "http://localhost:9000/api/v1/gallary";
+  // const API_URL ="http://localhost:9000/api/v1/gallary";
 
 
   // =========================================
@@ -184,7 +184,7 @@ const AddGallery = () => {
       // =========================================
 
       const response = await axios.post(
-        `${API_URL}/add`,
+        `${API_URL}/gallary/add`,
         data,
         {
           headers: {

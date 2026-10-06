@@ -7,7 +7,7 @@ import {
 import axios from "axios";
 
 import "./EditProject.css";
-
+import API_URL from "../../config/api";
 
 const EditProject = () => {
 
@@ -68,7 +68,8 @@ const EditProject = () => {
 
 
       const response = await axios.get(
-        `http://localhost:9000/api/v1/project/${id}`
+        // `http://localhost:9000/api/v1/project/${id}`
+        `${API_URL}/project/${id}`
       );
 
 
@@ -284,7 +285,8 @@ const EditProject = () => {
       const response =
         await axios.put(
 
-          `http://localhost:9000/api/v1/project/update/${id}`,
+          // `http://localhost:9000/api/v1/project/update/${id}`,
+          `${API_URL}/project/update/${id}`,
 
           formData,
 

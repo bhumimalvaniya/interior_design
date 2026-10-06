@@ -5,6 +5,7 @@ import {
 } from "react-router-dom";
 import axios from "axios";
 import "./EditGallery.css";
+import API_URL from "../../config/api";
 
 const EditGallery = () => {
   const navigate = useNavigate();
@@ -14,8 +15,7 @@ const EditGallery = () => {
   // API URL
   // =========================================
 
-  const API_URL =
-    "http://localhost:9000/api/v1/gallary";
+  // const API_URL = "http://localhost:9000/api/v1/gallary";
 
   // =========================================
   // FORM DATA
@@ -55,7 +55,7 @@ const EditGallery = () => {
       );
 
       const response = await axios.get(
-        `${API_URL}/single/${id}`
+        `${API_URL}/gallary/single/${id}`
       );
 
       console.log(
@@ -286,7 +286,7 @@ const EditGallery = () => {
 
       const response =
         await axios.put(
-          `${API_URL}/update/${id}`,
+          `${API_URL}/gallary/update/${id}`,
           data
         );
 

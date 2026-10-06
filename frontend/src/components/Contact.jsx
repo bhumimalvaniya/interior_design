@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import "./Contact.css";
 import axios from "axios";
+import API_URL from "../config/api";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -26,7 +27,8 @@ const Contact = () => {
 
   try {
     const response = await axios.post(
-      "http://localhost:9000/api/v1/contact/add",
+         `${API_URL}/contact/add`,
+      // "http://localhost:9000/api/v1/contact/add",
       formData
     );
 

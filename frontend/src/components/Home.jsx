@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Home.css";
+import API_URL from "../config/api";
 
 // ======================================================
 // API URL
@@ -12,8 +13,8 @@ import "./Home.css";
 // Live Render:
 // Set VITE_API_URL in Render environment variables
 // ======================================================
-const API_URL =
-  import.meta.env.VITE_API_URL || "http://localhost:9000/api/v1";
+
+// const API_URL = import.meta.env.VITE_API_URL || "http://localhost:9000/api/v1";
 
 // ======================================================
 // FALLBACK IMAGE

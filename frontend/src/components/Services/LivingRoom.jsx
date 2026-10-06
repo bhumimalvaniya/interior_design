@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./LivingRoom.css";
 import { Link } from "react-router-dom";
+import API_URL from "../../config/api";
 
-const API_URL = "http://localhost:9000/api/v1";
+// const API_URL = "http://localhost:9000/api/v1";
 
 const FALLBACK_IMAGE =
   "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=85";

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./AdminContacts.css";
+import API_URL from "../../config/api";
 
 const AdminContacts = () => {
   const [search, setSearch] = useState("");
@@ -18,7 +19,8 @@ const AdminContacts = () => {
       setLoading(true);
 
       const response = await axios.get(
-        "http://localhost:9000/api/v1/contact/featch"
+        // "http://localhost:9000/api/v1/contact/featch"
+        `${API_URL}/contact/featch`
       );
 
       console.log("CONTACT DATA:", response.data);
@@ -84,7 +86,8 @@ const AdminContacts = () => {
 
     try {
       const response = await axios.delete(
-        `http://localhost:9000/api/v1/contact/delete/${id}`
+        // `http://localhost:9000/api/v1/contact/delete/${id}`
+        `${API_URL}/contact/delete/${id}`
       );
 
       console.log("DELETE RESPONSE:", response.data);
@@ -124,7 +127,8 @@ const AdminContacts = () => {
     if (contact.status === "Pending") {
       try {
         const response = await axios.put(
-          `http://localhost:9000/api/v1/contact/status/${contact._id}`,
+          // `http://localhost:9000/api/v1/contact/status/${contact._id}`,
+          `${API_URL}/contact/status/${contact._id}`,
           {
             status: "Read",
           }
@@ -153,7 +157,8 @@ const AdminContacts = () => {
     // Mark as Replied
     try {
       const response = await axios.put(
-        `http://localhost:9000/api/v1/contact/status/${contact._id}`,
+        // `http://localhost:9000/api/v1/contact/status/${contact._id}`,
+        `${API_URL}/contact/status/${contact._id}`,
         {
           status: "Replied",
         }

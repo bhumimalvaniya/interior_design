@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import "./AdminForgotPassword.css";
+import API_URL from "../../config/api";
 
-const API_URL = "http://localhost:9000/api/v1/admin";
+// const API_URL = "http://localhost:9000/api/v1/admin";
 
 const AdminForgotPassword = () => {
   const navigate = useNavigate();
@@ -54,7 +55,8 @@ const AdminForgotPassword = () => {
       setLoading(true);
 
       const response = await axios.post(
-        `${API_URL}/forgot-password/send-otp`,
+        // `${API_URL}/forgot-password/send-otp`,
+        `${API_URL}/admin/forgot-password/send-otp`,
         {
           phone: phone.trim(),
         }
@@ -105,7 +107,8 @@ const AdminForgotPassword = () => {
       setLoading(true);
 
       const response = await axios.post(
-        `${API_URL}/forgot-password/verify-otp`,
+        // `${API_URL}/forgot-password/verify-otp`,
+         `${API_URL}/admin/forgot-password/verify-otp`,
         {
           phone: phone.trim(),
           otp: otp.trim(),
@@ -163,7 +166,8 @@ const AdminForgotPassword = () => {
       setLoading(true);
 
       const response = await axios.post(
-        `${API_URL}/forgot-password/reset-password`,
+        // `${API_URL}/forgot-password/reset-password`,
+         `${API_URL}/admin/forgot-password/reset-password`,
         {
           phone: phone.trim(),
           password,

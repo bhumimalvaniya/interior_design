@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import "./A_EditService.css";
+import API_URL from "../../config/api";
 
-const API_URL = "http://localhost:9000";
+// const API_URL = "http://localhost:9000";
 
 const A_EditServices = () => {
   const navigate = useNavigate();

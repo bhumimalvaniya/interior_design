@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./Commercial.css";
+import API_URL from "../../config/api";
 
-const API_URL = "http://localhost:9000/api/v1";
+// const API_URL = "http://localhost:9000/api/v1";
 
 const Commercial = () => {
   const [services, setServices] = useState([]);

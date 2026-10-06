@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./AdminCategories.css";
+import API_URL from "../../config/api";
 
 const AdminCategories = () => {
 
@@ -9,8 +10,7 @@ const AdminCategories = () => {
   // API URL
   // =========================================
 
-  const API_URL =
-    "http://localhost:9000/api/v1/category";
+  // const API_URL ="http://localhost:9000/api/v1/category";
 
 
   // =========================================
@@ -46,7 +46,7 @@ const AdminCategories = () => {
       setLoading(true);
 
       const response = await axios.get(
-        `${API_URL}/featch`
+        `${API_URL}/category/featch`
       );
 
       console.log(
@@ -250,7 +250,7 @@ const AdminCategories = () => {
 
       const response =
         await axios.delete(
-          `${API_URL}/delete/${id}`
+          `${API_URL}/category/delete/${id}`
         );
 
 

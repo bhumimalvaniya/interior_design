@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Kitchen.css";
+import API_URL from "../../config/api";
 
-const API_URL = "http://localhost:9000/api/v1";
+// const API_URL = "http://localhost:9000/api/v1";
 
 const DEFAULT_IMAGE =
   "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=85";

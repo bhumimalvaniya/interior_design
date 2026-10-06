@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./AdminDashboard.css";
+import API_URL from "../../config/api";
 
 const AdminDashboard = () => {
 
@@ -10,7 +11,7 @@ const AdminDashboard = () => {
   // API URL
   // =========================================
 
-  const API_BASE_URL = "http://localhost:9000/api/v1";
+  // const API_BASE_URL = "http://localhost:9000/api/v1";
 
 
   // =========================================
@@ -34,7 +35,8 @@ const AdminDashboard = () => {
     try {
 
       const response = await axios.get(
-        `${API_BASE_URL}/cust/featch`
+        // `${API_BASE_URL}/cust/featch`
+         `${API_URL}/cust/featch`
       );
 
       console.log("USERS:", response.data);
@@ -65,7 +67,8 @@ const AdminDashboard = () => {
     try {
 
       const response = await axios.get(
-        `${API_BASE_URL}/event/featch`
+        // `${API_BASE_URL}/event/featch`
+       `${API_URL}/event/featch`
       );
 
       console.log("EVENTS:", response.data);
@@ -96,7 +99,8 @@ const AdminDashboard = () => {
     try {
 
       const response = await axios.get(
-        `${API_BASE_URL}/event/showallbook`
+        // `${API_BASE_URL}/event/showallbook`
+         `${API_URL}/event/showallbook`
       );
 
       console.log(
@@ -130,7 +134,8 @@ const AdminDashboard = () => {
     try {
 
       const response = await axios.get(
-        `${API_BASE_URL}/consultation/featch`
+        // `${API_BASE_URL}/consultation/featch`
+        `${API_URL}/consultation/featch`
       );
 
       console.log(

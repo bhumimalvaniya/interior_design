@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
 import "./A_About.css";
+import API_URL from "../../config/api";
 
-const API_URL = "http://localhost:9000/api/v1";
-const BACKEND_URL = "http://localhost:9000";
+// const API_URL = "http://localhost:9000/api/v1";
+// const BACKEND_URL = "http://localhost:9000";
 
 // ======================================================
 // IMAGE URL HELPER
