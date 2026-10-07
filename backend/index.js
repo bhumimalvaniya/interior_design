@@ -30,50 +30,40 @@ const allowedOrigins = [
   "https://rutavinteriordesign.netlify.app",
 ];
 
-const corsOptions = {
-  origin: function (origin, callback) {
-    // Allow requests without an Origin header
-    // such as Postman/server-to-server requests.
-    if (!origin) {
-      return callback(null, true);
-    }
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow Postman/server-to-server requests
+      if (!origin) {
+        return callback(null, true);
+      }
 
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    }
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
 
-    console.log("CORS blocked origin:", origin);
+      console.log("Blocked CORS origin:", origin);
 
-    return callback(
-      new Error(`CORS blocked for origin: ${origin}`)
-    );
-  },
+      return callback(null, false);
+    },
 
-  methods: [
-    "GET",
-    "POST",
-    "PUT",
-    "PATCH",
-    "DELETE",
-    "OPTIONS",
-  ],
+    methods: [
+      "GET",
+      "POST",
+      "PUT",
+      "PATCH",
+      "DELETE",
+      "OPTIONS",
+    ],
 
-  allowedHeaders: [
-    "Content-Type",
-    "Authorization",
-  ],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+    ],
 
-  credentials: false,
-
-  optionsSuccessStatus: 204,
-};
-
-/*
-  Handle browser preflight requests.
-*/
-app.options("*", cors(corsOptions));
-
-app.use(cors(corsOptions));
+    credentials: false,
+  })
+);
 
 /* =========================================================
    BODY PARSERS
@@ -88,7 +78,7 @@ app.use(
 );
 
 /* =========================================================
-   STATIC UPLOADS
+   UPLOADS
 ========================================================= */
 
 app.use(
@@ -113,63 +103,30 @@ app.get("/", (req, res) => {
    API ROUTES
 ========================================================= */
 
-app.use(
-  "/api/v1/admin",
-  adminRouter
-);
+app.use("/api/v1/admin", adminRouter);
 
-app.use(
-  "/api/v1/cust",
-  userRouter
-);
+app.use("/api/v1/cust", userRouter);
 
-app.use(
-  "/api/v1/project",
-  projectRouter
-);
+app.use("/api/v1/project", projectRouter);
 
-app.use(
-  "/api/v1/gallary",
-  gallaryRouter
-);
+app.use("/api/v1/gallary", gallaryRouter);
 
-app.use(
-  "/api/v1/category",
-  categoryRouter
-);
+app.use("/api/v1/category", categoryRouter);
 
-app.use(
-  "/api/v1/event",
-  eventRouter
-);
+app.use("/api/v1/event", eventRouter);
 
-app.use(
-  "/api/v1/contact",
-  contactRouter
-);
+app.use("/api/v1/contact", contactRouter);
 
-app.use(
-  "/api/v1/services",
-  serviceRouter
-);
+app.use("/api/v1/services", serviceRouter);
 
-app.use(
-  "/api/v1/consultation",
-  consultationRouter
-);
+app.use("/api/v1/consultation", consultationRouter);
 
-app.use(
-  "/api/v1/header-menu",
-  headerMenuRouter
-);
+app.use("/api/v1/header-menu", headerMenuRouter);
 
-app.use(
-  "/api/v1/about",
-  aboutRouter
-);
+app.use("/api/v1/about", aboutRouter);
 
 /* =========================================================
-   404 HANDLER
+   404
 ========================================================= */
 
 app.use((req, res) => {
@@ -188,44 +145,32 @@ app.use((err, req, res, next) => {
 
   res.status(500).json({
     success: false,
-    message:
-      err.message || "Internal server error",
+    message: err.message || "Internal server error",
   });
 });
 
 /* =========================================================
-   DATABASE + SERVER
+   DATABASE
 ========================================================= */
 
 const PORT = process.env.PORT || 9000;
 const MONGOURL = process.env.MONGOURL;
 
 if (!MONGOURL) {
-  console.error(
-    "MONGOURL is missing from environment variables."
-  );
-
+  console.error("MONGOURL is missing from environment variables.");
   process.exit(1);
 }
 
 mongoose
   .connect(MONGOURL)
   .then(() => {
-    console.log(
-      "Database connected successfully"
-    );
+    console.log("Database connected successfully");
 
     app.listen(PORT, "0.0.0.0", () => {
-      console.log(
-        `Server running on port ${PORT}`
-      );
+      console.log(`Server running on port ${PORT}`);
     });
   })
   .catch((error) => {
-    console.error(
-      "Database connection error:",
-      error
-    );
-
+    console.error("Database connection error:", error);
     process.exit(1);
   });
