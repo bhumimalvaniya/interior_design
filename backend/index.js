@@ -6,7 +6,10 @@ import mongoose from "mongoose";
 import cors from "cors";
 import path from "path";
 
-// Routers
+// =========================================================
+// ROUTERS
+// =========================================================
+
 import adminRouter from "./Router/AdminRouter.js";
 import userRouter from "./Router/UserRouter.js";
 import projectRouter from "./Router/ProjectRouter.js";
@@ -19,11 +22,15 @@ import consultationRouter from "./Router/ConsultationRouter.js";
 import headerMenuRouter from "./Router/HeaderMenuRouter.js";
 import aboutRouter from "./Router/AboutRouter.js";
 
+// =========================================================
+// APP
+// =========================================================
+
 const app = express();
 
-/* =========================================================
-   CORS
-========================================================= */
+// =========================================================
+// CORS CONFIGURATION
+// =========================================================
 
 const allowedOrigins = [
   "http://localhost:5173",
@@ -33,7 +40,8 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: function (origin, callback) {
-      // Allow Postman/server-to-server requests
+      // Allow requests from Postman, Render health checks,
+      // server-to-server requests, etc.
       if (!origin) {
         return callback(null, true);
       }
@@ -42,9 +50,11 @@ app.use(
         return callback(null, true);
       }
 
-      console.log("Blocked CORS origin:", origin);
+      console.log("CORS blocked origin:", origin);
 
-      return callback(null, false);
+      return callback(
+        new Error(`CORS blocked for origin: ${origin}`)
+      );
     },
 
     methods: [
@@ -62,12 +72,14 @@ app.use(
     ],
 
     credentials: false,
+
+    optionsSuccessStatus: 204,
   })
 );
 
-/* =========================================================
-   BODY PARSERS
-========================================================= */
+// =========================================================
+// BODY PARSER
+// =========================================================
 
 app.use(express.json());
 
@@ -77,9 +89,9 @@ app.use(
   })
 );
 
-/* =========================================================
-   UPLOADS
-========================================================= */
+// =========================================================
+// STATIC UPLOADS
+// =========================================================
 
 app.use(
   "/uploads",
@@ -88,9 +100,9 @@ app.use(
   )
 );
 
-/* =========================================================
-   ROOT
-========================================================= */
+// =========================================================
+// ROOT / HEALTH CHECK
+// =========================================================
 
 app.get("/", (req, res) => {
   res.status(200).json({
@@ -99,35 +111,68 @@ app.get("/", (req, res) => {
   });
 });
 
-/* =========================================================
-   API ROUTES
-========================================================= */
+// =========================================================
+// API ROUTES
+// =========================================================
 
-app.use("/api/v1/admin", adminRouter);
+app.use(
+  "/api/v1/admin",
+  adminRouter
+);
 
-app.use("/api/v1/cust", userRouter);
+app.use(
+  "/api/v1/cust",
+  userRouter
+);
 
-app.use("/api/v1/project", projectRouter);
+app.use(
+  "/api/v1/project",
+  projectRouter
+);
 
-app.use("/api/v1/gallary", gallaryRouter);
+app.use(
+  "/api/v1/gallary",
+  gallaryRouter
+);
 
-app.use("/api/v1/category", categoryRouter);
+app.use(
+  "/api/v1/category",
+  categoryRouter
+);
 
-app.use("/api/v1/event", eventRouter);
+app.use(
+  "/api/v1/event",
+  eventRouter
+);
 
-app.use("/api/v1/contact", contactRouter);
+app.use(
+  "/api/v1/contact",
+  contactRouter
+);
 
-app.use("/api/v1/services", serviceRouter);
+app.use(
+  "/api/v1/services",
+  serviceRouter
+);
 
-app.use("/api/v1/consultation", consultationRouter);
+app.use(
+  "/api/v1/consultation",
+  consultationRouter
+);
 
-app.use("/api/v1/header-menu", headerMenuRouter);
+app.use(
+  "/api/v1/header-menu",
+  headerMenuRouter
+);
 
-app.use("/api/v1/about", aboutRouter);
+app.use(
+  "/api/v1/about",
+  aboutRouter
+);
 
-/* =========================================================
-   404
-========================================================= */
+// =========================================================
+// 404 HANDLER
+// =========================================================
 
 app.use((req, res) => {
   res.status(404).json({
@@ -136,41 +181,61 @@ app.use((req, res) => {
   });
 });
 
-/* =========================================================
-   ERROR HANDLER
-========================================================= */
+// =========================================================
+// ERROR HANDLER
+// =========================================================
 
 app.use((err, req, res, next) => {
   console.error("SERVER ERROR:", err);
 
   res.status(500).json({
     success: false,
-    message: err.message || "Internal server error",
+    message:
+      err.message || "Internal server error",
   });
 });
 
-/* =========================================================
-   DATABASE
-========================================================= */
+// =========================================================
+// ENVIRONMENT VARIABLES
+// =========================================================
 
 const PORT = process.env.PORT || 9000;
 const MONGOURL = process.env.MONGOURL;
 
 if (!MONGOURL) {
-  console.error("MONGOURL is missing from environment variables.");
+  console.error(
+    "ERROR: MONGOURL is missing from environment variables."
+  );
+
   process.exit(1);
 }
+
+// =========================================================
+// DATABASE CONNECTION
+// =========================================================
 
 mongoose
   .connect(MONGOURL)
   .then(() => {
-    console.log("Database connected successfully");
+    console.log(
+      "Database connected successfully"
+    );
+
+    // =====================================================
+    // START SERVER
+    // =====================================================
 
     app.listen(PORT, "0.0.0.0", () => {
-      console.log(`Server running on port ${PORT}`);
+      console.log(
+        `Server running on port ${PORT}`
+      );
     });
   })
   .catch((error) => {
-    console.error("Database connection error:", error);
+    console.error(
+      "Database connection error:",
+      error
+    );
+
     process.exit(1);
   });
