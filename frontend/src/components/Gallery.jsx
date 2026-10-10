@@ -304,7 +304,7 @@ const Gallery = () => {
     setLoading(true);
 
     const response = await axios.get(
-      `${API_URL}/api/v1/gallary/featch`
+      `${API_URL}/gallary/featch`
     );
 
     console.log("Gallery Response:", response.data);
