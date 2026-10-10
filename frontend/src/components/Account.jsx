@@ -107,7 +107,7 @@ const Account = () => {
     user.address ||
     "Not Added";
 
-    // const API_URL = "http://localhost:9000";
+    // const API_URL  = "http://localhost:9000";
  const getAvatarUrl = (user) => {
   const avatar =
     user?.avatar ||
