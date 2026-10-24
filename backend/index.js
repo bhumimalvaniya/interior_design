@@ -39,23 +39,7 @@ const allowedOrigins = [
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // Allow requests from Postman, Render health checks,
-      // server-to-server requests, etc.
-      if (!origin) {
-        return callback(null, true);
-      }
-
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-
-      console.log("CORS blocked origin:", origin);
-
-      return callback(
-        new Error(`CORS blocked for origin: ${origin}`)
-      );
-    },
+    origin: allowedOrigins,
 
     methods: [
       "GET",
@@ -72,11 +56,17 @@ app.use(
     ],
 
     credentials: false,
-
     optionsSuccessStatus: 204,
   })
 );
 
+// Explicitly handle preflight requests
+app.options(/.*/, cors({
+  origin: allowedOrigins,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: false,
+}));
 // =========================================================
 // BODY PARSER
 // =========================================================
