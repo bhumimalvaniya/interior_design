@@ -28,45 +28,46 @@ import aboutRouter from "./Router/AboutRouter.js";
 
 const app = express();
 
-// =========================================================
-// CORS CONFIGURATION
-// =========================================================
 
-const allowedOrigins = [
+ // =========================================================
+ // CORS CONFIGURATION
+ // =========================================================
+
+const allowedOrigins = new Set([
   "http://localhost:5173",
   "https://rutavinteriordesign.netlify.app",
-];
+]);
 
-app.use(
-  cors({
-    origin: allowedOrigins,
+app.use((req, res, next) => {
+  const origin = req.headers.origin;
 
-    methods: [
-      "GET",
-      "POST",
-      "PUT",
-      "PATCH",
-      "DELETE",
-      "OPTIONS",
-    ],
+  if (origin && allowedOrigins.has(origin)) {
+    res.setHeader("Access-Control-Allow-Origin", origin);
+    res.setHeader("Vary", "Origin");
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+    );
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      "Content-Type, Authorization"
+    );
+  }
 
-    allowedHeaders: [
-      "Content-Type",
-      "Authorization",
-    ],
+  if (req.method === "OPTIONS") {
+    if (origin && !allowedOrigins.has(origin)) {
+      return res.status(403).json({
+        success: false,
+        message: "Origin not allowed by CORS",
+      });
+    }
 
-    credentials: false,
-    optionsSuccessStatus: 204,
-  })
-);
+    return res.sendStatus(204);
+  }
 
-// Explicitly handle preflight requests
-app.options(/.*/, cors({
-  origin: allowedOrigins,
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: false,
-}));
+  next();
+});
+
 // =========================================================
 // BODY PARSER
 // =========================================================
