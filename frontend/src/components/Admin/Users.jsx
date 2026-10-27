@@ -35,10 +35,10 @@ const Users = () => {
     }
 
     if (avatar.startsWith("/")) {
-      return `${BACKEND_URL}${avatar}`;
+      return `${API_URL}${avatar}`;
     }
 
-    return `${BACKEND_URL}/${avatar}`;
+    return `${API_URL}/${avatar}`;
   };
 
   // =====================================================
