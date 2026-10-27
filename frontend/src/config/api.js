@@ -13,4 +13,4 @@ const API_URL = (
   "https://interior-design-backend-bh9c.onrender.com/api/v1"
 ).replace(/\/+$/, "");
 
-export default API_URL;
+export default API_URL; 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Users.css";
+import API_URL from "../../config/api";
 
 // const BACKEND_URL = "http://localhost:9000";
 // const API_URL = `${BACKEND_URL}/api/v1/cust`;
