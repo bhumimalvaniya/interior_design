@@ -519,7 +519,7 @@ const AdminProjects = () => {
                         "http"
                       )
                         ? project.image
-                        : `http://localhost:9000${project.image}`
+                        : `{API_URL}${project.image}`
                     }
                     alt={
                       project.title ||
