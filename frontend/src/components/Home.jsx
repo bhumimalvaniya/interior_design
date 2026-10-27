@@ -29,85 +29,27 @@ const HERO_IMAGE =
 // ======================================================
 // IMAGE URL HELPER
 // ======================================================
-
 const getImageUrl = (image) => {
-  if (!image || typeof image !== "string") {
+  if (!image) {
     return FALLBACK_IMAGE;
   }
 
-  // Cloudinary URLs are already complete.
-  if (/^https?:\/\//i.test(image)) {
+  // Cloudinary / complete URL
+  if (
+    image.startsWith("http://") ||
+    image.startsWith("https://")
+  ) {
     return image;
   }
 
-  // Support older local-upload images.
-  const backendBaseUrl = API_URL.replace(/\/api\/v1\/?$/, "");
-  return `${backendBaseUrl}/${image.replace(/^\/+/, "")}`;
-};
-
-// ==========================================
-// FETCH HOME PROJECTS
-// ==========================================
-
-const fetchProjects = async () => {
-  setLoadingProjects(true);
-  setProjectError("");
-
-  const endpoints = [
-    `${API_URL}/project/featch`,
-    `${API_URL}/project/fetch`,
-  ];
-
-  try {
-    let response = null;
-
-    for (const endpoint of endpoints) {
-      try {
-        console.log("Fetching home projects from:", endpoint);
-
-        response = await axios.get(endpoint);
-
-        // Stop when an endpoint responds successfully.
-        break;
-      } catch (error) {
-        // Only try the alternate spelling if the route is missing.
-        if (error.response?.status !== 404) {
-          throw error;
-        }
-      }
-    }
-
-    if (
-      !response ||
-      response.data?.success !== true ||
-      !Array.isArray(response.data?.data)
-    ) {
-      throw new Error(
-        "Project API did not return a successful projects array."
-      );
-    }
-
-    console.log("Home projects received:", response.data.data);
-
-    setProjects(response.data.data.slice(0, 6));
-  } catch (error) {
-    console.error("HOME PROJECT FETCH ERROR:", {
-      message: error.message,
-      status: error.response?.status,
-      response: error.response?.data,
-      apiUrl: API_URL,
-    });
-
-    setProjects([]);
-    setProjectError(
-      error.response?.status === 404
-        ? "Project route not found. Check your ProjectRouter.js."
-        : error.response?.data?.message ||
-          "Unable to load projects. Please try again."
-    );
-  } finally {
-    setLoadingProjects(false);
+  // Backend local upload
+  if (image.startsWith("/uploads/")) {
+    const backendBaseUrl = API_URL.replace("/api/v1", "");
+    return `${backendBaseUrl}${image}`;
   }
+
+  // Other relative image paths
+  return image;
 };
 
 
