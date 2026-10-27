@@ -575,7 +575,7 @@ const EditProject = () => {
               src={
                 oldImage.startsWith("http")
                   ? oldImage
-                  : `http://localhost:9000${oldImage}`
+                  : `{API_URL}${oldImage}`
               }
               alt="Current Project"
               style={{
