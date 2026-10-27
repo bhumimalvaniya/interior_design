@@ -29,7 +29,8 @@ const Services = () => {
       setError("");
 
       const response = await axios.get(
-        `${API_URL}/api/v1/services/featch`
+        // `${API_URL}/api/v1/services/featch`
+       `${API_URL}/services/featch`
       );
 
       console.log("SERVICES API RESPONSE:", response.data);
