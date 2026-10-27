@@ -14,38 +14,56 @@ const Gallery = () => {
   // FETCH GALLERY FROM DATABASE
   // =========================================
 
-  const fetchGallery = async () => {
-    try {
-      setLoading(true);
+  
+const fetchGallery = async () => {
+  try {
+    setLoading(true);
 
-      console.log("GALLERY API URL:", `${API_URL}/gallary/featch`);
+    const url = `${API_URL}/gallary/featch`;
 
-      const response = await axios.get(
-        `${API_URL}/gallary/featch`
-      );
+    console.log("Gallery API URL:", url);
 
-      console.log("Gallery Response:", response.data);
+    const response = await axios.get(url, {
+      timeout: 20000,
+    });
 
-      if (response.data?.success) {
-        setGalleryData(response.data.data || []);
-      } else {
-        setGalleryData([]);
-        console.error(
-          "Gallery API Error:",
-          response.data?.message
-        );
-      }
-    } catch (error) {
+    console.log("Gallery status:", response.status);
+    console.log("Gallery response:", response.data);
+
+    const result = response.data;
+
+    const items = Array.isArray(result)
+      ? result
+      : Array.isArray(result?.data)
+      ? result.data
+      : Array.isArray(result?.gallery)
+      ? result.gallery
+      : Array.isArray(result?.galleries)
+      ? result.galleries
+      : null;
+
+    if (items !== null) {
+      setGalleryData(items);
+    } else {
       console.error(
-        "Gallery Fetch Error:",
-        error.response?.data || error.message
+        "Unexpected gallery response format:",
+        result
       );
-
       setGalleryData([]);
-    } finally {
-      setLoading(false);
     }
-  };
+  } catch (error) {
+    console.error("Gallery request failed:", {
+      url: `${API_URL}/gallary/featch`,
+      status: error.response?.status,
+      response: error.response?.data,
+      message: error.message,
+    });
+
+    setGalleryData([]);
+  } finally {
+    setLoading(false);
+  }
+};
 
   // =========================================
   // LOAD DATA
