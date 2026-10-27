@@ -511,38 +511,39 @@ const AdminProjects = () => {
                     IMAGE
                 ================================= */}
 
-                <div className="admin-project-image">
+                
+<div className="admin-project-image">
+  <img
+    src={
+      project.image?.startsWith("http://") ||
+      project.image?.startsWith("https://")
+        ? project.image
+        : `${API_URL.replace(/\/api\/v1\/?$/, "")}${
+            project.image?.startsWith("/")
+              ? project.image
+              : `/${project.image || ""}`
+          }`
+    }
+    alt={project.title || "Project"}
+    onError={(e) => {
+      console.error("Project image failed to load:", {
+        image: project.image,
+        resolvedURL: e.currentTarget.src,
+      });
+    }}
+  />
 
-                  <img
-                    src={
-                      project.image?.startsWith(
-                        "http"
-                      )
-                        ? project.image
-                        : `{API_URL}${project.image}`
-                    }
-                    alt={
-                      project.title ||
-                      "Project"
-                    }
-                    onError={(e) => {
-                      e.target.src =
-                        "https://via.placeholder.com/900x600?text=Image+Not+Found";
-                    }}
-                  />
+  <span
+    className={`project-status ${
+      project.status === "Completed"
+        ? "completed"
+        : "ongoing"
+    }`}
+  >
+    {project.status}
+  </span>
+</div>
 
-                  <span
-                    className={`project-status ${
-                      project.status ===
-                      "Completed"
-                        ? "completed"
-                        : "ongoing"
-                    }`}
-                  >
-                    {project.status}
-                  </span>
-
-                </div>
 
                 {/* =================================
                     CONTENT
