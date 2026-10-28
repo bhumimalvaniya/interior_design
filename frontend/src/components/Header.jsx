@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate,useLocation } from "react-router-dom";
 import axios from "axios";
 import "./Header.css";
 import API_URL from "../config/api";
@@ -19,6 +19,7 @@ import API_URL from "../config/api";
 
 const Header = () => {
   const navigate = useNavigate();
+  const location= useLocation();
 
   /* =======================================================
      MENU STATE
@@ -76,6 +77,10 @@ const Header = () => {
     const handleStorageChange = () => {
       loadUser();
     };
+
+    useEffect(() => {
+  loadUser();
+}, [location.pathname]);
 
     window.addEventListener(
       "storage",

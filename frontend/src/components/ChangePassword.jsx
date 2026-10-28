@@ -218,6 +218,7 @@ const ChangePassword = () => {
         });
 
         // Go account page
+        window.dispatchEvent(new Event("userDataUpdated")); //new added
         navigate("/account");
       } else {
         alert(
