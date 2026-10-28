@@ -78,9 +78,7 @@ const Header = () => {
       loadUser();
     };
 
-    useEffect(() => {
-  loadUser();
-}, [location.pathname]);
+   
 
     window.addEventListener(
       "storage",
@@ -95,7 +93,9 @@ const Header = () => {
     };
   }, []);
 
-
+ useEffect(() => {
+  loadUser();
+}, [location.pathname]);
   /* =======================================================
      CHECK USER WHEN PAGE/ROUTE CHANGES
      
