@@ -18,6 +18,7 @@ const router = express.Router();
 
 router.post("/add", upload.single("image"), addProject);
 
+router.get("/featch",getProjects);
 router.get("/fetch", getProjects);
 
 router.get("/residential",getResidentialProjects);
