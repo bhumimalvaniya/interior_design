@@ -108,47 +108,32 @@ const Account = () => {
     "Not Added";
 
     // const API_URL  = "http://localhost:9000";
- 
-const getAvatarUrl = (user) => {
+ const getAvatarUrl = (user) => {
   const avatar =
     user?.avatar ||
     user?.image ||
     user?.profileImage ||
     user?.profile_image ||
-    user?.photo ||
-    user?.profilePic ||
     "";
 
-  if (!avatar || typeof avatar !== "string") {
+  if (!avatar) {
     return "";
   }
 
-  const image = avatar.trim();
-
-  // Cloudinary or another complete image URL
-  if (/^https?:\/\//i.test(image)) {
-    return image;
+  // Cloudinary / external URL
+  if (avatar.startsWith("http://") || avatar.startsWith("https://")) {
+    return avatar;
   }
 
-  // Remove /api/v1 to get the backend origin
-  const backendBaseUrl = API_URL.replace(/\/api\/v1\/?$/, "");
-
-  // Local backend uploads: /uploads/profile.jpg
-  if (image.startsWith("/uploads/")) {
-    return `${backendBaseUrl}${image}`;
+  // Backend local image
+  if (avatar.startsWith("/")) {
+    return `${API_URL}${avatar}`;
   }
 
-  // Other root-relative paths
-  if (image.startsWith("/")) {
-    return `${backendBaseUrl}${image}`;
-  }
-
-  // Relative image paths
-  return `${backendBaseUrl}/${image.replace(/^\/+/, "")}`;
+  return `${API_URL}/${avatar}`;
 };
 
 const userAvatar = getAvatarUrl(user);
-
 
   // =====================================================
   // RETURN
@@ -204,17 +189,14 @@ const userAvatar = getAvatarUrl(user);
 
                 {userAvatar ? (
 
-                <img
-  src={userAvatar}
-  alt="Profile"
-  onError={(event) => {
-    console.error("Avatar image failed to load:", {
-      url: event.currentTarget.src,
-      user,
-    });
-    event.currentTarget.style.display = "none";
-  }}
-/>
+                  <img
+                    src={userAvatar}
+                    alt="Profile"
+                     onError={(e) => {
+                     console.log("Avatar image failed:", userAvatar);
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
 
                 ) : (
 
