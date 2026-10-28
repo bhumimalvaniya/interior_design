@@ -1,6 +1,6 @@
 
-import React, { useEffect, useState } from "react";
 import { Link, useNavigate,useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Header.css";
 import API_URL from "../config/api";
@@ -93,9 +93,34 @@ const Header = () => {
     };
   }, []);
 
- useEffect(() => {
-  loadUser();
-}, [location.pathname]);
+ 
+  // LOAD USER AND KEEP HEADER IN SYNC
+
+  useEffect(() => {
+    const syncUser = () => {
+      try {
+        const storedUser =
+          localStorage.getItem("userData") ||
+          sessionStorage.getItem("userData");
+
+        setUser(storedUser ? JSON.parse(storedUser) : null);
+      } catch (error) {
+        console.error("HEADER USER ERROR:", error);
+        setUser(null);
+      }
+    };
+
+    syncUser();
+
+    window.addEventListener("userDataChanged", syncUser);
+    window.addEventListener("storage", syncUser);
+
+    return () => {
+      window.removeEventListener("userDataChanged", syncUser);
+      window.removeEventListener("storage", syncUser);
+    };
+  }, [location.pathname]);
+
   /* =======================================================
      CHECK USER WHEN PAGE/ROUTE CHANGES
      
