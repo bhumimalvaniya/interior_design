@@ -67,35 +67,127 @@ const Header = () => {
   };
 
 
-  /* =======================================================
-     LOAD USER ONCE
-  ======================================================= */
+//   /* =======================================================
+//      LOAD USER ONCE
+//   ======================================================= */
 
-  useEffect(() => {
-    loadUser();
+//   useEffect(() => {
+//     loadUser();
 
-    const handleStorageChange = () => {
-      loadUser();
-    };
+//     const handleStorageChange = () => {
+//       loadUser();
+//     };
 
    
 
-    window.addEventListener(
-      "storage",
-      handleStorageChange
-    );
+//     window.addEventListener(
+//       "storage",
+//       handleStorageChange
+//     );
 
-    return () => {
-      window.removeEventListener(
-        "storage",
-        handleStorageChange
-      );
-    };
-  }, []);
+//     return () => {
+//       window.removeEventListener(
+//         "storage",
+//         handleStorageChange
+//       );
+//     };
+//   }, []);
 
- 
+//  useEffect(() => {
+//   loadUser();
+// }, [location.pathname]);
+//   /* =======================================================
+//      CHECK USER WHEN PAGE/ROUTE CHANGES
+     
+//      Custom event allows login/logout pages to immediately
+//      update the Header.
+//   ======================================================= */
+
+//   useEffect(() => {
+//     const handleUserChanged = () => {
+//       loadUser();
+//     };
+
+//     window.addEventListener(
+//       "userDataChanged",
+//       handleUserChanged
+//     );
+
+//     return () => {
+//       window.removeEventListener(
+//         "userDataChanged",
+//         handleUserChanged
+//       );
+//     };
+//   }, []);
+
+
+//   /* =======================================================
+//      FETCH ACTIVE HEADER MENUS
+//   ======================================================= */
+
+//   useEffect(() => {
+//     let mounted = true;
+
+//     const fetchMenus = async () => {
+//       try {
+//         setMenuLoading(true);
+
+//         const url = `${API_URL}/header-menu/active`;
+
+//         const response = await axios.get(url, {
+//           timeout: 15000,
+//         });
+
+//         if (!mounted) return;
+
+//         const menuData = Array.isArray(response.data?.data)
+//           ? response.data.data
+//           : [];
+
+//         const sortedMenus = [...menuData].sort(
+//           (a, b) =>
+//             Number(a.order || 0) -
+//             Number(b.order || 0)
+//         );
+
+//         setMenus(sortedMenus);
+
+//         console.log(
+//           "ACTIVE HEADER MENUS:",
+//           sortedMenus
+//         );
+//       } catch (error) {
+//         if (!mounted) return;
+
+//         console.error(
+//           "FETCH HEADER MENUS ERROR:",
+//           error.response?.status,
+//           error.response?.data || error.message
+//         );
+
+//         /*
+//           Do not break the complete Header if the dynamic
+//           menu API is temporarily unavailable.
+//         */
+
+//         setMenus([]);
+//       } finally {
+//         if (mounted) {
+//           setMenuLoading(false);
+//         }
+//       }
+//     };
+
+//     fetchMenus();
+
+//     return () => {
+//       mounted = false;
+//     };
+//   }, []);
+
+
   // LOAD USER AND KEEP HEADER IN SYNC
-
   useEffect(() => {
     const syncUser = () => {
       try {
@@ -103,16 +195,26 @@ const Header = () => {
           localStorage.getItem("userData") ||
           sessionStorage.getItem("userData");
 
-        setUser(storedUser ? JSON.parse(storedUser) : null);
+        if (!storedUser) {
+          setUser(null);
+          return;
+        }
+
+        const parsedUser = JSON.parse(storedUser);
+        setUser(parsedUser);
       } catch (error) {
         console.error("HEADER USER ERROR:", error);
         setUser(null);
       }
     };
 
+    // Load user when the header mounts or route changes
     syncUser();
 
+    // Update user immediately when another component changes it
     window.addEventListener("userDataChanged", syncUser);
+
+    // Detect storage changes from another browser tab
     window.addEventListener("storage", syncUser);
 
     return () => {
@@ -120,96 +222,6 @@ const Header = () => {
       window.removeEventListener("storage", syncUser);
     };
   }, [location.pathname]);
-
-  /* =======================================================
-     CHECK USER WHEN PAGE/ROUTE CHANGES
-     
-     Custom event allows login/logout pages to immediately
-     update the Header.
-  ======================================================= */
-
-  useEffect(() => {
-    const handleUserChanged = () => {
-      loadUser();
-    };
-
-    window.addEventListener(
-      "userDataChanged",
-      handleUserChanged
-    );
-
-    return () => {
-      window.removeEventListener(
-        "userDataChanged",
-        handleUserChanged
-      );
-    };
-  }, []);
-
-
-  /* =======================================================
-     FETCH ACTIVE HEADER MENUS
-  ======================================================= */
-
-  useEffect(() => {
-    let mounted = true;
-
-    const fetchMenus = async () => {
-      try {
-        setMenuLoading(true);
-
-        const url = `${API_URL}/header-menu/active`;
-
-        const response = await axios.get(url, {
-          timeout: 15000,
-        });
-
-        if (!mounted) return;
-
-        const menuData = Array.isArray(response.data?.data)
-          ? response.data.data
-          : [];
-
-        const sortedMenus = [...menuData].sort(
-          (a, b) =>
-            Number(a.order || 0) -
-            Number(b.order || 0)
-        );
-
-        setMenus(sortedMenus);
-
-        console.log(
-          "ACTIVE HEADER MENUS:",
-          sortedMenus
-        );
-      } catch (error) {
-        if (!mounted) return;
-
-        console.error(
-          "FETCH HEADER MENUS ERROR:",
-          error.response?.status,
-          error.response?.data || error.message
-        );
-
-        /*
-          Do not break the complete Header if the dynamic
-          menu API is temporarily unavailable.
-        */
-
-        setMenus([]);
-      } finally {
-        if (mounted) {
-          setMenuLoading(false);
-        }
-      }
-    };
-
-    fetchMenus();
-
-    return () => {
-      mounted = false;
-    };
-  }, []);
 
 
   /* =======================================================
