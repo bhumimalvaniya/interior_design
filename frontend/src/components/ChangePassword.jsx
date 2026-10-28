@@ -188,7 +188,7 @@ const ChangePassword = () => {
       // =================================================
 
       const response = await axios.put(
-        `${API_URL}/change-password/${userId}`,
+        `${API_URL}/cust/change-password/${userId}`,
         {
           currentPassword,
           newPassword,
