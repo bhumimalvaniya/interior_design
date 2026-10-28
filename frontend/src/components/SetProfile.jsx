@@ -46,84 +46,150 @@ const SetProfile = () => {
     }
   };
 
+  
+const getAvatarUrl = (user) => {
+  const image =
+    user?.avatar ||
+    user?.image ||
+    user?.profileImage ||
+    user?.profile_image ||
+    "";
+
+  if (!image || typeof image !== "string") {
+    return "";
+  }
+
+  if (/^https?:\/\//i.test(image)) {
+    return image;
+  }
+
+  const backendBaseUrl = API_URL.replace(/\/api\/v1\/?$/, "");
+
+  if (image.startsWith("/")) {
+    return `${backendBaseUrl}${image}`;
+  }
+
+  return `${backendBaseUrl}/${image}`;
+};
+
   // ==========================================
   // FETCH PROFILE FROM MONGODB
   // ==========================================
 
-  useEffect(() => {
-    const fetchProfile = async () => {
-      try {
-        const storedUser = getStoredUser();
+ 
+useEffect(() => {
+  let cancelled = false;
 
-        if (!storedUser) {
-          alert("Please login first.");
-          navigate("/login");
-          return;
+  const fetchProfile = async () => {
+    try {
+      const storedUser = getStoredUser();
+
+      if (!storedUser) {
+        navigate("/login");
+        return;
+      }
+
+      const userId = storedUser.id || storedUser._id;
+
+      if (!userId) {
+        console.error("Stored user has no ID:", storedUser);
+        alert("User ID not found. Please log in again.");
+        navigate("/login");
+        return;
+      }
+
+      const token =
+        storedUser.token ||
+        localStorage.getItem("token") ||
+        sessionStorage.getItem("token");
+
+      const response = await axios.get(
+        `${API_URL}/cust/profile/${userId}`,
+        {
+          headers: token
+            ? { Authorization: `Bearer ${token}` }
+            : {},
         }
+      );
 
-        const userId =
-          storedUser.id ||
-          storedUser._id;
+      console.log("PROFILE API RESPONSE:", response.data);
 
-        if (!userId) {
-          alert("User ID not found. Please login again.");
-          navigate("/login");
-          return;
-        }
+      const body = response.data;
 
-        console.log("Fetching profile:", userId);
+      const user =
+        body?.data?.user ||
+        body?.user ||
+        body?.data;
 
-        const response = await axios.get(
-          `${API_URL}/profile/${userId}`
+      if (
+        !body?.success ||
+        !user ||
+        typeof user !== "object" ||
+        Array.isArray(user)
+      ) {
+        throw new Error(
+          body?.message || "User profile was not returned by the API."
         );
+      }
 
-        console.log(
-          "PROFILE RESPONSE:",
-          response.data
-        );
+      if (cancelled) return;
 
-        if (
-          response.data.success &&
-          response.data.data
-        ) {
-          const user = response.data.data;
+      setProfile({
+        name: user.name || user.fnm || "",
+        email: user.email || "",
+        phone: user.phone || user.phone_no || "",
+        gender: user.gender || "",
+        city: user.city || "",
+        address: user.address || "",
+        bio: user.bio || "",
+      });
 
-          setProfile({
-            name: user.name || "",
-            email: user.email || "",
-            phone: user.phone || "",
-            gender: user.gender || "",
-            city: user.city || "",
-            address: user.address || "",
-            bio: user.bio || "",
-          });
+      const avatarUrl = getAvatarUrl(user);
 
-          if (user.avatar) {
-            setPreview(
-              user.avatar.startsWith("http")
-                ? user.avatar
-                : `http://localhost:9000${user.avatar}`
-            );
-          }
-        }
+      setPreview(avatarUrl || null);
 
-      } catch (error) {
-        console.error(
-          "FETCH PROFILE ERROR:",
-          error
-        );
+      // Keep the stored login data in sync with the latest profile.
+      const updatedUser = {
+        ...storedUser,
+        ...user,
+        id: user._id || user.id || userId,
+      };
 
+      if (localStorage.getItem("userData")) {
+        localStorage.setItem("userData", JSON.stringify(updatedUser));
+      }
+
+      if (sessionStorage.getItem("userData")) {
+        sessionStorage.setItem("userData", JSON.stringify(updatedUser));
+      }
+    } catch (error) {
+      console.error("FETCH PROFILE ERROR:", {
+        message: error.message,
+        status: error.response?.status,
+        response: error.response?.data,
+      });
+
+      if (!cancelled) {
         alert(
           error.response?.data?.message ||
-          "Unable to fetch profile"
+          error.message ||
+          "Unable to fetch profile."
         );
-      } finally {
+      }
+    } finally {
+      if (!cancelled) {
         setLoading(false);
       }
-    };
+    }
+  };
 
-    fetchProfile();
-  }, [navigate]);
+  fetchProfile();
+
+  return () => {
+    cancelled = true;
+  };
+}, [navigate]);
+
 
   // ==========================================
   // INPUT CHANGE
@@ -289,7 +355,7 @@ const SetProfile = () => {
       // ======================================
 
       const response = await axios.put(
-        `${API_URL}/updateprofile/${userId}`,
+        `${API_URL}/cust/updateprofile/${userId}`,
         formData,
         {
           headers: {
