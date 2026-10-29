@@ -222,24 +222,27 @@ setUser(parsedUser);
      LOGOUT
   ======================================================= */
 
-  const handleLogout = () => {
+ const handleLogout = () => {
+  // Clear saved user information
   localStorage.removeItem("userData");
   localStorage.removeItem("token");
   localStorage.removeItem("userToken");
   localStorage.removeItem("userEmail");
 
+  // Clear session information
   sessionStorage.removeItem("userData");
   sessionStorage.removeItem("token");
   sessionStorage.removeItem("userToken");
 
+  // Update the header
   setUser(null);
   closeMenu();
 
   window.dispatchEvent(new Event("userDataChanged"));
 
-  navigate("/login");
+  // Go to login page
+  navigate("/login", { replace: true });
 };
-
   /* =======================================================
      USER NAME
   ======================================================= */

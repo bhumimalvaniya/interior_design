@@ -39,13 +39,14 @@ const Login = () => {
 
   useEffect(() => {
   setFormData({
-    email: localStorage.getItem("userEmail") || "",
+    email: "",
     password: "",
   });
 
-  setRememberMe(
-    Boolean(localStorage.getItem("userEmail"))
-  );
+  setRememberMe(false);
+
+  // Clear previously remembered email
+  localStorage.removeItem("userEmail");
 }, []);
 
 
