@@ -39,10 +39,8 @@ const Header = () => {
 
   const [user, setUser] = useState(null);
 
-
-  
-const localUser = localStorage.getItem("userData");
-const sessionUser = sessionStorage.getItem("userData");
+  const localUser = localStorage.getItem("userData");
+  const sessionUser = sessionStorage.getItem("userData");
 
 console.log("HEADER DEBUG - localStorage:", localUser);
 console.log("HEADER DEBUG - sessionStorage:", sessionUser);
