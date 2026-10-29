@@ -223,23 +223,22 @@ setUser(parsedUser);
   ======================================================= */
 
   const handleLogout = () => {
-    localStorage.removeItem("userData");
-    localStorage.removeItem("token");
+  localStorage.removeItem("userData");
+  localStorage.removeItem("token");
+  localStorage.removeItem("userToken");
+  localStorage.removeItem("userEmail");
 
-    sessionStorage.removeItem("userData");
-    sessionStorage.removeItem("token");
+  sessionStorage.removeItem("userData");
+  sessionStorage.removeItem("token");
+  sessionStorage.removeItem("userToken");
 
-    setUser(null);
+  setUser(null);
+  closeMenu();
 
-    closeMenu();
+  window.dispatchEvent(new Event("userDataChanged"));
 
-    window.dispatchEvent(
-      new Event("userDataChanged")
-    );
-
-    navigate("/login");
-  };
-
+  navigate("/login");
+};
 
   /* =======================================================
      USER NAME

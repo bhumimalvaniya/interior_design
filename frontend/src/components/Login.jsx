@@ -38,18 +38,15 @@ const Login = () => {
   // =====================================================
 
   useEffect(() => {
-    const savedEmail =
-      localStorage.getItem("userEmail");
+  setFormData({
+    email: localStorage.getItem("userEmail") || "",
+    password: "",
+  });
 
-    if (savedEmail) {
-      setFormData((prev) => ({
-        ...prev,
-        email: savedEmail,
-      }));
-
-      setRememberMe(true);
-    }
-  }, []);
+  setRememberMe(
+    Boolean(localStorage.getItem("userEmail"))
+  );
+}, []);
 
 
   // =====================================================
