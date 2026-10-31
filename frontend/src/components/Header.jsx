@@ -1,29 +1,16 @@
-
-import { Link, useNavigate,useLocation } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./Header.css";
 import API_URL from "../config/api";
 
-/* =========================================================
-   API CONFIGURATION
-   Local:
-   http://localhost:9000/api/v1
-
-   Production:
-   https://interior-design-backend.onrender.com/api/v1
-========================================================= */
-
-// const API_URL = import.meta.env.VITE_API_URL || "http://localhost:9000/api/v1";
-
-
 const Header = () => {
   const navigate = useNavigate();
-  const location= useLocation();
+  const location = useLocation();
 
-  /* =======================================================
+  /* =====================================================
      MENU STATE
-  ======================================================= */
+  ===================================================== */
 
   const [menus, setMenus] = useState([]);
   const [menuLoading, setMenuLoading] = useState(true);
@@ -33,35 +20,15 @@ const Header = () => {
   const [projectOpen, setProjectOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
 
-  /* =======================================================
+  /* =====================================================
      USER STATE
-  ======================================================= */
+  ===================================================== */
 
   const [user, setUser] = useState(null);
 
-  const localUser = localStorage.getItem("userData");
-  const sessionUser = sessionStorage.getItem("userData");
-
-console.log("HEADER DEBUG - localStorage:", localUser);
-console.log("HEADER DEBUG - sessionStorage:", sessionUser);
-
-const storedUser = localUser || sessionUser;
-
-if (!storedUser) {
-  console.error("HEADER DEBUG: No userData found");
-  setUser(null);
-  return;
-}
-
-const parsedUser = JSON.parse(storedUser);
-
-console.log("HEADER DEBUG - parsed user:", parsedUser);
-
-setUser(parsedUser);
-
-  /* =======================================================
-     LOAD USER
-  ======================================================= */
+  /* =====================================================
+     LOAD USER FROM LOCAL STORAGE / SESSION STORAGE
+  ===================================================== */
 
   const loadUser = () => {
     try {
@@ -77,73 +44,45 @@ setUser(parsedUser);
 
       const parsedUser = JSON.parse(storedUser);
 
-      setUser(parsedUser);
+      // Support both direct user objects and nested user objects.
+      const userData =
+        parsedUser.user ||
+        parsedUser.customer ||
+        parsedUser.data?.user ||
+        parsedUser;
+
+      setUser(userData);
+
+      console.log("HEADER USER LOADED:", userData);
     } catch (error) {
       console.error("HEADER USER ERROR:", error);
-
       setUser(null);
     }
   };
 
-
-  /* =======================================================
-     LOAD USER ONCE
-  ======================================================= */
+  /* =====================================================
+     SYNC USER ON LOGIN, LOGOUT, REFRESH AND ROUTE CHANGE
+  ===================================================== */
 
   useEffect(() => {
     loadUser();
 
-    const handleStorageChange = () => {
+    const handleUserChange = () => {
       loadUser();
     };
 
-   
-
-    window.addEventListener(
-      "storage",
-      handleStorageChange
-    );
+    window.addEventListener("userDataChanged", handleUserChange);
+    window.addEventListener("storage", handleUserChange);
 
     return () => {
-      window.removeEventListener(
-        "storage",
-        handleStorageChange
-      );
+      window.removeEventListener("userDataChanged", handleUserChange);
+      window.removeEventListener("storage", handleUserChange);
     };
-  }, []);
+  }, [location.pathname]);
 
- useEffect(() => {
-  loadUser();
-}, [location.pathname]);
-  /* =======================================================
-     CHECK USER WHEN PAGE/ROUTE CHANGES
-     
-     Custom event allows login/logout pages to immediately
-     update the Header.
-  ======================================================= */
-
-  useEffect(() => {
-    const handleUserChanged = () => {
-      loadUser();
-    };
-
-    window.addEventListener(
-      "userDataChanged",
-      handleUserChanged
-    );
-
-    return () => {
-      window.removeEventListener(
-        "userDataChanged",
-        handleUserChanged
-      );
-    };
-  }, []);
-
-
-  /* =======================================================
+  /* =====================================================
      FETCH ACTIVE HEADER MENUS
-  ======================================================= */
+  ===================================================== */
 
   useEffect(() => {
     let mounted = true;
@@ -165,17 +104,12 @@ setUser(parsedUser);
           : [];
 
         const sortedMenus = [...menuData].sort(
-          (a, b) =>
-            Number(a.order || 0) -
-            Number(b.order || 0)
+          (a, b) => Number(a.order || 0) - Number(b.order || 0)
         );
 
         setMenus(sortedMenus);
 
-        console.log(
-          "ACTIVE HEADER MENUS:",
-          sortedMenus
-        );
+        console.log("ACTIVE HEADER MENUS:", sortedMenus);
       } catch (error) {
         if (!mounted) return;
 
@@ -184,11 +118,6 @@ setUser(parsedUser);
           error.response?.status,
           error.response?.data || error.message
         );
-
-        /*
-          Do not break the complete Header if the dynamic
-          menu API is temporarily unavailable.
-        */
 
         setMenus([]);
       } finally {
@@ -205,10 +134,9 @@ setUser(parsedUser);
     };
   }, []);
 
-
-  /* =======================================================
+  /* =====================================================
      CLOSE ALL MENUS
-  ======================================================= */
+  ===================================================== */
 
   const closeMenu = () => {
     setMenuOpen(false);
@@ -217,32 +145,31 @@ setUser(parsedUser);
     setProfileOpen(false);
   };
 
-
-  /* =======================================================
+  /* =====================================================
      LOGOUT
-  ======================================================= */
+  ===================================================== */
 
   const handleLogout = () => {
-  localStorage.removeItem("userData");
-  localStorage.removeItem("token");
-  localStorage.removeItem("userToken");
-  localStorage.removeItem("userEmail");
+    localStorage.removeItem("userData");
+    localStorage.removeItem("token");
+    localStorage.removeItem("userToken");
+    localStorage.removeItem("userEmail");
 
-  sessionStorage.removeItem("userData");
-  sessionStorage.removeItem("token");
-  sessionStorage.removeItem("userToken");
+    sessionStorage.removeItem("userData");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("userToken");
 
-  setUser(null);
-  closeMenu();
+    setUser(null);
+    closeMenu();
 
-  window.dispatchEvent(new Event("userDataChanged"));
+    window.dispatchEvent(new Event("userDataChanged"));
 
-  navigate("/login", { replace: true });
-};
+    navigate("/login", { replace: true });
+  };
 
-  /* =======================================================
-     USER NAME
-  ======================================================= */
+  /* =====================================================
+     GET USER NAME
+  ===================================================== */
 
   const getUserName = () => {
     if (!user) {
@@ -253,24 +180,22 @@ setUser(parsedUser);
       user.name ||
       user.fnm ||
       user.username ||
+      user.fullName ||
+      user.firstName ||
       "Account"
     );
   };
 
-
-  /* =======================================================
-     USER AVATAR URL
-     
-     IMPORTANT:
-     Never force localhost for production.
-  ======================================================= */
+  /* =====================================================
+     GET USER AVATAR URL
+  ===================================================== */
 
   const getAvatarUrl = (avatar) => {
-    if (!avatar) {
+    if (!avatar || typeof avatar !== "string") {
       return "";
     }
 
-    /* Cloudinary / external URL */
+    // Cloudinary or external image URL
     if (
       avatar.startsWith("http://") ||
       avatar.startsWith("https://")
@@ -278,29 +203,21 @@ setUser(parsedUser);
       return avatar;
     }
 
-    /* Relative backend upload */
+    // Relative backend upload path
     if (avatar.startsWith("/")) {
-      return `${API_URL.replace(
-        "/api/v1",
-        ""
-      )}${avatar}`;
+      return `${API_URL.replace("/api/v1", "")}${avatar}`;
     }
 
-    return `${API_URL.replace(
-      "/api/v1",
-      ""
-    )}/${avatar}`;
+    return `${API_URL.replace("/api/v1", "")}/${avatar}`;
   };
 
-
   const userAvatar = getAvatarUrl(
-    user?.avatar
+    user?.avatar || user?.profileImage || user?.image
   );
 
-
-  /* =======================================================
+  /* =====================================================
      ROOT MENUS
-  ======================================================= */
+  ===================================================== */
 
   const rootMenus = menus
     .filter((menu) => {
@@ -309,21 +226,15 @@ setUser(parsedUser);
         menu.parentId ||
         null;
 
-      return (
-        !parentId &&
-        menu.status !== "inactive"
-      );
+      return !parentId && menu.status !== "inactive";
     })
     .sort(
-      (a, b) =>
-        Number(a.order || 0) -
-        Number(b.order || 0)
+      (a, b) => Number(a.order || 0) - Number(b.order || 0)
     );
 
-
-  /* =======================================================
+  /* =====================================================
      CHILD MENUS
-  ======================================================= */
+  ===================================================== */
 
   const getChildMenus = (parentId) => {
     return menus
@@ -334,51 +245,39 @@ setUser(parsedUser);
           null;
 
         return (
-          String(menuParentId) ===
-            String(parentId) &&
+          String(menuParentId) === String(parentId) &&
           menu.status !== "inactive"
         );
       })
       .sort(
-        (a, b) =>
-          Number(a.order || 0) -
-          Number(b.order || 0)
+        (a, b) => Number(a.order || 0) - Number(b.order || 0)
       );
   };
 
-
-  /* =======================================================
+  /* =====================================================
      CHECK CHILDREN
-  ======================================================= */
+  ===================================================== */
 
   const hasChildren = (menu) => {
-    return (
-      getChildMenus(menu._id).length > 0
-    );
+    return getChildMenus(menu._id).length > 0;
   };
 
-
-  /* =======================================================
+  /* =====================================================
      CHECK DROPDOWN
-  ======================================================= */
+  ===================================================== */
 
   const isDropdown = (menu) => {
-    return (
-      menu.menuType === "dropdown" ||
-      hasChildren(menu)
-    );
+    return menu.menuType === "dropdown" || hasChildren(menu);
   };
 
-
-  /* =======================================================
+  /* =====================================================
      GET DROPDOWN STATE
-  ======================================================= */
+  ===================================================== */
 
   const getDropdownState = (menu) => {
-    const menuName =
-      String(menu.name || "")
-        .trim()
-        .toLowerCase();
+    const menuName = String(menu.name || "")
+      .trim()
+      .toLowerCase();
 
     if (menuName === "services") {
       return serviceOpen;
@@ -391,16 +290,14 @@ setUser(parsedUser);
     return false;
   };
 
-
-  /* =======================================================
+  /* =====================================================
      GET DROPDOWN SETTER
-  ======================================================= */
+  ===================================================== */
 
   const getDropdownSetter = (menu) => {
-    const menuName =
-      String(menu.name || "")
-        .trim()
-        .toLowerCase();
+    const menuName = String(menu.name || "")
+      .trim()
+      .toLowerCase();
 
     if (menuName === "services") {
       return setServiceOpen;
@@ -413,10 +310,9 @@ setUser(parsedUser);
     return setServiceOpen;
   };
 
-
-  /* =======================================================
+  /* =====================================================
      RENDER NORMAL MENU
-  ======================================================= */
+  ===================================================== */
 
   const renderSingleMenu = (menu) => {
     const path =
@@ -435,44 +331,30 @@ setUser(parsedUser);
     );
   };
 
-
-  /* =======================================================
+  /* =====================================================
      RENDER DROPDOWN MENU
-  ======================================================= */
+  ===================================================== */
 
   const renderDropdownMenu = (menu) => {
-    const children = getChildMenus(
-      menu._id
-    );
+    const children = getChildMenus(menu._id);
 
-    const isOpen =
-      getDropdownState(menu);
-
-    const setOpen =
-      getDropdownSetter(menu);
+    const isOpen = getDropdownState(menu);
+    const setOpen = getDropdownSetter(menu);
 
     const hasValidPath =
-      menu.path &&
-      menu.path !== "#";
+      menu.path && menu.path !== "#";
 
     return (
       <div
         key={menu._id}
         className="nav-dropdown"
-        onMouseEnter={() => {
-          setOpen(true);
-        }}
-        onMouseLeave={() => {
-          setOpen(false);
-        }}
+        onMouseEnter={() => setOpen(true)}
+        onMouseLeave={() => setOpen(false)}
       >
-
         <button
           type="button"
           className="dropdown-btn"
-          onClick={() => {
-            setOpen(!isOpen);
-          }}
+          onClick={() => setOpen(!isOpen)}
         >
           {hasValidPath ? (
             <Link
@@ -488,9 +370,7 @@ setUser(parsedUser);
             </Link>
           ) : (
             <>
-              <span>
-                {menu.name}
-              </span>
+              <span>{menu.name}</span>
 
               <span className="dropdown-arrow">
                 ⌄
@@ -499,14 +379,11 @@ setUser(parsedUser);
           )}
         </button>
 
-
         {isOpen && (
           <div className="dropdown-menu">
-
             {children.map((child) => {
               const childPath =
-                child.path &&
-                child.path !== "#"
+                child.path && child.path !== "#"
                   ? child.path
                   : "/";
 
@@ -520,18 +397,15 @@ setUser(parsedUser);
                 </Link>
               );
             })}
-
           </div>
         )}
-
       </div>
     );
   };
 
-
-  /* =======================================================
+  /* =====================================================
      RENDER DYNAMIC MENU
-  ======================================================= */
+  ===================================================== */
 
   const renderMenu = (menu) => {
     if (isDropdown(menu)) {
@@ -541,19 +415,15 @@ setUser(parsedUser);
     return renderSingleMenu(menu);
   };
 
-
-  /* =======================================================
+  /* =====================================================
      HEADER UI
-  ======================================================= */
+  ===================================================== */
 
   return (
     <header className="header">
-
       <div className="header-container">
 
-        {/* =================================================
-            LOGO
-        ================================================= */}
+        {/* LOGO */}
 
         <Link
           to="/"
@@ -572,83 +442,45 @@ setUser(parsedUser);
           </span>
         </Link>
 
-
-        {/* =================================================
-            NAVIGATION
-        ================================================= */}
+        {/* NAVIGATION */}
 
         <nav
-          className={`navbar ${
-            menuOpen ? "active" : ""
-          }`}
+          className={`navbar ${menuOpen ? "active" : ""}`}
         >
-
-          {/* DYNAMIC DATABASE MENUS */}
-
           {!menuLoading &&
-            rootMenus.map((menu) =>
-              renderMenu(menu)
-            )}
+            rootMenus.map((menu) => renderMenu(menu))}
 
+          {/* FALLBACK MENUS */}
 
-          {/* =================================================
-              FALLBACK
-              
-              If backend menu API is unavailable, show
-              basic navigation instead of an empty header.
-          ================================================= */}
+          {!menuLoading && rootMenus.length === 0 && (
+            <>
+              <Link to="/" onClick={closeMenu}>
+                Home
+              </Link>
 
-          {!menuLoading &&
-            rootMenus.length === 0 && (
-              <>
-                <Link
-                  to="/"
-                  onClick={closeMenu}
-                >
-                  Home
-                </Link>
+              <Link to="/about" onClick={closeMenu}>
+                About
+              </Link>
 
-                <Link
-                  to="/about"
-                  onClick={closeMenu}
-                >
-                  About
-                </Link>
+              <Link to="/services" onClick={closeMenu}>
+                Services
+              </Link>
 
-                <Link
-                  to="/services"
-                  onClick={closeMenu}
-                >
-                  Services
-                </Link>
+              <Link to="/projects" onClick={closeMenu}>
+                Projects
+              </Link>
 
-                <Link
-                  to="/projects"
-                  onClick={closeMenu}
-                >
-                  Projects
-                </Link>
+              <Link to="/gallery" onClick={closeMenu}>
+                Gallery
+              </Link>
 
-                <Link
-                  to="/gallery"
-                  onClick={closeMenu}
-                >
-                  Gallery
-                </Link>
+              <Link to="/contact" onClick={closeMenu}>
+                Contact
+              </Link>
+            </>
+          )}
 
-                <Link
-                  to="/contact"
-                  onClick={closeMenu}
-                >
-                  Contact
-                </Link>
-              </>
-            )}
-
-
-          {/* =================================================
-              MOBILE LOGIN
-          ================================================= */}
+          {/* MOBILE LOGIN */}
 
           {!user && (
             <Link
@@ -660,10 +492,7 @@ setUser(parsedUser);
             </Link>
           )}
 
-
-          {/* =================================================
-              MOBILE CONSULTATION
-          ================================================= */}
+          {/* MOBILE CONSULTATION */}
 
           <Link
             to="/consultation"
@@ -672,13 +501,9 @@ setUser(parsedUser);
           >
             Book Consultation
           </Link>
-
         </nav>
 
-
-        {/* =================================================
-            RIGHT SIDE
-        ================================================= */}
+        {/* RIGHT SIDE */}
 
         <div className="header-right">
 
@@ -692,55 +517,35 @@ setUser(parsedUser);
             🔍
           </Link>
 
-
-          {/* =================================================
-              PROFILE
-          ================================================= */}
+          {/* PROFILE */}
 
           {user ? (
-
             <div
               className="profile-dropdown"
-              onMouseEnter={() =>
-                setProfileOpen(true)
-              }
-              onMouseLeave={() =>
-                setProfileOpen(false)
-              }
+              onMouseEnter={() => setProfileOpen(true)}
+              onMouseLeave={() => setProfileOpen(false)}
             >
-
               <button
                 type="button"
                 className="profile-btn"
-                onClick={() =>
-                  setProfileOpen(
-                    !profileOpen
-                  )
-                }
+                onClick={() => setProfileOpen(!profileOpen)}
               >
-
                 {/* AVATAR */}
 
                 {userAvatar ? (
-
                   <img
                     src={userAvatar}
                     alt={getUserName()}
                     className="header-avatar"
                     onError={(event) => {
-                      event.currentTarget.style.display =
-                        "none";
+                      event.currentTarget.style.display = "none";
                     }}
                   />
-
                 ) : (
-
                   <span className="header-user-icon">
                     👤
                   </span>
-
                 )}
-
 
                 {/* USER NAME */}
 
@@ -751,25 +556,18 @@ setUser(parsedUser);
                 <span className="profile-arrow">
                   ⌄
                 </span>
-
               </button>
 
-
-              {/* =================================================
-                  PROFILE MENU
-              ================================================= */}
+              {/* PROFILE MENU */}
 
               {profileOpen && (
-
                 <div className="profile-menu">
-
                   <Link
                     to="/account"
                     onClick={closeMenu}
                   >
                     👤 My Account
                   </Link>
-
 
                   <Link
                     to="/setprofile"
@@ -778,14 +576,12 @@ setUser(parsedUser);
                     ⚙ Set Profile
                   </Link>
 
-
                   <Link
                     to="/change-password"
                     onClick={closeMenu}
                   >
                     🔒 Change Password
                   </Link>
-
 
                   <Link
                     to="/bookings"
@@ -794,25 +590,17 @@ setUser(parsedUser);
                     📋 My Bookings
                   </Link>
 
-
                   <button
                     type="button"
                     onClick={handleLogout}
                   >
                     ↪ Logout
                   </button>
-
                 </div>
-
               )}
-
             </div>
-
           ) : (
-
-            /* =================================================
-               NOT LOGGED IN
-            ================================================= */
+            /* NOT LOGGED IN */
 
             <Link
               to="/login"
@@ -821,13 +609,9 @@ setUser(parsedUser);
             >
               👤 Login
             </Link>
-
           )}
 
-
-          {/* =================================================
-              CONSULTATION
-          ================================================= */}
+          {/* CONSULTATION */}
 
           <Link
             to="/consultation"
@@ -836,31 +620,21 @@ setUser(parsedUser);
           >
             Book Consultation
           </Link>
-
         </div>
 
-
-        {/* =================================================
-            MOBILE MENU BUTTON
-        ================================================= */}
+        {/* MOBILE MENU BUTTON */}
 
         <button
           type="button"
           className="menu-toggle"
-          onClick={() =>
-            setMenuOpen(!menuOpen)
-          }
+          onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation menu"
         >
           {menuOpen ? "✕" : "☰"}
         </button>
-
       </div>
-
     </header>
   );
 };
 
-
 export default Header;
-
