@@ -1015,7 +1015,7 @@ const AdminDashboard = () => {
             <div>
 
               <strong>
-                Add Event
+                Add Project
               </strong>
 
               <small>
