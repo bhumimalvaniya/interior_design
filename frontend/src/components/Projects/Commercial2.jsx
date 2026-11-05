@@ -142,7 +142,7 @@ const Commercial2 = () => {
           </p>
 
           <Link
-            to="/contactus"
+            to="/contact"
             className="commercial-hero-btn"
           >
             Start Your Project
@@ -343,7 +343,7 @@ const Commercial2 = () => {
                     )}
 
                     <Link
-                      to="/contactus"
+                      to="/contact"
                       className="commercial-project-link"
                     >
                       Discuss Similar Project →
@@ -611,7 +611,7 @@ const Commercial2 = () => {
           </p>
 
           <Link
-            to="/contactus"
+            to="/contact"
             className="commercial-cta-btn"
           >
             Contact Us
