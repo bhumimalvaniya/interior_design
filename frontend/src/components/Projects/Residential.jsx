@@ -150,7 +150,7 @@ const Residential = () => {
           </p>
 
           <Link
-            to="/contactus"
+            to="/contact"
             className="residential-hero-btn"
           >
             Start Your Home Project
