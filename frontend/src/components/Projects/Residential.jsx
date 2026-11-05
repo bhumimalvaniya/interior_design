@@ -443,7 +443,7 @@ const Residential = () => {
                     {/* CONTACT */}
 
                     <Link
-                      to="/contactus"
+                      to="/contact"
                       className="residential-project-link"
                     >
                       Enquire About This Style →
@@ -760,7 +760,7 @@ const Residential = () => {
           </p>
 
           <Link
-            to="/contactus"
+            to="/contact"
             className="residential-cta-btn"
           >
             Contact Us
