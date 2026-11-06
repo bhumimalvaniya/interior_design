@@ -67,8 +67,7 @@ const About = () => {
   const [slide, setSlide] = useState(0);
 
   // =======================================================
-  // TOTAL EXPERIENCE CALCULATION
-  // Add experience of all About records
+  // TOTAL EXPERIENCE,PROJECTS AND CLIENTS CALCULATION
   // =======================================================
 
   const totalExperience = about.reduce(
@@ -80,6 +79,12 @@ const About = () => {
   const totalProjects = about.reduce(
     (total, item) =>
       total + (Number(item.projects) || 0),
+    0
+  );
+
+  const totalClients = about.reduce(
+    (total, item) =>
+      total + (Number(item.clients) || 0),
     0
   );
 
@@ -343,7 +348,7 @@ const About = () => {
 
             <div className="stat-card">
               <span className="stat-number">
-                {about[0]?.clients || "0"}
+                {totalClients}+
               </span>
 
               <span className="stat-title">
