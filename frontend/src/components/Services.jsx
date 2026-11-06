@@ -138,46 +138,9 @@ const Services = () => {
       </section>
 
 
-      {/* =====================================
-          INTRO
-      ===================================== */}
+     
 
-      <section className="services-intro">
-
-        <div className="services-intro-content">
-
-          <p className="services-label">
-            WHAT WE DO
-          </p>
-
-          <h2>
-            Interior Design
-            <span> With Purpose</span>
-          </h2>
-
-          <p>
-            We create interiors that are beautiful,
-            practical and completely personalized to
-            your lifestyle.
-          </p>
-
-          <p>
-            Every project begins with understanding
-            your vision and ends with a space you are
-            proud to call your own.
-          </p>
-
-          <Link
-            to="/contact"
-            className="services-text-link"
-          >
-            Discuss Your Project →
-          </Link>
-
-        </div>
-
-      </section>
-
+     
 
       {/* =====================================
           SERVICES
