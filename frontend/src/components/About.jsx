@@ -5,12 +5,9 @@ import axios from "axios";
 import "./About.css";
 import API_URL from "../config/api";
 
-// const API_URL = import.meta.env.VITE_API_URL || "http://localhost:9000/api/v1";
-
-/* =========================================================
-   STATIC SLIDER DATA
-   This data does NOT come from the database.
-========================================================= */
+// =========================================================
+// STATIC SLIDER DATA
+// =========================================================
 
 const sliderData = [
   {
@@ -33,9 +30,9 @@ const sliderData = [
   },
 ];
 
-/* =========================================================
-   IMAGE URL
-========================================================= */
+// =========================================================
+// IMAGE URL
+// =========================================================
 
 const getImageUrl = (image) => {
   if (!image || typeof image !== "string") {
@@ -60,23 +57,29 @@ const getImageUrl = (image) => {
   return `${backendURL}/${cleanImage}`;
 };
 
-/* =========================================================
-   ABOUT COMPONENT
-========================================================= */
+// =========================================================
+// ABOUT COMPONENT
+// =========================================================
 
 const About = () => {
   const [about, setAbout] = useState([]);
   const [loading, setLoading] = useState(true);
   const [slide, setSlide] = useState(0);
 
+  // =======================================================
+  // TOTAL EXPERIENCE CALCULATION
+  // Add experience of all About records
+  // =======================================================
 
   const totalExperience = about.reduce(
-  (total, item) => total + (Number(item.experience) || 0),
-  0
-);
-  /* =======================================================
-     FETCH DYNAMIC ABOUT DATA
-  ======================================================= */
+    (total, item) =>
+      total + (Number(item.experience) || 0),
+    0
+  );
+
+  // =======================================================
+  // FETCH DYNAMIC ABOUT DATA
+  // =======================================================
 
   const fetchAbout = async () => {
     try {
@@ -108,9 +111,9 @@ const About = () => {
     fetchAbout();
   }, []);
 
-  /* =======================================================
-     STATIC SLIDER AUTO PLAY
-  ======================================================= */
+  // =======================================================
+  // STATIC SLIDER AUTO PLAY
+  // =======================================================
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -130,9 +133,9 @@ const About = () => {
     );
   };
 
-  /* =======================================================
-     UI
-  ======================================================= */
+  // =======================================================
+  // UI
+  // =======================================================
 
   return (
     <main className="about-page">
@@ -169,7 +172,8 @@ const About = () => {
           </div>
         ))}
 
-        {/* Previous */}
+        {/* Previous Button */}
+
         <button
           type="button"
           className="slider-arrow prev"
@@ -179,7 +183,8 @@ const About = () => {
           ❮
         </button>
 
-        {/* Next */}
+        {/* Next Button */}
+
         <button
           type="button"
           className="slider-arrow next"
@@ -189,7 +194,8 @@ const About = () => {
           ❯
         </button>
 
-        {/* Dots */}
+        {/* Slider Dots */}
+
         <div className="slider-dots">
           {sliderData.map((_, index) => (
             <button
@@ -208,64 +214,94 @@ const About = () => {
           DYNAMIC ABOUT SECTION
       ================================================= */}
 
-     <section className="about-section"> 
-      <div className="section-heading"> 
-        <span>WHO WE ARE</span> 
-        <h2>Our Story</h2> 
-        <p> Discover our experience, creativity and passion for
-           creating beautiful interior spaces. </p> 
-           </div> 
-           {loading ? ( 
-            <div className="about-message"> 
-            Loading About Us... </div> ) : 
-            about.length === 0 ?
-             ( <div className="about-message"> 
-             About information is not available. </div> ) :
-              ( <div className="about-row"> 
-              {about.map((item, index) => 
-                ( 
-                <div className="about-card" 
-                key={item._id || index} >
-                   {/* Image */} 
-                   <div className="about-card-image"> 
-                    <img src={getImageUrl(item.image)} 
-                    alt={item.title || "About Us"} 
-                    onError={(event) => { 
+      <section className="about-section">
+
+        <div className="section-heading">
+          <span>WHO WE ARE</span>
+
+          <h2>Our Story</h2>
+
+          <p>
+            Discover our experience, creativity and passion for
+            creating beautiful interior spaces.
+          </p>
+        </div>
+
+        {loading ? (
+          <div className="about-message">
+            Loading About Us...
+          </div>
+        ) : about.length === 0 ? (
+          <div className="about-message">
+            About information is not available.
+          </div>
+        ) : (
+          <div className="about-row">
+
+            {about.map((item, index) => (
+              <div
+                className="about-card"
+                key={item._id || index}
+              >
+
+                {/* Image */}
+
+                <div className="about-card-image">
+                  <img
+                    src={getImageUrl(item.image)}
+                    alt={item.title || "About Us"}
+                    onError={(event) => {
                       event.currentTarget.onerror = null;
-                       event.currentTarget.src = sliderData
-                       [index % sliderData.length].image; 
-                       }} />
-                        </div>
-                         {/* Content */} 
-                         <div className="about-card-content"> 
-                          <span className="about-card-number">
-                             {String(index + 1).padStart(2, "0")}
-                              </span> 
-                              <span className="about-label">
-                                 ABOUT US 
-                                 </span> 
-                                 <h2> 
-                                  {item.title || "Our Interior Design"}
-                                   </h2>
-                                    <h3> 
-                                      {item.subtitle || ""} 
-                                      </h3>
-                                       <p> 
-                                        {item.description || ""}
-                                         </p> 
-                                    <Link to="/contact" className="about-button" > 
-                                    Let's Work Together 
-                                    </Link> 
-                                    </div> 
-                                    </div> 
-                                  ))} 
-                                  </div> 
-                                )} 
-                                </section>
+                      event.currentTarget.src =
+                        sliderData[index % sliderData.length].image;
+                    }}
+                  />
+                </div>
+
+                {/* Content */}
+
+                <div className="about-card-content">
+
+                  <span className="about-card-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+
+                  <span className="about-label">
+                    ABOUT US
+                  </span>
+
+                  <h2>
+                    {item.title || "Our Interior Design"}
+                  </h2>
+
+                  <h3>
+                    {item.subtitle || ""}
+                  </h3>
+
+                  <p>
+                    {item.description || ""}
+                  </p>
+
+                  <Link
+                    to="/contact"
+                    className="about-button"
+                  >
+                    Let's Work Together
+                  </Link>
+
+                </div>
+              </div>
+            ))}
+
+          </div>
+        )}
+
+      </section>
 
       {/* =================================================
           DYNAMIC STATISTICS
-          Uses first About record
+          Experience = TOTAL of all About records
+          Projects and Clients = First About record
       ================================================= */}
 
       {!loading && about.length > 0 && (
@@ -273,15 +309,19 @@ const About = () => {
 
           <div className="stats-container">
 
+            {/* TOTAL EXPERIENCE */}
+
             <div className="stat-card">
               <span className="stat-number">
-                {about[0]?.experience || "0"}
+                {totalExperience}+
               </span>
 
               <span className="stat-title">
                 Years Experience
               </span>
             </div>
+
+            {/* PROJECTS */}
 
             <div className="stat-card">
               <span className="stat-number">
@@ -292,6 +332,8 @@ const About = () => {
                 Projects Completed
               </span>
             </div>
+
+            {/* CLIENTS */}
 
             <div className="stat-card">
               <span className="stat-number">
@@ -309,7 +351,7 @@ const About = () => {
       )}
 
       {/* =================================================
-          CTA
+          CALL TO ACTION
       ================================================= */}
 
       <section className="about-cta">
@@ -336,4 +378,3 @@ const About = () => {
 };
 
 export default About;
-
