@@ -77,6 +77,12 @@ const About = () => {
     0
   );
 
+  const totalProjects = about.reduce(
+    (total, item) =>
+      total + (Number(item.projects) || 0),
+    0
+  );
+
   // =======================================================
   // FETCH DYNAMIC ABOUT DATA
   // =======================================================
@@ -325,7 +331,7 @@ const About = () => {
 
             <div className="stat-card">
               <span className="stat-number">
-                {about[0]?.projects || "0"}
+                {totalProjects}+
               </span>
 
               <span className="stat-title">
