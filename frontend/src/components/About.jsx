@@ -69,9 +69,8 @@ const About = () => {
   const [loading, setLoading] = useState(true);
   const [slide, setSlide] = useState(0);
 
-  const [aboutData, setAboutData] = useState([]);
 
-const totalExperience = aboutData.reduce(
+  const totalExperience = about.reduce(
   (total, item) => total + (Number(item.experience) || 0),
   0
 );
@@ -276,8 +275,7 @@ const totalExperience = aboutData.reduce(
 
             <div className="stat-card">
               <span className="stat-number">
-                {/* {about[0]?.experience || "0"} */}
-                {totalExperience}+
+                {about[0]?.experience || "0"}
               </span>
 
               <span className="stat-title">
