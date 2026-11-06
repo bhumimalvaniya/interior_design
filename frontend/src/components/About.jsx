@@ -69,6 +69,12 @@ const About = () => {
   const [loading, setLoading] = useState(true);
   const [slide, setSlide] = useState(0);
 
+  const [aboutData, setAboutData] = useState([]);
+
+const totalExperience = aboutData.reduce(
+  (total, item) => total + (Number(item.experience) || 0),
+  0
+);
   /* =======================================================
      FETCH DYNAMIC ABOUT DATA
   ======================================================= */
@@ -270,7 +276,8 @@ const About = () => {
 
             <div className="stat-card">
               <span className="stat-number">
-                {about[0]?.experience || "0"}
+                {/* {about[0]?.experience || "0"} */}
+                {totalExperience}+
               </span>
 
               <span className="stat-title">

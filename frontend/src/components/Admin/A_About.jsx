@@ -39,7 +39,7 @@ const A_About = () => {
 
   const [about, setAbout] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  
   // ======================================================
   // FETCH ABOUT DATA
   // ======================================================
