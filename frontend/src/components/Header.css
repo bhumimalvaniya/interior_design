@@ -893,9 +893,29 @@
      PROFILE ON MOBILE
   ----------------------------------------------- */
 
-  .profile-dropdown {
+  /* .profile-dropdown {
     display: none;
-  }
+  } */
+   .profile-dropdown {
+    display: flex !important;
+    align-items: center;
+    height: auto;
+}
+
+.profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    max-width: 180px;
+}
+
+.profile-btn > span:nth-child(2) {
+    display: inline-block;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 }
 
 
