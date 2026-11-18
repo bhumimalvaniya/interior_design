@@ -19,7 +19,6 @@
   min-height: 82px;
   margin: 0 auto;
   padding: 0 40px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,15 +34,12 @@
   display: flex;
   align-items: center;
   gap: 10px;
-
   color: #171717;
   text-decoration: none;
-
   font-family: "Georgia", "Times New Roman", serif;
   font-size: 24px;
   font-weight: 600;
   letter-spacing: 0.3px;
-
   white-space: nowrap;
 }
 
@@ -54,14 +50,11 @@
 .logo-icon {
   width: 34px;
   height: 34px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: #b38b45;
   font-size: 23px;
-
   transform: rotate(0deg);
 }
 
@@ -79,9 +72,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   gap: 5px;
-
   flex: 1;
 }
 
@@ -116,16 +107,12 @@
 .navbar > a::after,
 .navbar > .nav-dropdown > .dropdown-btn::after {
   content: "";
-
   position: absolute;
   left: 15px;
   right: 15px;
   bottom: 3px;
-
   height: 2px;
-
   background: #b38b45;
-
   transform: scaleX(0);
   transform-origin: center;
 
