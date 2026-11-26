@@ -71,7 +71,7 @@ const Footer = () => {
             </li>
 
             <li>
-              <Link to="/contactus">Contact Us</Link>
+              <Link to="/contact">Contact Us</Link>
             </li>
           </ul>
         </div>
